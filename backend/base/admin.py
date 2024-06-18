@@ -1,3 +1,22 @@
 from django.contrib import admin
+from base.models import *
 
-# Register your models here.
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ['id', 'user', 'title', 'image', 'description', 'github_link', 'website_link', 'created_at', 'likes']
+    
+    
+@admin.register(Anon_User)
+class Anon_UserAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name']
+    
+@admin.register(Like)
+class LikeAdmin(admin.ModelAdmin):
+    list_display = ['id', 'user', 'post', 'created_at']
+    
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['id', 'user', 'post', 'content', 'created_at', 'likes']
+  
