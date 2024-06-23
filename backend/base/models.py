@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
     
 class Anon_User(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=100, blank=True)
+    name = models.CharField(max_length=100, blank=False, null=False)
     
     class Meta:
         db_table = 'base_anon_user'
@@ -62,7 +62,7 @@ class Comment(models.Model):
     user = models.ForeignKey(User, verbose_name='user', on_delete=models.CASCADE, related_name='userComments', null=True, blank=True)
     anon_user = models.ForeignKey('Anon_User', on_delete=models.CASCADE, related_name='anon_userComments', null=True, blank=True)
     post = models.ForeignKey(Post, verbose_name='post', on_delete=models.CASCADE, related_name='postComments')
-    content = models.TextField(max_length=250, verbose_name='content', null=True, blank=True)
+    content = models.TextField(max_length=250, verbose_name='content', null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

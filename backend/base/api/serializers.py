@@ -9,6 +9,33 @@ from rest_framework.authtoken.models import Token
 
 from base.models import Anon_User, Post, PostLike, Comment, CommentLike, CommentDislike, CommentHeart
 
+class UserSerializer(serializers.ModelSerializer):
+    name=serializers.SerializerMethodField(read_only=True)
+    _id=serializers.SerializerMethodField(read_only=True)
+    isAdmin=serializers.SerializerMethodField(read_only=True)
+
+
+    class Meta:
+        model = User
+        fields = ['id', '_id', 'username', 'email', 'name', 'isAdmin']
+        
+    def get__id(self, obj):
+        _id=obj.id
+        
+        return _id
+        
+    def get_isAdmin(self, obj):
+        isAdmin=obj.is_staff
+        
+        return isAdmin
+        
+    def get_name(self, obj):
+        name = obj.first_name
+        if name == '':
+            name = obj.email
+            
+        return name
+
 class Anon_UserSerializer(serializers.ModelSerializer):
     
     class Meta:
