@@ -39,6 +39,11 @@ from django.db.models import Q
 from base.api.serializers import *
 from base.models import *
 from rest_framework.pagination import PageNumberPagination
+from django.http import JsonResponse
+from django.shortcuts import render, redirect
+from django.core.mail import send_mail
+from django.conf import settings
+from ..forms import ContactForm
 
 
 class GetPostAPIView(ListCreateAPIView): 
@@ -66,4 +71,30 @@ class GetCreateCommentAPIView(ListCreateAPIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     
-    
+
+
+
+
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+
+            send_mail(
+                subject,
+                f'Name: {name}\nEmail: {email}\n\Message:\n{message}',
+                email,
+                [settings.CONTACT_EMAIL],  # CONFIGURAR EN SETTINGS.PY!!!!!!!!!!!!
+                fail_silently=False,
+            )
+            return JsonResponse({'success': 'Thanks for your message. I will contact you as soon as possible.'}, status=200)
+        else:
+            return JsonResponse({'errors': form.errors}, status=400)
+    else:
+        return JsonResponse({'error': 'Method not allowed'}, status=405)

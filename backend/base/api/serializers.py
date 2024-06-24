@@ -46,14 +46,14 @@ class PostSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Post
-        fields = '__all__'
+        fields = ['id', 'title', 'description', 'image', 'likes', 'github_link', 'website_link']
         
 
-class LikeSerializer(serializers.ModelSerializer):
+class PostLikeSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = PostLike
-        fields = '__all__'
+        fields = ['id', 'user', 'anon_user', 'post']
         
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -66,17 +66,17 @@ class CommentLikeSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = CommentLike
-        fields = '__all__'
+        fields = ['id', 'user', 'anon_user', 'comment']
 
 class CommentDislikeSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = CommentDislike
-        fields = '__all__'
+        fields = ['id', 'user', 'anon_user', 'comment']
         
 class CommentHeartSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = CommentHeart
-        fields = '__all__'
+        fields = ['id', 'user', 'anon_user', 'comment']
         
