@@ -46,10 +46,16 @@ from django.conf import settings
 from ..forms import ContactForm
 
 
-class GetPostAPIView(ListCreateAPIView): 
+class PostListAPIView(ListAPIView): 
     queryset = Post.objects.all().order_by('id')
     serializer_class = PostSerializer
     pagination_class = None
+    
+class PostDetailAPIView(RetrieveAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    lookup_field = 'id'
+    
     
     
 class GetCreateCommentAPIView(ListCreateAPIView):

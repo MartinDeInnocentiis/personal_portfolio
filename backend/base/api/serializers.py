@@ -43,6 +43,7 @@ class Anon_UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
         
 class PostSerializer(serializers.ModelSerializer):
+    comments = 'CommentSerializer'(many=True, read_only=True)
     
     class Meta:
         model = Post
