@@ -13,12 +13,13 @@ from rest_framework.decorators import api_view
 from rest_framework.generics import (
     ListAPIView,
     CreateAPIView,
-    RetrieveAPIView,
     ListCreateAPIView,
-    RetrieveUpdateAPIView,
     DestroyAPIView,
+    UpdateAPIView,
+    RetrieveUpdateDestroyAPIView,
+    RetrieveAPIView,
+    RetrieveUpdateAPIView,
     GenericAPIView,
-    UpdateAPIView
 )
 
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
@@ -44,43 +45,55 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
 from ..forms import ContactForm
+from .permissions import IsOwnerOrReadOnly
 
-
-class PostListAPIView(ListAPIView): 
+class PostListAPIView(ListAPIView):
     queryset = Post.objects.all().order_by('id')
     serializer_class = PostSerializer
-    pagination_class = None
+    permission_classes = [AllowAny] 
     
-class PostDetailAPIView(RetrieveAPIView):
+class PostDetailAPIView(ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     lookup_field = 'id'
+    permission_classes = [AllowAny] 
+    
+class PostCreateAPIView(CreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [IsAdminUser]  
+
+class PostUpdateAPIView(UpdateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [IsAdminUser]  
+    lookup_field = 'id'
+
+class PostDestroyAPIView(DestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [IsAdminUser]  
+    lookup_field = 'id'
+
     
     
     
-class GetCreateCommentAPIView(ListCreateAPIView):
+class CommentListCreateAPIView(ListCreateAPIView):
     serializer_class = CommentSerializer
 
     def get_queryset(self):
-        post_id = self.kwargs['post_id']
-        return Comment.objects.filter(post_id=post_id).order_by('id')
+        return Comment.objects.filter(post_id=self.kwargs['post_id'])
 
-    def post(self, request, *args, **kwargs):
-        post_id = self.kwargs.get('post_id')
-        data = request.data.copy()
-        data['post'] = post_id  
-
-        serializer = CommentSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-    
+    def perform_create(self, serializer): #se llama cuando se crea (post) un nuevo comment, asegurando que se asocie con el post correcto
+        # asumiendo que post_id es pasado en la URL
+        serializer.save(post_id=self.kwargs['post_id'])
 
 
-
-
+class CommentRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+    lookup_field = 'id'
+    permission_classes = [IsOwnerOrReadOnly]  # APPLIES CUSTOM PERMISSION.
 
 
 def contact(request):
