@@ -46,6 +46,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from ..forms import ContactForm
 from .permissions import IsOwnerOrReadOnly
+from ..mixins import AnonUserInteractionMixin
 
 class PostListAPIView(ListAPIView):
     queryset = Post.objects.all().order_by('id')
@@ -76,8 +77,7 @@ class PostDestroyAPIView(DestroyAPIView):
     lookup_field = 'id'
 
     
-    
-    
+        
 class CommentListCreateAPIView(ListCreateAPIView):
     serializer_class = CommentSerializer
 
@@ -85,15 +85,87 @@ class CommentListCreateAPIView(ListCreateAPIView):
         return Comment.objects.filter(post_id=self.kwargs['post_id'])
 
     def perform_create(self, serializer): #se llama cuando se crea (post) un nuevo comment, asegurando que se asocie con el post correcto
+        user, anon_user = self.handle_anon_user(self.request)
         # asumiendo que post_id es pasado en la URL
-        serializer.save(post_id=self.kwargs['post_id'])
-
+        serializer.save(user=user, anon_user=anon_user, post_id=self.kwargs['post_id'])
 
 class CommentRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    lookup_field = 'id'
     permission_classes = [IsOwnerOrReadOnly]  # APPLIES CUSTOM PERMISSION.
+    lookup_field = 'id'
+
+
+class PostLikeListCreateAPIView(ListCreateAPIView):
+    serializer_class = PostLikeSerializer
+
+    def get_queryset(self):
+        return PostLike.objects.filter(post_id=self.kwargs['post_id'])
+
+    def perform_create(self, serializer):
+        user, anon_user = self.handle_anon_user(self.request)
+        serializer.save(user=user, anon_user=anon_user, post_id=self.kwargs['post_id'])
+        
+        
+class PostLikeDestroyAPIView(DestroyAPIView):
+    queryset = PostLike.objects.all()
+    serializer_class = PostLikeSerializer
+    permission_classes = [IsOwnerOrReadOnly]  
+    lookup_field = 'id'
+
+        
+        
+class CommentLikeListCreateAPIView(ListCreateAPIView):
+    serializer_class = CommentLikeSerializer
+
+    def get_queryset(self):
+        return CommentLike.objects.filter(comment_id=self.kwargs['comment_id'])
+
+    def perform_create(self, serializer):
+        user, anon_user = self.handle_anon_user(self.request)
+        serializer.save(user=user, anon_user=anon_user, comment_id=self.kwargs['comment_id'])
+        
+        
+class CommentLikeDestroyAPIView(DestroyAPIView):
+    queryset = CommentLike.objects.all()
+    serializer_class = CommentLikeSerializer
+    permission_classes = [IsOwnerOrReadOnly]  
+    lookup_field = 'id'
+
+        
+class CommentDislikeListCreateAPIView(ListCreateAPIView):
+    serializer_class = CommentDislikeSerializer
+
+    def get_queryset(self):
+        return CommentDislike.objects.filter(comment_id=self.kwargs['comment_id'])
+
+    def perform_create(self, serializer):
+        user, anon_user = self.handle_anon_user(self.request)
+        serializer.save(user=user, anon_user=anon_user, comment_id=self.kwargs['comment_id'])
+        
+        
+class CommentDislikeDestroyAPIView(DestroyAPIView):
+    queryset = CommentDislike.objects.all()
+    serializer_class = CommentDislikeSerializer
+    permission_classes = [IsOwnerOrReadOnly]  
+    lookup_field = 'id'
+        
+        
+class CommentHeartListCreateAPIView(ListCreateAPIView):
+    serializer_class = CommentHeartSerializer
+
+    def get_queryset(self):
+        return CommentHeart.objects.filter(comment_id=self.kwargs['comment_id'])
+
+    def perform_create(self, serializer):
+        user, anon_user = self.handle_anon_user(self.request)
+        serializer.save(user=user, anon_user=anon_user, comment_id=self.kwargs['comment_id'])
+        
+class CommentHeartDestroyAPIView(DestroyAPIView):
+    queryset = CommentHeart.objects.all()
+    serializer_class = CommentHeartSerializer
+    permission_classes = [IsOwnerOrReadOnly]  
+    lookup_field = 'id'
 
 
 def contact(request):

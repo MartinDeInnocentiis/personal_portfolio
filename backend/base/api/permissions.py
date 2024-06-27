@@ -11,6 +11,14 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
         
-        #WRITING  ARE ONLY ALLOWED TO THE OWNER OF THAT COMMENT.
+        # WRITING PERMISSIONS ARE ONLY ALLOWED TO THE OWNER OF THAT OBJ.
+        # CHECKING IF THEY MATCH...
+        if obj.user and obj.user == request.user:
+            return True
         
-        return obj.user == request.user
+        # ADDITIONAL CHECK FOR ANON_USERS.
+        # THEY NEED TO STORE SOME ID AND PASS IT IN REQUEST.SESSION
+        if obj.anon_user and 'anon_user_id' in request.session:
+            return obj.anon_user.id == request.session['anon_user_id']
+
+        return False
