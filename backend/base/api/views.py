@@ -48,6 +48,27 @@ from ..forms import ContactForm
 from .permissions import IsOwnerOrReadOnly
 from ..mixins import AnonUserInteractionMixin
 
+from ..functions import send_mail_google
+from django.views.generic import FormView
+from django import forms
+from django.urls import reverse_lazy
+
+class EmailForm(forms.Form):
+    email = forms.EmailField(label='Email Address...')
+
+class SendEmail (FormView):
+    template_name ='index.html'
+    form_class = EmailForm
+    success_url = reverse_lazy ('send-mail')
+    
+    def form_valid (self, form):
+        send_mail_google()
+        print (form.cleaned_data['email'])
+        
+        return super().form_valid(form)
+    
+    
+
 class PostListAPIView(ListAPIView):
     queryset = Post.objects.all().order_by('id')
     serializer_class = PostSerializer
