@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     
     #Third party apps
     'rest_framework',
+    'rest_framework_simplejwt',
     #'django_filters',
     'corsheaders',
     #'drf_yasg',
@@ -52,8 +53,11 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
 }
 
 MIDDLEWARE = [

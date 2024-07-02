@@ -1,5 +1,9 @@
 from django.urls import path
 from .views import *
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 urlpatterns = [
     path('contact/', contact, name='contact'),
@@ -33,4 +37,11 @@ urlpatterns = [
     path('comments/hearts/<int:id>/', CommentHeartDestroyAPIView.as_view(), name='comment-heart-destroy'),
 
     path('send/', SendEmail.as_view(), name='send'),
+    
+    
+    
+    # !!!!   URLs FOR ACCESS & REFRESH TOKENS (SUPERADMIN ONLY)   !!!!
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    
 ]

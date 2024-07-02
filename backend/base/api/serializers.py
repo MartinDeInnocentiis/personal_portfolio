@@ -44,18 +44,20 @@ class Anon_UserSerializer(serializers.ModelSerializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
+    post = serializers.PrimaryKeyRelatedField(queryset=Post.objects.all(), required=False)
     
     class Meta:
         model = Comment
-        fields = '__all__'
+        fields = ['id', 'user', 'anon_user', 'post', 'content', 'created_at']
+        read_only_fields = ['id', 'user', 'anon_user', 'created_at']
         
         
 class PostSerializer(serializers.ModelSerializer):
-    comments = CommentSerializer(many=True, read_only=True)
+    comments = CommentSerializer(many=True, read_only=True, source='postComments')
     
     class Meta:
         model = Post
-        fields = ['id', 'title', 'description', 'image', 'likes', 'github_link', 'website_link']
+        fields = ['id', 'title', 'description', 'image', 'likes', 'comments', 'github_link', 'website_link']
         
 
 class PostLikeSerializer(serializers.ModelSerializer):

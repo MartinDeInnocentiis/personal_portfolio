@@ -81,9 +81,15 @@ class PostDetailAPIView(ListAPIView):
     permission_classes = [AllowAny] 
     
 class PostCreateAPIView(CreateAPIView):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
     permission_classes = [IsAdminUser]  
+    
+    def post(self, request, *args, **kwargs):
+        serializer = PostSerializer(data=request.data)
+        if serializer.is_valid():
+            user = request.user  
+            serializer.save(user=user)  
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class PostUpdateAPIView(UpdateAPIView):
     queryset = Post.objects.all()
@@ -99,25 +105,28 @@ class PostDestroyAPIView(DestroyAPIView):
 
     
         
-class CommentListCreateAPIView(ListCreateAPIView):
+class CommentListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
     serializer_class = CommentSerializer
+    permission_classes = [AllowAny]
 
     def get_queryset(self):
         return Comment.objects.filter(post_id=self.kwargs['post_id'])
 
     def perform_create(self, serializer): #se llama cuando se crea (post) un nuevo comment, asegurando que se asocie con el post correcto
         user, anon_user = self.handle_anon_user(self.request)
+        post_id = self.kwargs['post_id']
+        post = Post.objects.get(id=post_id)
         # asumiendo que post_id es pasado en la URL
-        serializer.save(user=user, anon_user=anon_user, post_id=self.kwargs['post_id'])
+        serializer.save(user=user, anon_user=anon_user, post=post)
 
-class CommentRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+class CommentRetrieveUpdateDestroyAPIView(AnonUserInteractionMixin, RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     permission_classes = [IsOwnerOrReadOnly]  # APPLIES CUSTOM PERMISSION.
     lookup_field = 'id'
 
 
-class PostLikeListCreateAPIView(ListCreateAPIView):
+class PostLikeListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
     serializer_class = PostLikeSerializer
 
     def get_queryset(self):
@@ -136,7 +145,7 @@ class PostLikeDestroyAPIView(DestroyAPIView):
 
         
         
-class CommentLikeListCreateAPIView(ListCreateAPIView):
+class CommentLikeListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
     serializer_class = CommentLikeSerializer
 
     def get_queryset(self):
@@ -154,7 +163,7 @@ class CommentLikeDestroyAPIView(DestroyAPIView):
     lookup_field = 'id'
 
         
-class CommentDislikeListCreateAPIView(ListCreateAPIView):
+class CommentDislikeListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
     serializer_class = CommentDislikeSerializer
 
     def get_queryset(self):
@@ -172,7 +181,7 @@ class CommentDislikeDestroyAPIView(DestroyAPIView):
     lookup_field = 'id'
         
         
-class CommentHeartListCreateAPIView(ListCreateAPIView):
+class CommentHeartListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
     serializer_class = CommentHeartSerializer
 
     def get_queryset(self):
