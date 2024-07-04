@@ -14,7 +14,7 @@ class Anon_User(models.Model):
         verbose_name_plural = 'anon_users'
 
     def __str__(self):
-        return f"Anónimo {self.id} - {self.name if self.name else 'Anonymous User'}"
+        return f"{self.id} - {self.name if self.name else 'Anonymous User'}"
     
 
 class Post (models.Model):

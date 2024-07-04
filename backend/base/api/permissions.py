@@ -1,24 +1,36 @@
 from rest_framework import permissions
+import logging
+
+logger = logging.getLogger(__name__)
 
 class IsOwnerOrReadOnly(permissions.BasePermission):
     """
-    PERMISSION CLASS. ALLOWS TO EDIT/DELETE COMMENTS ONLY TO THEIR OWNERS.
+    Permiso personalizado que permite editar/eliminar comentarios solo a sus propietarios.
     """
 
     def has_object_permission(self, request, view, obj):
-        # READING PERMISSIONS ARE ALWAYS ALLOWED TO ANY REQUEST (GET, HEAD, OPTIONS)
-
-        if request.method in permissions.SAFE_METHODS:
-            return True
         
-        # WRITING PERMISSIONS ARE ONLY ALLOWED TO THE OWNER OF THAT OBJ.
-        # CHECKING IF THEY MATCH...
-        if obj.user and obj.user == request.user:
-            return True
+        if request.user.is_authenticated:
+            return obj.user == request.user
+        else:
+            anon_user_id = request.session.get('anon_user_id')
+            return str(obj.anon_user.id) == anon_user_id
         
-        # ADDITIONAL CHECK FOR ANON_USERS.
-        # THEY NEED TO STORE SOME ID AND PASS IT IN REQUEST.SESSION
-        if obj.anon_user and 'anon_user_id' in request.session:
-            return obj.anon_user.id == request.session['anon_user_id']
+        
+        # # Permisos de lectura siempre están permitidos
+        # if request.method in permissions.SAFE_METHODS:
+        #     return True
+        
+        # # Permisos de escritura solo están permitidos al propietario del objeto
+        # if obj.user and obj.user == request.user:
+        #     return True
+        
+        # # Verificación adicional para usuarios anónimos
+        # if obj.anon_user:
+        #     anon_user_id = request.session.get('anon_user_id', None)
+        #     logger.debug(f"anon_user_id en sesión: {anon_user_id}")
+        #     logger.debug(f"anon_user.id: {obj.anon_user.id}")
+        #     if anon_user_id and obj.anon_user.id == anon_user_id:
+        #         return True
 
-        return False
+        # return False

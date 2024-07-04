@@ -112,19 +112,22 @@ class CommentListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
     def get_queryset(self):
         return Comment.objects.filter(post_id=self.kwargs['post_id'])
 
-    def perform_create(self, serializer): #se llama cuando se crea (post) un nuevo comment, asegurando que se asocie con el post correcto
+    def perform_create(self, serializer):
         user, anon_user = self.handle_anon_user(self.request)
         post_id = self.kwargs['post_id']
         post = Post.objects.get(id=post_id)
-        # asumiendo que post_id es pasado en la URL
         serializer.save(user=user, anon_user=anon_user, post=post)
 
-class CommentRetrieveUpdateDestroyAPIView(AnonUserInteractionMixin, RetrieveUpdateDestroyAPIView):
+class CommentRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    permission_classes = [IsOwnerOrReadOnly]  # APPLIES CUSTOM PERMISSION.
+    permission_classes = [IsOwnerOrReadOnly]
     lookup_field = 'id'
 
+    def get_object(self):
+        obj = super().get_object()
+        self.check_object_permissions(self.request, obj)
+        return obj
 
 class PostLikeListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
     serializer_class = PostLikeSerializer
