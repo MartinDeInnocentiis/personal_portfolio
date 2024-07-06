@@ -5,7 +5,7 @@ logger = logging.getLogger(__name__)
 
 class IsOwnerOrReadOnly(permissions.BasePermission):
     """
-    Permiso personalizado que permite editar/eliminar comentarios solo a sus propietarios.
+    CUSTOM PERMISSION. ALLOWS TO MODIFY AND DELETE AN OBJECT ONLY TO ITS OWNER.
     """
 
     def has_object_permission(self, request, view, obj):

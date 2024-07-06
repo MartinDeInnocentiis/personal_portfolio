@@ -61,24 +61,32 @@ class PostSerializer(serializers.ModelSerializer):
         
 
 class PostLikeSerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True)
+    post = serializers.PrimaryKeyRelatedField(queryset=Post.objects.all(), required=False)
     
     class Meta:
         model = PostLike
         fields = ['id', 'user', 'anon_user', 'post']
         
 class CommentLikeSerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True)
+    comment = serializers.PrimaryKeyRelatedField(queryset=Comment.objects.all(), required=False)
     
     class Meta:
         model = CommentLike
         fields = ['id', 'user', 'anon_user', 'comment']
 
 class CommentDislikeSerializer(serializers.ModelSerializer):
-    
+    user = UserSerializer(read_only=True)
+    comment = serializers.PrimaryKeyRelatedField(queryset=Comment.objects.all(), required=False)
+        
     class Meta:
         model = CommentDislike
         fields = ['id', 'user', 'anon_user', 'comment']
         
 class CommentHeartSerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True)
+    comment = serializers.PrimaryKeyRelatedField(queryset=Comment.objects.all(), required=False)
     
     class Meta:
         model = CommentHeart

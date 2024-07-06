@@ -27,6 +27,7 @@ from rest_framework.response import Response
 from rest_framework.validators import ValidationError
 from rest_framework.views import APIView
 from rest_framework.filters import SearchFilter
+from rest_framework.exceptions import ValidationError as ValidationErrorDRF
 from django.db.models import Q
 
 # NOTE: Importamos este decorador para poder customizar los 
@@ -46,7 +47,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from ..forms import ContactForm
 from .permissions import IsOwnerOrReadOnly
-from ..mixins import AnonUserInteractionMixin
+from ..mixins import AnonUserInteractionMixin, ReactionCountMixin, PreventDuplicateReactionMixin
 
 from ..functions import send_mail_google
 from django.views.generic import FormView
@@ -129,15 +130,21 @@ class CommentRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
         self.check_object_permissions(self.request, obj)
         return obj
 
-class PostLikeListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
-    serializer_class = PostLikeSerializer
 
+class PostLikeListCreateAPIView(ReactionCountMixin, PreventDuplicateReactionMixin, ListCreateAPIView):
+    serializer_class = PostLikeSerializer
+    permission_classes = [AllowAny]
+    reaction_model = PostLike
+    
     def get_queryset(self):
         return PostLike.objects.filter(post_id=self.kwargs['post_id'])
 
     def perform_create(self, serializer):
-        user, anon_user = self.handle_anon_user(self.request)
-        serializer.save(user=user, anon_user=anon_user, post_id=self.kwargs['post_id'])
+        post_id = self.kwargs['post_id']
+        post = Post.objects.get(id=post_id)
+        user, anon_user = self.check_duplicate_reaction(self.request, post_id=post)
+
+        serializer.save(user=user, anon_user=anon_user, post=post)
         
         
 class PostLikeDestroyAPIView(DestroyAPIView):
@@ -148,15 +155,19 @@ class PostLikeDestroyAPIView(DestroyAPIView):
 
         
         
-class CommentLikeListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
+class CommentLikeListCreateAPIView(ReactionCountMixin, PreventDuplicateReactionMixin,  ListCreateAPIView):
     serializer_class = CommentLikeSerializer
+    permission_classes = [AllowAny]
+    reaction_model = CommentLike
 
     def get_queryset(self):
         return CommentLike.objects.filter(comment_id=self.kwargs['comment_id'])
 
     def perform_create(self, serializer):
-        user, anon_user = self.handle_anon_user(self.request)
-        serializer.save(user=user, anon_user=anon_user, comment_id=self.kwargs['comment_id'])
+        comment_id = self.kwargs['comment_id']
+        comment = Comment.objects.get(id=comment_id)
+        user, anon_user = self.check_duplicate_reaction(self.request, comment_id=comment)
+        serializer.save(user=user, anon_user=anon_user, comment=comment)
         
         
 class CommentLikeDestroyAPIView(DestroyAPIView):
@@ -166,15 +177,19 @@ class CommentLikeDestroyAPIView(DestroyAPIView):
     lookup_field = 'id'
 
         
-class CommentDislikeListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
+class CommentDislikeListCreateAPIView(ReactionCountMixin, PreventDuplicateReactionMixin, ListCreateAPIView):
     serializer_class = CommentDislikeSerializer
+    permission_classes = [AllowAny]
+    reaction_model = CommentDislike
 
     def get_queryset(self):
         return CommentDislike.objects.filter(comment_id=self.kwargs['comment_id'])
 
     def perform_create(self, serializer):
-        user, anon_user = self.handle_anon_user(self.request)
-        serializer.save(user=user, anon_user=anon_user, comment_id=self.kwargs['comment_id'])
+        comment_id = self.kwargs['comment_id']
+        comment = Comment.objects.get(id=comment_id)
+        user, anon_user = self.check_duplicate_reaction(self.request, comment_id=comment)
+        serializer.save(user=user, anon_user=anon_user, comment=comment)
         
         
 class CommentDislikeDestroyAPIView(DestroyAPIView):
@@ -184,15 +199,19 @@ class CommentDislikeDestroyAPIView(DestroyAPIView):
     lookup_field = 'id'
         
         
-class CommentHeartListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
+class CommentHeartListCreateAPIView(ReactionCountMixin, PreventDuplicateReactionMixin, ListCreateAPIView):
     serializer_class = CommentHeartSerializer
+    permission_classes = [AllowAny]
+    reaction_model = CommentHeart
 
     def get_queryset(self):
         return CommentHeart.objects.filter(comment_id=self.kwargs['comment_id'])
 
     def perform_create(self, serializer):
-        user, anon_user = self.handle_anon_user(self.request)
-        serializer.save(user=user, anon_user=anon_user, comment_id=self.kwargs['comment_id'])
+        comment_id = self.kwargs['comment_id']
+        comment = Comment.objects.get(id=comment_id)
+        user, anon_user = self.check_duplicate_reaction(self.request, comment_id=comment)
+        serializer.save(user=user, anon_user=anon_user, comment=comment)
         
 class CommentHeartDestroyAPIView(DestroyAPIView):
     queryset = CommentHeart.objects.all()
