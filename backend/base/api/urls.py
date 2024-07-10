@@ -36,8 +36,9 @@ urlpatterns = [
     path('comments/<int:comment_id>/hearts/', CommentHeartListCreateAPIView.as_view(), name='comment-heart-list-create'),
     path('comments/hearts/<int:id>/', CommentHeartDestroyAPIView.as_view(), name='comment-heart-destroy'),
 
-    path('send/', SendEmail.as_view(), name='send'),
-    
+    #path('send/', SendEmail.as_view(), name='send'),
+    path("contact/", contact, name='contact'),
+    path("success/", success, name='success'),
     
     
     # !!!!   URLs FOR ACCESS & REFRESH TOKENS (SUPERADMIN ONLY)   !!!!

@@ -1,2 +1,4 @@
 # IGNORE ANY CREDENTIALS.JSON FILE AT ANY LEVEL/DIRECTORY:
 **/credentials.json
+
+**/.env
