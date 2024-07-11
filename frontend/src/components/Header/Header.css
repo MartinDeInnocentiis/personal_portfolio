@@ -1,0 +1,53 @@
+
+
+header {
+    font-family: "Roboto Condensed", serif;
+    font-weight: 900;
+    border-bottom: 2px solid #96FF1F;
+    background: #F0F9FA;
+    color: #221536;
+    padding-left: 1rem;
+    padding-right: 3rem;
+    margin-bottom: 2rem;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 14vh;
+}
+
+.logo {
+    width: 230px;
+    height: auto;
+    margin-left: 50%;
+    margin-top: 1rem;
+}
+
+.navbarList {
+    margin-right: 4rem;
+}
+
+.objectList {
+    display: inline-block;
+    margin: 1rem;
+    cursor:pointer;
+    font-size:large;
+    transition: transform 0.2s ease;
+}
+
+.objectList:hover {
+    transform: scale(1.1);
+    font-weight: bold; 
+    transition: all .5s ease;
+}
+
+.nav-link {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.nav-link:hover, .nav-link:focus {
+    transition: all .5s ease;
+}

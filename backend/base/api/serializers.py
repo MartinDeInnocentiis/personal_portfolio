@@ -7,7 +7,7 @@ from django.core.exceptions import ValidationError as DjangoValidationError
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 
-from base.models import Anon_User, Post, PostLike, Comment, CommentLike, CommentDislike, CommentHeart
+from base.models import Anon_User, Post, PostLike, PostHeart, Comment, CommentLike, CommentDislike, CommentHeart
 
 class UserSerializer(serializers.ModelSerializer):
     name=serializers.SerializerMethodField(read_only=True)
@@ -57,7 +57,7 @@ class PostSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Post
-        fields = ['id', 'title', 'description', 'image', 'likes', 'comments', 'github_link', 'website_link']
+        fields = ['id', 'title', 'description', 'image', 'likes', 'hearts', 'comments', 'github_link', 'website_link', 'status']
         
 
 class PostLikeSerializer(serializers.ModelSerializer):
@@ -68,6 +68,16 @@ class PostLikeSerializer(serializers.ModelSerializer):
         model = PostLike
         fields = ['id', 'user', 'anon_user', 'post']
         
+
+class PostHeartSerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True)
+    post = serializers.PrimaryKeyRelatedField(queryset=Post.objects.all(), required=False)
+    
+    class Meta:
+        model = PostHeart
+        fields = ['id', 'user', 'anon_user', 'post']      
+        
+          
 class CommentLikeSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     comment = serializers.PrimaryKeyRelatedField(queryset=Comment.objects.all(), required=False)

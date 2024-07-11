@@ -121,6 +121,30 @@ class PostLikeDestroyAPIView(DestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]  
     lookup_field = 'id'
 
+
+
+class PostHeartListCreateAPIView(ReactionCountMixin, PreventDuplicateReactionMixin, ListCreateAPIView):
+    serializer_class = PostHeartSerializer
+    permission_classes = [AllowAny]
+    reaction_model = PostHeart
+    
+    def get_queryset(self):
+        return PostHeart.objects.filter(post_id=self.kwargs['post_id'])
+
+    def perform_create(self, serializer):
+        post_id = self.kwargs['post_id']
+        post = Post.objects.get(id=post_id)
+        user, anon_user = self.check_duplicate_reaction(self.request, post_id=post)
+
+        serializer.save(user=user, anon_user=anon_user, post=post)
+        
+        
+class PostHeartDestroyAPIView(DestroyAPIView):
+    queryset = PostHeart.objects.all()
+    serializer_class = PostHeartSerializer
+    permission_classes = [IsOwnerOrReadOnly]  
+    lookup_field = 'id'
+
         
         
 class CommentLikeListCreateAPIView(ReactionCountMixin, PreventDuplicateReactionMixin,  ListCreateAPIView):

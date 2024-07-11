@@ -1,0 +1,18 @@
+
+.home-container{
+    align-items:center;
+    justify-content:center;
+    margin: 5rem 0 0 10rem;
+    height: 65vh;
+}
+
+.home-h1{
+    color: #221536;
+}
+
+.home-h2{
+    color: #5C61FF;
+    font-size:xx-large;
+}
+
+

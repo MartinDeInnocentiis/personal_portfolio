@@ -24,6 +24,10 @@ urlpatterns = [
     path('posts/<int:post_id>/likes/', PostLikeListCreateAPIView.as_view(), name='post-like-list-create'),
     path('posts/likes/<int:id>/', PostLikeDestroyAPIView.as_view(), name='post-like-destroy'),
 
+    # URLs for PostHearts
+    path('posts/<int:post_id>/hearts/', PostHeartListCreateAPIView.as_view(), name='post-heart-list-create'),
+    path('posts/hearts/<int:id>/', PostHeartDestroyAPIView.as_view(), name='post-heart-destroy'),
+
     # URLs for CommentLikes
     path('comments/<int:comment_id>/likes/', CommentLikeListCreateAPIView.as_view(), name='comment-like-list-create'),
     path('comments/likes/<int:id>/', CommentLikeDestroyAPIView.as_view(), name='comment-like-destroy'),

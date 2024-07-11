@@ -27,6 +27,9 @@ class Post (models.Model):
     website_link = models.CharField(max_length=100, default='',null=True, blank=True, verbose_name='website_link')
     created_at = models.DateTimeField(auto_now_add=True)
     likes = models.PositiveIntegerField(default=0, verbose_name='likes')
+    hearts = models.PositiveIntegerField(default=0, verbose_name='hearts')
+    status = models.CharField(max_length=20, default='', verbose_name='status')
+
     
     class Meta:
         db_table = 'base_post'
@@ -56,6 +59,26 @@ class PostLike(models.Model):
     def __str__(self):
         return f'Like {self.id} by {self.user if self.user else self.anon_user} on POST {self.post.id}'
     
+    
+class PostHeart(models.Model):
+    id = models.AutoField(db_column='ID', primary_key=True)
+    user = models.ForeignKey(User, verbose_name='user', on_delete=models.CASCADE, related_name='userHearts', null=True, blank=True)
+    anon_user = models.ForeignKey('Anon_User', on_delete=models.CASCADE, related_name='anon_userHearts', null=True, blank=True)
+    post = models.ForeignKey(Post, verbose_name='post', on_delete=models.CASCADE, related_name='postHearts')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'base_post_heart'
+        verbose_name = 'post_heart'
+        verbose_name_plural = 'post_hearts'
+
+    def clean(self):
+        if not (self.user or self.anon_user):
+            raise ValidationError("ERROR: At least one registered or anonymous user must be specified.")
+
+    def __str__(self):
+        return f'Like {self.id} by {self.user if self.user else self.anon_user} on POST {self.post.id}'
+  
     
 class Comment(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)
