@@ -11,7 +11,7 @@ const Header = () => {
         <Link to={'/'} className='nav-link'>
             <div>
                 {
-                    <img src="../public/logo2.png" alt="Portfolio Logo" className='logo'/>
+                    <img src="../public/logo1.png" alt="Portfolio Logo" className='logo-header'/>
                 }
             </div>
         </Link>

@@ -8,9 +8,9 @@ const Footer = () => {
                 <div className="row">
                     <div className="col">
                         <h4 className='footer-item-title' >CONTACT ME</h4>
-                        <ul>
-                            <li>LinkedIn,</li>
-                            <li>WhatsApp,</li>
+                        <ul className='contact-me-list'>
+                            <li>LinkedIn</li>
+                            <li>WhatsApp</li>
                             <br />
                             <hr />
                             <br />
@@ -22,7 +22,7 @@ const Footer = () => {
 
                     <div className="col">
                         <h4 className='footer-item-title'>EXPLORE</h4>
-                        <ul>
+                        <ul className='explore-list'>
                             <li className="footerList">
                                 <NavLink to={"/"} className="nav-link">Home</NavLink>
                             </li>

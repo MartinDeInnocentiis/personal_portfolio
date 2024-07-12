@@ -1,18 +1,50 @@
+.home-general-container{
+    display: flex;
+    margin-right: 4rem;
+}
 
-.home-container{
+.home-container1{
+    width: 58vw;
+    color: #221536;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
     align-items:center;
     justify-content:center;
     margin: 5rem 0 0 10rem;
     height: 65vh;
+    font-size: 30px;
 }
 
 .home-h1{
-    color: #221536;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.home-h2{
-    color: #5C61FF;
+.my-name{
+    margin-left: 10px;
+    font-weight: 800;
+    font-size:70px;
+    letter-spacing: 1px;
+}
+
+.home-fullstack{
+    margin: 2rem 0 0 0;
     font-size:xx-large;
+    font-size: 90.5px;
+    font-weight: 500;
+    background:  linear-gradient(135deg, #5C61FF 0% 20%, #a57f64 50%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+.home-h3{
+    width: 65%;
+    font-weight: 100;
+    font-size: 29.5px;
+    letter-spacing: 1px;
+}
 
+.home-container2{
+    width: 30vw;
+}
