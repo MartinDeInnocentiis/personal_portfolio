@@ -4,7 +4,7 @@ import Header from './components/Header/Header.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import HomeScreen from './screens/HomeScreen/HomeScreen.jsx';
 import AboutScreen from './screens/AboutScreen/AboutScreen.jsx';
-
+import ProjectsScreen from './screens/ProjectsScreen/ProjectsScreen.jsx';
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
           <Routes>
             <Route path='/' element={<HomeScreen />} exact />
             <Route path='/about/' element={<AboutScreen />} exact />
-
+            <Route path='/projects/' element={<ProjectsScreen />} exact />
           </Routes>
         <Footer/>
       </div>
