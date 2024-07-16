@@ -37,13 +37,11 @@ header {
     margin: 1.5rem;
     cursor:pointer;
     font-size:large;
-    transition: transform 0.2s ease;
     font-size: 21px;
 }
 
 .objectList:hover {
-    transform: scale(1.1);
-    transition: all .5s ease;
+    transform: scale(1.03);
 }
 
 .nav-link {

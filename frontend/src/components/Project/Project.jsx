@@ -9,9 +9,13 @@ const Project = ({ project }) => {
                     <h2 className="project-title">{project.title}</h2>
                     <p className="project-description">{project.description}</p>
                 </div>
-                    <div className="project-reactions">
-                        <span className="project-like">👍 {project.likes}</span>
-                        <span className="project-heart">❤️ {project.hearts}</span>
+                <div className="project-reactions">
+                    <span className="project-like">
+                        <img src="/like.png" alt="like icon" className="reaction-icon" /> {project.likes}
+                    </span>
+                    <span className="project-heart">
+                        <img src="/heart.png" alt="heart icon" className="reaction-icon" /> {project.hearts}
+                    </span>
                 </div>
             </div>
         </div>

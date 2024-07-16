@@ -1,21 +1,27 @@
 .about-general-container{
     display: flex;
+    margin-bottom: 5rem;
 }
 
 .about-container1{
-    margin: 1rem 0 0 6rem;
+    margin: 1rem 3rem 0 6rem;
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
-    width: 60vw;
+    width: 45vw;
 }
 
 .about-container2{
-    margin: 2rem 0 3rem 0;
+    margin: 4rem 0 3rem 0;
     width: 25vw;
+    height: 73vh;
+    border-radius:  38px 0 38px 0;
+    padding-left: 3rem;
+    background-color: rgba(255, 255, 255, 0.719);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-h1{
-    width: 57.5%;
+    width: 68%;
     padding:15px;
     font-size: 75px;
     background: #5C61FF;
@@ -25,8 +31,8 @@
 .about-h3{
     font-family: "Rajdhani", sans-serif;
     font-weight: 500;
-    font-size: 22px;
-    width: 60%;
+    font-size: 24px;
+    width: 70%;
     color: #221536;
 }
 
