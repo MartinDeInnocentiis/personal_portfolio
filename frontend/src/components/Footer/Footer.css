@@ -65,6 +65,6 @@ ul {
 }
 
 .logo-footer:hover {
-    transform: scale(1.05);
+    transform: scale(1.015);
     transition: all 0.5s ease;
 }

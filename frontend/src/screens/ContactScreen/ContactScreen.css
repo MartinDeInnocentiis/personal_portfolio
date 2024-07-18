@@ -87,3 +87,8 @@
 .contact-form button:active {
     background:  linear-gradient(135deg, #2026cf 0% 5%, #170b2b  100%);
 }
+
+.contact-form button:focus {
+    border: 3px solid #96FF1F; 
+    outline: none; 
+}

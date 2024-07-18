@@ -1,0 +1,94 @@
+.project-detail-container {
+    margin: 2rem;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.back-button {
+    text-decoration: none;
+    color: #221536;
+    font-size: 1.2em;
+    margin: 0 0 1rem 1rem;
+    display: inline-block;
+}
+
+.back-button:hover{
+    color: #5C61FF;
+    font-weight: 600;
+}
+
+.project-detail-card {
+    border-radius: 38px 0 38px 0;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 7rem;
+    box-shadow: 0 3px 16px rgba(44, 43, 40, 0.233);
+    box-sizing: border-box;
+}
+
+.project-detail-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 38px 0 0 0;
+    mask-image: linear-gradient(
+        black 80%,
+        transparent
+    );
+}
+
+.project-detail-content {
+    padding: 36px;
+}
+
+.project-detail-title {
+    font-family: "Orbitron", sans-serif;
+    color: #5C61FF;
+    font-size: 2.5em;
+    margin: 0 0 20px 0;
+}
+
+.project-detail-description {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    color: #221536;
+    font-size: 1.4em;
+    margin: 0 0 20px 0;
+}
+
+.project-detail-reactions {
+    display: flex;
+    justify-content:baseline;
+    align-items: center;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.2em;
+    color: #221536;
+    margin-bottom: 20px;
+}
+
+.project-like, .project-heart {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+}
+
+.reaction-icon {
+    width: 36px;
+    margin-right: 5px;
+}
+
+.project-detail-extra-info {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    color: #221536;
+    font-size: 1.1em;
+}
+
+.project-detail-extra-info p {
+    margin: 10px 0;
+}
+
+.project-comment{
+    cursor: pointer;
+}

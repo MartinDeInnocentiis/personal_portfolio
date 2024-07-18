@@ -13,6 +13,11 @@
 .project-card-container:hover{
     box-shadow: 0 3px 16px rgba(44, 43, 40, 0.288), 0 0 0 1px #96FF1F;
     transform: scale(1.007);
+    cursor:pointer;
+}
+
+.project-card-link{
+    text-decoration: none;
 }
 
 .project-image {

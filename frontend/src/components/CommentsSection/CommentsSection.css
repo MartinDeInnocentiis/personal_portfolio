@@ -1,0 +1,96 @@
+.comments-container{
+    background: linear-gradient( 175deg, #b6a59941 0% 20%, #8f7e72c4 90%);
+    height: 70vh;
+    margin: 0 -3rem -7rem -2rem;
+}
+
+.comments-subcontainer{
+    padding-top: 1.5rem;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.title-divider{
+    border: none;
+    border-top: 2px solid #5C61FF;
+}
+
+.comments-title{
+    font-weight: 500;
+    font-size: 1.7rem;
+    color:#221536;
+}
+
+
+
+
+
+
+.messages-box {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.message-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.message-item:last-child {
+    border-bottom: none;
+}
+
+.new-message-form {
+    display: flex;
+    gap: 10px;
+}
+
+.new-message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 12px 1px 12px 1px;
+    background-color: #ffffff;
+    font-size: 19px;
+    font-family: "Rajdhani", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.new-message-input:focus {
+    border: 1px solid #5c61ff96; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(92, 97, 255, 0.5); 
+}
+
+.new-message-button {
+    font-family: "Rajdhani", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #5C61FF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+}
+
+
+.new-message-button:focus {
+    border: 1px solid #96FF1F; 
+    box-shadow: 0 0 5px #96FF1F; 
+    outline: none; 
+}
+
+.new-message-button:hover {
+    background-color: #363cec;
+}
+
+.new-message-button:active {
+    background-color: #1f25da;
+}
