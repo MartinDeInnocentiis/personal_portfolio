@@ -34,7 +34,7 @@
     font-size:xx-large;
     font-size: 90.5px;
     font-weight: 500;
-    background:  linear-gradient(135deg, #5C61FF 0% 20%, #a57f64 50%);
+    background:  linear-gradient(115deg, #5C61FF 0% 35%, #a57f64 65%);
     -webkit-background-clip: text;
             background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -56,4 +56,8 @@
     background-color: #b6a599;
     height: 70vh;
     margin-bottom: -5rem;
+}
+
+.subcontainer-2{
+    padding: 8.2%;
 }

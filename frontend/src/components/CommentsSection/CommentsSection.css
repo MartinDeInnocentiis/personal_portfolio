@@ -82,8 +82,7 @@
 
 
 .new-message-button:focus {
-    border: 1px solid #96FF1F; 
-    box-shadow: 0 0 5px #96FF1F; 
+    box-shadow: 0 0 7px #96FF1F; 
     outline: none; 
 }
 
@@ -93,4 +92,33 @@
 
 .new-message-button:active {
     background-color: #1f25da;
+}
+
+.messages-box{
+    margin-top: 1.2rem;
+    color:#221536;
+}
+
+.message-item{
+    font-family: "Rajdhani", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+}
+
+.message-author{
+    margin-left: 0.3rem;
+    color:#5C61FF;
+    font-weight: 500;
+}
+
+.message-content{
+    margin-left: 0.3rem;
+    font-weight: 500;
+}
+
+.message-item-date{
+    margin-left: 0.3rem;
+    font-size: 15px;
+    letter-spacing: 1px;
 }

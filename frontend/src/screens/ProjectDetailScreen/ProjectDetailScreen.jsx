@@ -1,57 +1,68 @@
 import './ProjectDetailScreen.css';
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import CommentsSection from '../../components/CommentsSection/CommentsSection';
-import mockData from '../../mockData';
+import axios from 'axios';
 
 
 const ProjectDetailScreen = () => {
+    
     const { id } = useParams();
-    const project = mockData.find(p => p.id === parseInt(id));
     const commentInputRef = useRef(null);
-
-    if (!project) {
-        return <div>Project not found</div>;
-    }
 
     /*const scrollToComments = () => {
         if (commentsRef.current) {
             commentsRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };*/
+            }
+            };*/
     const scrollToCommentInput = () => {
         if (commentInputRef.current) {
             commentInputRef.current.focus();
         }
     };
 
+    const [projectDetail, setProjectDetail] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            const { data } = await axios.get(`http://127.0.0.1:8000/api/posts/${id}/`)
+            setProjectDetail(data)
+        }
+        fetchData()
+    }, [])
+
+
+    if (!projectDetail) {
+        return <div>Project not found</div>;
+    }
+
+
     return (
         <div className='project-detail-container'>
             <Link to="/projects" className="back-button">Back</Link>
             <div className="project-detail-card">
-                <img src={project.image} alt={project.title} className="project-detail-image" />
+                <img src={projectDetail.image} alt={projectDetail.title} className="project-detail-image" />
                 <div className="project-detail-content">
-                    <h2 className="project-detail-title">{project.title}</h2>
-                    <p className="project-detail-description">{project.description}</p>
+                    <h2 className="project-detail-title">{projectDetail.title}</h2>
+                    <p className="project-detail-description">{projectDetail.description}</p>
                     <div className="project-detail-reactions">
                         <span className="project-like">
-                            <img src="/like.png" alt="like icon" className="reaction-icon" /> {project.likes}
+                            <img src="/like.png" alt="like icon" className="reaction-icon-like" /> {projectDetail.likes}
                         </span>
                         <span className="project-heart">
-                            <img src="/heart.png" alt="heart icon" className="reaction-icon" /> {project.hearts}
+                            <img src="/heart.png" alt="heart icon" className="reaction-icon-heart" /> {projectDetail.hearts}
                         </span>
-                        <span className="project-comment" onClick={scrollToCommentInput}>
-                            <img src="/comment.png" alt="comment icon" className="reaction-icon" /> {project.comments}
+                        <span className="project-comment">
+                            <img src="/comment.png" alt="comment icon" className="reaction-icon-comment" onClick={scrollToCommentInput}/> {projectDetail.total_comments}
                         </span>
                     </div>
                     <div className="project-detail-extra-info">
-                        <p><strong>Start Date:</strong> {project.startDate || 'N/A'}</p>
-                        <p><strong>Technologies:</strong> {project.technologies ? project.technologies.join(', ') : 'N/A'}</p>
+
                     </div>
                 </div>
             </div>
             <div>
-                <CommentsSection inputRef={commentInputRef}/>
+                <CommentsSection comments={projectDetail.comments} inputRef={commentInputRef} />
             </div>
         </div>
     );

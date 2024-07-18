@@ -43,7 +43,7 @@ class PostListAPIView(ListAPIView):
     serializer_class = PostSerializer
     permission_classes = [AllowAny] 
     
-class PostDetailAPIView(ListAPIView):
+class PostDetailAPIView(RetrieveAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     lookup_field = 'id'

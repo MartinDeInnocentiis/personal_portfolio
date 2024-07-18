@@ -20,15 +20,15 @@ class Anon_User(models.Model):
 class Post (models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)
     user = models.ForeignKey(User, verbose_name='user', on_delete=models.CASCADE, related_name='userPosts')
-    title  = models.CharField(max_length=60, default='', verbose_name='title')
-    image = models.CharField(max_length=20, default='', verbose_name='image')
+    title  = models.CharField(max_length=90, default='', verbose_name='title')
+    image = models.CharField(max_length=350, default='', verbose_name='image')
     description = models.CharField(max_length=250, default='', verbose_name='description')
-    github_link = models.CharField(max_length=100, default='', verbose_name='github_link')
-    website_link = models.CharField(max_length=100, default='',null=True, blank=True, verbose_name='website_link')
+    github_link = models.CharField(max_length=200, default='', verbose_name='github_link')
+    website_link = models.CharField(max_length=200, default='',null=True, blank=True, verbose_name='website_link')
     created_at = models.DateTimeField(auto_now_add=True)
     likes = models.PositiveIntegerField(default=0, verbose_name='likes')
     hearts = models.PositiveIntegerField(default=0, verbose_name='hearts')
-    status = models.CharField(max_length=20, default='', verbose_name='status')
+    status = models.CharField(max_length=30, default='', verbose_name='status')
 
     
     class Meta:
@@ -85,7 +85,7 @@ class Comment(models.Model):
     user = models.ForeignKey(User, verbose_name='user', on_delete=models.CASCADE, related_name='userComments', null=True, blank=True)
     anon_user = models.ForeignKey('Anon_User', on_delete=models.CASCADE, related_name='anon_userComments', null=True, blank=True)
     post = models.ForeignKey(Post, verbose_name='post', on_delete=models.CASCADE, related_name='postComments')
-    content = models.TextField(max_length=250, verbose_name='content', null=False, blank=False)
+    content = models.TextField(max_length=450, verbose_name='content', null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

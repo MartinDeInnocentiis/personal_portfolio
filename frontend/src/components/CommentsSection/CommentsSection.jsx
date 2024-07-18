@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import './CommentsSection.css';
 
-const CommentsSection = ({ inputRef }) => {
-    const [messages, setMessages] = useState([]);
+const CommentsSection = ({ comments, inputRef }) => {
+    const [messages, setMessages] = useState(comments || []);  // Inicializar con los comentarios pasados como props
     const [newMessage, setNewMessage] = useState('');
 
     const handleNewMessage = (e) => {
         e.preventDefault();
         if (newMessage.trim()) {
-            setMessages([...messages, newMessage]);
+            setMessages([...messages, { content: newMessage, created_at: new Date().toISOString() }]);
             setNewMessage('');
         }
     };
@@ -20,7 +20,11 @@ const CommentsSection = ({ inputRef }) => {
                 <hr className='title-divider'/>
                 <ul className='messages-box'>
                     {messages.map((message, index) => (
-                        <li key={index} className='message-item'>{message}</li>
+                        <li key={index} className='message-item'>
+                            <div className='message-author'>{message.user ? message.user.username : `Anonymous User: ${message.anon_user}`}</div>
+                            <div className='message-content'>{message.content}</div>
+                            <small className='message-item-date'>{new Date(message.created_at).toLocaleString()}</small>
+                        </li>
                     ))}
                 </ul>
                 <form onSubmit={handleNewMessage} className='new-message-form'>

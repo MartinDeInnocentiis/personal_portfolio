@@ -112,15 +112,24 @@
     font-size: 22px;
 }
 
+
+.login-text-back {
+    text-align: center;
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+}
+
 .login-text-back a{
+    text-align: center;
+    margin-top: 1rem;
     color: #221536;
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
-    padding-left: 14.5rem;
     transition: transform 0.3s;
 }
 
 .login-text-back a:hover{
     transform: scale(1.2);
+    background-color: rgba(0, 0, 0, 0.082);
 }

@@ -18,7 +18,9 @@ const HomeScreen = () => {
       </div>
 
       <div className='home-section2'>
-        HOLA
+        <div className='subcontainer-2'>
+          HOLA
+        </div>
       </div>
     </>
   )

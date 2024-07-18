@@ -1,17 +1,16 @@
 .project-card-container {
-    border: 1px solid #96FF1F;
     border-radius: 38px 0 38px 0;
     overflow: hidden;
     width: 300px;
     margin: 20px 10px 55px 0px;
     box-shadow: 0 3px 16px rgba(44, 43, 40, 0.233);
-    background: linear-gradient(#ffffff 0% 10%, #F0F9FA 15% 55%, rgba(0, 255, 64, 0.062) 110%);
+    background: linear-gradient(#ffffff 0% 10%, #F0F9FA 15% 55%, rgba(228, 236, 230, 0.103) 110%);
     box-sizing: border-box;
     transition: box-shadow 0.3s, transform 0.7s;
 }
 
 .project-card-container:hover{
-    box-shadow: 0 3px 16px rgba(44, 43, 40, 0.288), 0 0 0 1px #96FF1F;
+    box-shadow: 0 3px 16px rgba(44, 43, 40, 0.288);
     transform: scale(1.007);
     cursor:pointer;
 }
