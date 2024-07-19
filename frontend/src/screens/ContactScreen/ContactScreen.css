@@ -65,7 +65,7 @@
     margin-bottom: 4rem;
     padding: 10px;
     background-color: #221536;
-    border: 1px solid #96FF1F;
+    border: 1px solid #97ff1f;
     color: white;
     border-radius: 4px;
     cursor: pointer;
@@ -89,6 +89,6 @@
 }
 
 .contact-form button:focus {
-    border: 3px solid #96FF1F; 
+    border: 2px solid #96FF1F; 
     outline: none; 
 }

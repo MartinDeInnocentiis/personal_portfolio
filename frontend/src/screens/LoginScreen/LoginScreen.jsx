@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './LoginScreen.css';
+import ViewPassword from '../../components/ViewPassword/ViewPassword';
 
 const LoginScreen = () => {
     const navigate = useNavigate();
@@ -37,8 +38,8 @@ const LoginScreen = () => {
                     type='text'
                     id='username'
                     name='username'
-                    value={username}
-                    /*onChange={handleChange}*/
+                    /*value={username}
+                    onChange={handleChange}*/
                     placeholder='Enter username/email'
                     required
                 />
@@ -47,8 +48,8 @@ const LoginScreen = () => {
                     type='password'
                     id='password'
                     name='password'
-                    value={password}
-                    /*onChange={handleChange}*/
+                    /*value={password}
+                    onChange={handleChange}*/
                     placeholder='Enter password'
                     required
                 />

@@ -8,6 +8,11 @@ from rest_framework_simplejwt.views import (
 urlpatterns = [
     path('contact/', contact, name='contact'),
     
+    # URLs for Users
+    path('list-user/', UserListView.as_view(), name='list-user'),
+    path('create-user/', UserCreateView.as_view(), name='create-user'),
+
+    
     # URLs for Posts
     path('posts/', PostListAPIView.as_view(), name='post-list'),
     path('posts/<int:id>/', PostDetailAPIView.as_view(), name='post-detail'),

@@ -36,6 +36,18 @@ from ..forms import ContactForm
 from .permissions import IsOwnerOrReadOnly
 from ..mixins import AnonUserInteractionMixin, ReactionCountMixin, PreventDuplicateReactionMixin
 
+class UserListView(ListAPIView):
+    queryset = User.objects.all().order_by('id')
+    serializer_class = UserSerializer
+    permission_classes = [AllowAny] 
+
+class UserCreateView(CreateAPIView):
+    serializer_class = UserSerializer
+    permission_classes = [AllowAny]    
+    
+    def post(self, request, *args, **kwargs):
+        print("UserCreateView post method called") 
+        return super().post(request, *args, **kwargs)
     
 
 class PostListAPIView(ListAPIView):

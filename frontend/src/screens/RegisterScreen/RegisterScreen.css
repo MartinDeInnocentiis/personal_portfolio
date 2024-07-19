@@ -10,7 +10,7 @@
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
     background: white;
-    padding: 2rem 2rem 2rem 5rem;
+    padding: 2rem 2rem 2rem 7.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 550px;
@@ -37,7 +37,7 @@
 }
 
 .register-form input {
-    width: 85%;
+    width: 77%;
     padding: 10px;
     margin-top: 8px;
     margin-bottom: 12px;
@@ -53,6 +53,20 @@
     border: 1px solid #5C61FF; 
     outline: none; 
     box-shadow: 0 0 5px rgba(92, 97, 255, 0.5); 
+}
+
+.all-fields {
+    margin-top: 0rem;
+    font-weight: 400;
+    font-size: 15px;
+    color:rgb(54, 47, 47);
+
+}
+
+.register-error-message {
+    color:red;
+    font-weight: 500;
+    font-size: 18px;
 }
 
 .register-form button {
@@ -102,7 +116,7 @@
 }
 
 .login-text{
-    margin-right: 4rem;
+    margin-right: 6.5rem;
 }
 
 .login-text a {
@@ -116,7 +130,7 @@
 .login-text-back {
     text-align: center;
     margin-top: 1rem;
-    margin-right: 1.5rem;
+    margin-right: 4.5rem;
 }
 
 .login-text-back a{
