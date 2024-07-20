@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './RegisterScreen.css';
-import ViewPassword from '../../components/ViewPassword/ViewPassword';
 import axios from 'axios';
 
 const RegisterScreen = () => {
@@ -21,7 +20,27 @@ const RegisterScreen = () => {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-    
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleMouseDown = () => {
+        setShowPassword(true);
+    };
+
+    const handleMouseUp = () => {
+        setShowPassword(false);
+    };
+
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+    const handleMouseDown2 = () => {
+        setShowConfirmPassword(true);
+    };
+
+    const handleMouseUp2 = () => {
+        setShowConfirmPassword(false);
+    };
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -90,25 +109,51 @@ const RegisterScreen = () => {
                     required
                 />
                 <label htmlFor='password'>Password:</label>
-                <input
-                    type='password'
-                    id='password'
-                    name='password'
-                    value={password}
-                    onChange={handleChange}
-                    placeholder='Enter password'
-                    required
-                />
+                <div className='password-eye-container'>
+                    <input
+                        type={showPassword ? 'text' : 'password'}
+                        id='password'
+                        name='password'
+                        value={password}
+                        onChange={handleChange}
+                        placeholder='Enter password'
+                        required
+                    />
+                    <button
+                        className='view-password-button'
+                        onMouseDown={handleMouseDown}
+                        onMouseUp={handleMouseUp}
+                        onMouseLeave={handleMouseUp}
+                        onTouchStart={handleMouseDown}
+                        onTouchEnd={handleMouseUp}
+                        type="button"
+                    >
+                        <img src="/eye.png" alt="See Password" className="eye-password" />
+                    </button>
+                </div>
                 <label htmlFor='confirmPassword'>Confirm Password:</label>
-                <input
-                    type='password'
-                    id='confirmPassword'
-                    name='confirmPassword'
-                    value={confirmPassword}
-                    onChange={handleChange}
-                    placeholder='Confirm password'
-                    required
-                />
+                <div className='password-eye-container'>
+                    <input
+                        type={showConfirmPassword ? 'text' : 'password'}
+                        id='confirmPassword'
+                        name='confirmPassword'
+                        value={confirmPassword}
+                        onChange={handleChange}
+                        placeholder='Confirm password'
+                        required
+                    />
+                    <button
+                        className='view-password-button'
+                        onMouseDown={handleMouseDown2}
+                        onMouseUp={handleMouseUp2}
+                        onMouseLeave={handleMouseUp2}
+                        onTouchStart={handleMouseDown2}
+                        onTouchEnd={handleMouseUp2}
+                        type="button"
+                    >
+                        <img src="/eye.png" alt="See Password" className="eye-password" />
+                    </button>
+                </div>
                 <h4 className='all-fields'>* All fields are required.</h4>
                 <div className='register-buttons'>
                     <button type='submit'>Register</button>

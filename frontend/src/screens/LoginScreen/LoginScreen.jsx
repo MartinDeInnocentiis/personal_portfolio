@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './LoginScreen.css';
-import ViewPassword from '../../components/ViewPassword/ViewPassword';
 
 const LoginScreen = () => {
     const navigate = useNavigate();
@@ -14,6 +13,16 @@ const LoginScreen = () => {
     });
 
     const { username, email, password, confirmPassword } = formData;
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleMouseDown = () => {
+        setShowPassword(true);
+    };
+
+    const handleMouseUp = () => {
+        setShowPassword(false);
+    };
 
     /*const handleChange = (e) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -44,15 +53,28 @@ const LoginScreen = () => {
                     required
                 />
                 <label htmlFor='password'>Password:</label>
-                <input
-                    type='password'
-                    id='password'
-                    name='password'
-                    /*value={password}
-                    onChange={handleChange}*/
-                    placeholder='Enter password'
-                    required
-                />
+                <div className='password-eye-container'>
+                    <input
+                        type={showPassword ? 'text' : 'password'}
+                        id='password'
+                        name='password'
+                        /*value={password}
+                        onChange={handleChange}*/
+                        placeholder='Enter password'
+                        required
+                    />
+                    <button
+                        className='view-password-button'
+                        onMouseDown={handleMouseDown}
+                        onMouseUp={handleMouseUp}
+                        onMouseLeave={handleMouseUp}
+                        onTouchStart={handleMouseDown}
+                        onTouchEnd={handleMouseUp}
+                        type="button"
+                    >
+                        <img src="/eye.png" alt="See Password" className="eye-password" />
+                    </button>
+                </div>
                 <div className='login-buttons'>
                     <button type='submit'>Enter</button>
                     <p className='register-text'>
