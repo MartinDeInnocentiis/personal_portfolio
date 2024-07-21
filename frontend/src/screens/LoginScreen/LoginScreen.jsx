@@ -24,6 +24,10 @@ const LoginScreen = () => {
         setShowPassword(false);
     };
 
+    const toggleShowPassword = () => {
+        setShowPassword(prevShowPassword => !prevShowPassword);
+    };
+
     /*const handleChange = (e) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -65,20 +69,16 @@ const LoginScreen = () => {
                     />
                     <button
                         className='view-password-button'
-                        onMouseDown={handleMouseDown}
-                        onMouseUp={handleMouseUp}
-                        onMouseLeave={handleMouseUp}
-                        onTouchStart={handleMouseDown}
-                        onTouchEnd={handleMouseUp}
+                        onClick={toggleShowPassword}
                         type="button"
                     >
-                        <img src="/eye.png" alt="See Password" className="eye-password" />
-                    </button>
+                        <img src={showPassword ? "/openeye.png" : "/closedeye.png"} alt="See Password" className="eye-password" />
+                        </button>
                 </div>
                 <div className='login-buttons'>
                     <button type='submit'>Enter</button>
                     <p className='register-text'>
-                        Not an user? <Link to='/register/'>Register.</Link>
+                        Not a user? <Link to='/register/'>Register.</Link>
                     </p>
                 </div>
                 <p className='login-text-back'>

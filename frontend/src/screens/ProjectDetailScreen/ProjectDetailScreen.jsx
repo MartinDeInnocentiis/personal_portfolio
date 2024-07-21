@@ -10,11 +10,7 @@ const ProjectDetailScreen = () => {
     const { id } = useParams();
     const commentInputRef = useRef(null);
 
-    /*const scrollToComments = () => {
-        if (commentsRef.current) {
-            commentsRef.current.scrollIntoView({ behavior: 'smooth' });
-            }
-            };*/
+    
     const scrollToCommentInput = () => {
         if (commentInputRef.current) {
             commentInputRef.current.focus();

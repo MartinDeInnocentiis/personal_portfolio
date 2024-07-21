@@ -23,22 +23,15 @@ const RegisterScreen = () => {
 
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleMouseDown = () => {
-        setShowPassword(true);
-    };
-
-    const handleMouseUp = () => {
-        setShowPassword(false);
-    };
-
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-    const handleMouseDown2 = () => {
-        setShowConfirmPassword(true);
+
+    const toggleShowPassword = () => {
+        setShowPassword(prevShowPassword => !prevShowPassword);
     };
 
-    const handleMouseUp2 = () => {
-        setShowConfirmPassword(false);
+    const toggleShowPassword2 = () => {
+        setShowConfirmPassword(prevShowConfirmPassword => !prevShowConfirmPassword);
     };
 
 
@@ -121,15 +114,11 @@ const RegisterScreen = () => {
                     />
                     <button
                         className='view-password-button'
-                        onMouseDown={handleMouseDown}
-                        onMouseUp={handleMouseUp}
-                        onMouseLeave={handleMouseUp}
-                        onTouchStart={handleMouseDown}
-                        onTouchEnd={handleMouseUp}
+                        onClick={toggleShowPassword}
                         type="button"
                     >
-                        <img src="/eye.png" alt="See Password" className="eye-password" />
-                    </button>
+                        <img src={showPassword ? "/openeye.png" : "/closedeye.png"} alt="See Password" className="eye-password" />
+                        </button>
                 </div>
                 <label htmlFor='confirmPassword'>Confirm Password:</label>
                 <div className='password-eye-container'>
@@ -144,21 +133,17 @@ const RegisterScreen = () => {
                     />
                     <button
                         className='view-password-button'
-                        onMouseDown={handleMouseDown2}
-                        onMouseUp={handleMouseUp2}
-                        onMouseLeave={handleMouseUp2}
-                        onTouchStart={handleMouseDown2}
-                        onTouchEnd={handleMouseUp2}
+                        onClick={toggleShowPassword2}
                         type="button"
                     >
-                        <img src="/eye.png" alt="See Password" className="eye-password" />
-                    </button>
+                        <img src={showConfirmPassword ? "/openeye.png" : "/closedeye.png"} alt="See Password" className="eye-password" />
+                        </button>
                 </div>
                 <h4 className='all-fields'>* All fields are required.</h4>
                 <div className='register-buttons'>
                     <button type='submit'>Register</button>
                     <p className='login-text'>
-                        Already an user? <Link to='/login/'>Log in.</Link>
+                        Already a user? <Link to='/login/'>Log in.</Link>
                     </p>
                 </div>
                 <p className='login-text-back'>

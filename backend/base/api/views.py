@@ -35,6 +35,9 @@ from django.conf import settings
 from ..forms import ContactForm
 from .permissions import IsOwnerOrReadOnly
 from ..mixins import AnonUserInteractionMixin, ReactionCountMixin, PreventDuplicateReactionMixin
+from django.views.decorators.csrf import csrf_exempt
+import json
+
 
 class UserListView(ListAPIView):
     queryset = User.objects.all().order_by('id')
@@ -224,29 +227,29 @@ class CommentHeartDestroyAPIView(DestroyAPIView):
     lookup_field = 'id'
 
 
+
+@csrf_exempt
 def contact(request):
     if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            subject = form.cleaned_data['subject']
-            message = form.cleaned_data['message']
-            email_message = EmailMessage(
-                subject,
-                f'Name: {name}\nEmail: {email}\n Message:\n{message}',
-                from_email = [email],
-                to = [settings.EMAIL_HOST_USER],
-                reply_to=[email]
-            )
-            email_message.send()
-            return redirect('success')
-                
-        else:
-            return JsonResponse({'errors': form.errors}, status=400)
-    else:
-        form = ContactForm()
-    return render (request, 'index.html', {'form': form})
+        data = json.loads(request.body)
+        name = data['name']
+        email = data['email']
+        subject = data['subject']
+        message = data['message']
+        
+        email_message = EmailMessage(
+            subject,
+            f'Name: {name}\nEmail: {email}\n Message:\n{message}',
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=[settings.EMAIL_HOST_USER],
+            reply_to=[email]
+        )
+        email_message.send()
+        return JsonResponse({'success': True})
+    return JsonResponse({'success': False}, status=400)
+
+
+
 
         
 def success(request):
