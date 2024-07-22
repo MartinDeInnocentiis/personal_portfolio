@@ -1,59 +1,80 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import useAuthStore from '../../store-zustand';
 import './LoginScreen.css';
+import Swal from 'sweetalert2';
+import '../customSwal.css';
+
 
 const LoginScreen = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         username: '',
-        email: '',
         password: '',
-        confirmPassword: ''
     });
 
-    const { username, email, password, confirmPassword } = formData;
+    const [error, setError] = useState('');
+
+    const { username, password } = formData;
 
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleMouseDown = () => {
-        setShowPassword(true);
-    };
-
-    const handleMouseUp = () => {
-        setShowPassword(false);
-    };
+    const login = useAuthStore((state) => state.login); // GET LOGIN FUNCTION FROM ZUSTAND STORE
 
     const toggleShowPassword = () => {
         setShowPassword(prevShowPassword => !prevShowPassword);
     };
 
-    /*const handleChange = (e) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
   
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      if (password !== confirmPassword) {
-        alert('Passwords do not match');
-      } else {
-        // Handle registration logic here
-        console.log('Form data:', formData);
-      }
-    };*/
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/api/custom-token/', { username, password });
+            const { access, refresh } = response.data;
+            login(username, access); // STORES LOGIN STATE WITH ZUSTAND
+            localStorage.setItem('refreshToken', refresh); // SAVES REFRESH TOKEN ON LOCALSTORAGE
+            setError('');
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Logged in successfully!",
+                customClass: {
+                    title: 'swal2-title',
+                    content: 'swal2-content',
+                },
+                showConfirmButton: false,
+                timer: 1200
+              });
+            navigate('/'); // REDIRECTS USER TO THE HOME PAGE
+        } catch (error) {
+            if (error.response && error.response.data) {
+                const errorMessage = error.response.data.detail || 'Login failed';
+                setError(errorMessage);
+            } else {
+                setError('Failed to login');
+            }
+            console.error('Login error:', error);
+        }
+    };
 
     return (
         <div className='login-screen'>
-            <form className='login-form' /*onSubmit={handleSubmit}*/>
+            <form className='login-form' onSubmit={handleSubmit}>
                 <h1>Log in</h1>
-                <label htmlFor='username'>Username or Email</label>
+                {error && <p className='register-error-message'>ERROR: {error}</p>}
+                <label htmlFor='username'>Username</label>
                 <input
                     type='text'
                     id='username'
                     name='username'
-                    /*value={username}
-                    onChange={handleChange}*/
-                    placeholder='Enter username/email'
+                    value={username}
+                    onChange={handleChange}
+                    placeholder='Enter username'
                     required
                 />
                 <label htmlFor='password'>Password:</label>
@@ -62,8 +83,8 @@ const LoginScreen = () => {
                         type={showPassword ? 'text' : 'password'}
                         id='password'
                         name='password'
-                        /*value={password}
-                        onChange={handleChange}*/
+                        value={password}
+                        onChange={handleChange}
                         placeholder='Enter password'
                         required
                     />

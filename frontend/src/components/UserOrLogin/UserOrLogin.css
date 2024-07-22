@@ -1,0 +1,63 @@
+
+.auth-status {
+    display: flex;
+    align-items: center;
+}
+
+.auth-status:hover{
+    transform: scale(0.97) !important;
+}
+
+.auth-links {
+    text-decoration: none;
+    color: inherit; 
+    margin: 0 5px;
+    font-size: 85% !important;
+}
+
+.auth-links:hover {
+    color: #5C61FF;
+}
+
+.user-info {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-info span {
+    font-weight: bold;
+    color: #5C61FF;
+}
+
+.logout-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #e7e1dd;
+    border: 1px solid #ddd;
+    padding: 10px 0px;
+    width: 160px;
+    height: 6vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.199);
+    z-index: 1000; 
+}
+
+.logout-button {
+    font-family: "Rajdhani", sans-serif;
+    background-color: #0505051f;
+    width: 100%;
+    color:black;
+    border: none;
+    padding: 5px 0px;
+    cursor: pointer;
+    border-radius: 2px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 16px 0px;
+}
+
+.logout-button:hover {
+    background-color: #5c61ff81;
+    color:rgb(255, 255, 255);
+}

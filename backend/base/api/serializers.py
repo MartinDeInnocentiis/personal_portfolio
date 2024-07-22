@@ -5,7 +5,9 @@ from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError as DjangoValidationError
 
 from rest_framework import serializers
+from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 import re
 from base.models import Anon_User, Post, PostLike, PostHeart, Comment, CommentLike, CommentDislike, CommentHeart
 
@@ -63,6 +65,28 @@ class UserSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+    
+    
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+
+    def validate(self, attrs):
+        credentials = {
+            'username': '',
+            'password': attrs.get("password")
+        }
+
+        user_obj = User.objects.filter(email=attrs.get("username")).first() or User.objects.filter(username=attrs.get("username")).first()
+
+        if user_obj:
+            credentials['username'] = user_obj.username
+            user = authenticate(**credentials)
+            if user is None:
+                raise serializers.ValidationError({"detail": "Incorrect password."})
+        else:
+            raise serializers.ValidationError({"detail": "User with this username does not exist."})
+
+        return super().validate(credentials)
+
 
 class Anon_UserSerializer(serializers.ModelSerializer):
     

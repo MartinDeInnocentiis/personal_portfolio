@@ -1,6 +1,6 @@
-import './Header.css';
 import {Link, NavLink} from 'react-router-dom';
-
+import UserOrLogin from '../UserOrLogin/UserOrLogin';
+import './Header.css';
 
 
 const Header = () => {
@@ -29,6 +29,11 @@ const Header = () => {
                 <li className='objectList'>
                     <NavLink to={'/contact/'} className="nav-link">Contact</NavLink>
                 </li>
+
+                <li className='objectList'>
+                  <UserOrLogin/>
+                </li>
+
             </ul>
         </nav>
 

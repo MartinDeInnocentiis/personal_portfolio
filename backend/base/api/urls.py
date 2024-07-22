@@ -11,6 +11,7 @@ urlpatterns = [
     # URLs for Users
     path('list-user/', UserListView.as_view(), name='list-user'),
     path('create-user/', UserCreateView.as_view(), name='create-user'),
+    path('user/<int:pk>/', UserDetailView.as_view(), name='user-detail'),
 
     
     # URLs for Posts
@@ -50,8 +51,8 @@ urlpatterns = [
     path("success/", success, name='success'),
     
     
-    # !!!!   URLs FOR ACCESS & REFRESH TOKENS (SUPERADMIN ONLY)   !!!!
+    # URLs FOR ACCESS & REFRESH TOKENS 
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    
+    path('custom-token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
 ]

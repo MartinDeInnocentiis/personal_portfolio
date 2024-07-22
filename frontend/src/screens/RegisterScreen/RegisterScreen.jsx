@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './RegisterScreen.css';
 import axios from 'axios';
+import Swal from 'sweetalert2';
+
 
 const RegisterScreen = () => {
     const navigate = useNavigate();
@@ -24,8 +26,7 @@ const RegisterScreen = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
-
+    
     const toggleShowPassword = () => {
         setShowPassword(prevShowPassword => !prevShowPassword);
     };
@@ -57,7 +58,14 @@ const RegisterScreen = () => {
                 password
             }, config);
 
-            console.log('User registered:', data);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your registration was successful! Please log in",
+                showConfirmButton: false,
+                timer: 2500
+              });
+
             setError('');
             navigate('/login/'); // REDIRECT USER TO LOGIN PAGE
         } catch (error) {

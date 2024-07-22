@@ -26,7 +26,7 @@ from rest_framework.exceptions import ValidationError as ValidationErrorDRF
 #from drf_yasg.utils import swagger_auto_schema
 #from drf_yasg import openapi
 
-from base.api.serializers import *
+from .serializers import *
 from base.models import *
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, HttpResponse
@@ -35,6 +35,7 @@ from django.conf import settings
 from ..forms import ContactForm
 from .permissions import IsOwnerOrReadOnly
 from ..mixins import AnonUserInteractionMixin, ReactionCountMixin, PreventDuplicateReactionMixin
+from rest_framework_simplejwt.views import TokenObtainPairView
 from django.views.decorators.csrf import csrf_exempt
 import json
 
@@ -43,14 +44,21 @@ class UserListView(ListAPIView):
     queryset = User.objects.all().order_by('id')
     serializer_class = UserSerializer
     permission_classes = [AllowAny] 
+    
+class UserDetailView(RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [AllowAny]
 
 class UserCreateView(CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = [AllowAny]    
     
     def post(self, request, *args, **kwargs):
-        print("UserCreateView post method called") 
         return super().post(request, *args, **kwargs)
+    
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
     
 
 class PostListAPIView(ListAPIView):
