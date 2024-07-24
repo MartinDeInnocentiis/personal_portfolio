@@ -113,7 +113,7 @@ class CommentListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
 class CommentRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = [AllowAny]
     lookup_field = 'id'
 
     def get_object(self):

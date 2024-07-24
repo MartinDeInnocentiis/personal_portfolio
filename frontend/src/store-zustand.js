@@ -6,14 +6,23 @@ const useAuthStore = create(
     (set) => ({
       user: null,
       token: null,
-      login: (user, token) => set({ user, token }),
+      refreshToken: null,
+      login: (user, token, refreshToken) => set({ 
+        user: {
+          id: user.id,
+          username: user.username,
+        }, 
+        token,
+        refreshToken
+      }),
       logout: () => {
-        set({ user: null, token: null });
+        set({ user: null, token: null, refreshToken: null});
         localStorage.removeItem('refreshToken');
       },
+      setToken: (token) => set({ token }),
     }),
     {
-      name: 'auth-storage', // NAME FOR STORING AT LOCALSTORAGE
+      name: 'auth-storage', // NAME FOR STORING AT localStorage
       getStorage: () => localStorage,
     }
   )

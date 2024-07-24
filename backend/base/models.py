@@ -23,6 +23,8 @@ class Post (models.Model):
     title  = models.CharField(max_length=90, default='', verbose_name='title')
     image = models.CharField(max_length=350, default='', verbose_name='image')
     description = models.CharField(max_length=250, default='', verbose_name='description')
+    summary = models.CharField(max_length=1250, default='', verbose_name='summary')
+    stack = models.CharField(max_length=450, default='', verbose_name='stack')
     github_link = models.CharField(max_length=200, default='', verbose_name='github_link')
     website_link = models.CharField(max_length=200, default='',null=True, blank=True, verbose_name='website_link')
     created_at = models.DateTimeField(auto_now_add=True)

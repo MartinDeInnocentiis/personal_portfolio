@@ -30,6 +30,8 @@ header {
 
 .navbarList {
     margin-right: 8rem;
+    display: flex;
+    align-items: center;
 }
 
 .objectList {
@@ -42,6 +44,7 @@ header {
 
 .objectList:hover {
     transform: scale(1.03);
+    font-weight: 600;
 }
 
 .nav-link {
@@ -52,3 +55,15 @@ header {
 .nav-link:hover, .nav-link:focus {
     transition: all .5s ease;
 }
+
+.vertical-separator {
+    width: 1px;
+    height: 35px; 
+    background-color: #080a3f;
+    margin: 0 15px; 
+  }
+
+  .active-nav-link {
+    color: #5C61FF;
+    font-weight: 600;
+  }

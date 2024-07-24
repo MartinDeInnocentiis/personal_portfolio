@@ -58,7 +58,7 @@ const ProjectDetailScreen = () => {
                 </div>
             </div>
             <div>
-                <CommentsSection comments={projectDetail.comments} inputRef={commentInputRef} />
+                <CommentsSection comments={projectDetail.comments} postId= {id} inputRef={commentInputRef} />
             </div>
         </div>
     );

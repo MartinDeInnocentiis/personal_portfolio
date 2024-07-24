@@ -85,7 +85,12 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         else:
             raise serializers.ValidationError({"detail": "User with this username does not exist."})
 
-        return super().validate(credentials)
+        data = super().validate(credentials)
+        data.update({
+            'id': user_obj.id,
+            'username': user_obj.username
+        })
+        return data
 
 
 class Anon_UserSerializer(serializers.ModelSerializer):
@@ -110,7 +115,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ['id', 'title', 'description', 'image', 'likes', 'hearts', 'comments', 'total_comments', 'github_link', 'website_link', 'status']
+        fields = ['id', 'title', 'description', 'summary', 'stack', 'image', 'likes', 'hearts', 'comments', 'total_comments', 'github_link', 'website_link', 'status']
     
     def get_total_comments(self, obj):
         return obj.postComments.count()    

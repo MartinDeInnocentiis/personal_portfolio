@@ -41,7 +41,8 @@ const UserOrLogin = () => {
         <div className="auth-status">
             {user ? (
                 <div className="user-info" ref={logoutRef}>
-                    <span onClick={toggleLogout}>Hi, @{user}</span>
+                    
+                    <span onClick={toggleLogout}><span className='hi'>Hi,</span> @{user.username}</span>
                     {showLogout && (
                         <div className='logout-container'>
                             <button onClick={handleLogout} className="logout-button">Log out</button>

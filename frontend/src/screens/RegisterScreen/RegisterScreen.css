@@ -171,8 +171,8 @@
 }
 
 .eye-password:hover{
-    transform: scale(1.14);
-    transition: all 0.6s ease;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
 }
 
 .view-password-button:focus{

@@ -10,13 +10,12 @@ class AnonUserInteractionMixin:
         if request.user.is_authenticated:
             return request.user, None
         else:
-            anon_user, created = Anon_User.objects.get_or_create(
-                id=request.session.get('anon_user_id', uuid.uuid4())
-            )
-            if created:
-                anon_user.name = f"Anonymous_{get_random_string(8)}"
-                anon_user.save()
-                request.session['anon_user_id'] = str(anon_user.id)
+            anon_user_id = request.session.get('anon_user_id')
+            if not anon_user_id:
+                anon_user = Anon_User.objects.create(name=f"Anonymous_{get_random_string(8)}")
+                request.session['anon_user_id'] = anon_user.id
+            else:
+                anon_user = Anon_User.objects.get(id=anon_user_id)
             return None, anon_user
         
         

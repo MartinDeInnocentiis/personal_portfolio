@@ -35,8 +35,8 @@ const LoginScreen = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://127.0.0.1:8000/api/custom-token/', { username, password });
-            const { access, refresh } = response.data;
-            login(username, access); // STORES LOGIN STATE WITH ZUSTAND
+            const { access, refresh,  id, username: responseUsername } = response.data;
+            login({ id, username: responseUsername }, access, refresh); // STORES LOGIN STATE WITH ZUSTAND
             localStorage.setItem('refreshToken', refresh); // SAVES REFRESH TOKEN ON LOCALSTORAGE
             setError('');
             Swal.fire({

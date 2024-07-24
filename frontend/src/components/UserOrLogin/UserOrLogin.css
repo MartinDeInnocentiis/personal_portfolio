@@ -19,6 +19,12 @@
     color: #5C61FF;
 }
 
+.hi{
+    font-size: 90%;
+    font-weight: 500 !important;
+    color: #221536 !important;
+}
+
 .user-info {
     position: relative;
     cursor: pointer;
@@ -35,6 +41,7 @@
     left: 0;
     background-color: #e7e1dd;
     border: 1px solid #ddd;
+    margin-top: 10px;
     padding: 10px 0px;
     width: 160px;
     height: 6vh;
@@ -54,10 +61,13 @@
     width: 100%;
     font-size: 18px;
     font-weight: 500;
-    margin: 16px 0px;
+    margin: 11px 0px;
 }
 
 .logout-button:hover {
-    background-color: #5c61ff81;
-    color:rgb(255, 255, 255);
+    background-color: #5c61ff42;
+}
+
+.logout-button:active {
+    background-color: #353bdd5b;
 }

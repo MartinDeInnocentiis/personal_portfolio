@@ -1,23 +1,74 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import useAuthStore from '../../store-zustand';
+import axios from 'axios';
+import { refreshToken } from '../../auth.js';
 import './CommentsSection.css';
 
-const CommentsSection = ({ comments, inputRef }) => {
-    const [messages, setMessages] = useState(comments || []);  // Inicializar con los comentarios pasados como props
+const CommentsSection = ({ comments, postId }) => {
+    const [messages, setMessages] = useState(comments || []);
     const [newMessage, setNewMessage] = useState('');
+    const [anonUsername, setAnonUsername] = useState('');
+    const [isRegisteredUser, setIsRegisteredUser] = useState(false);
+    const [username, setUsername] = useState('');
 
-    const handleNewMessage = (e) => {
+    const { user, token } = useAuthStore();
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        if (user) {
+            setUsername(user.username);
+            setIsRegisteredUser(true);
+        }
+    }, [user]);
+
+    const handleNewMessage = async (e) => {
         e.preventDefault();
-        if (newMessage.trim()) {
-            setMessages([...messages, { content: newMessage, created_at: new Date().toISOString() }]);
-            setNewMessage('');
+
+        if (newMessage.trim() && (isRegisteredUser || anonUsername.trim())) {
+            const newMessageData = {
+                content: newMessage,
+                user: isRegisteredUser ? user.id : null,
+                anon_user: !isRegisteredUser ? anonUsername : null,
+            };
+
+            try {
+                let headers = {};
+                if (isRegisteredUser) {
+                    let currentToken = token;
+                    if (!currentToken) {
+                        currentToken = await refreshToken();
+                    }
+                    if (!currentToken) {
+                        throw new Error('Unable to refresh token');
+                    }
+                    headers = { Authorization: `Bearer ${currentToken}` };
+                }
+
+                const response = await axios.post(
+                    `http://127.0.0.1:8000/api/posts/${postId}/comments/`,
+                    newMessageData,
+                    { headers }
+                );
+                const createdComment = response.data;
+                setMessages((prevMessages) => [...prevMessages, createdComment]);
+                setNewMessage(''); 
+                setAnonUsername(''); 
+                inputRef.current.value = ''; 
+            } catch (error) {
+                console.error("There was an error creating the comment!", error);
+            }
         }
     };
+
+    useEffect(() => {
+        console.log("Updated messages:", messages);
+    }, [messages]);
 
     return (
         <div className='comments-container'>
             <div className='comments-subcontainer'>
                 <h2 className='comments-title'>Comments</h2>
-                <hr className='title-divider'/>
+                <hr className='title-divider' />
                 <ul className='messages-box'>
                     {messages.map((message, index) => (
                         <li key={index} className='message-item'>
@@ -28,7 +79,16 @@ const CommentsSection = ({ comments, inputRef }) => {
                     ))}
                 </ul>
                 <form onSubmit={handleNewMessage} className='new-message-form'>
-                    <input 
+                    {!isRegisteredUser && (
+                        <input
+                            type='text'
+                            value={anonUsername}
+                            onChange={(e) => setAnonUsername(e.target.value)}
+                            placeholder='Enter your name...'
+                            className='new-message-input'
+                        />
+                    )}
+                    <input
                         ref={inputRef}
                         type='text'
                         value={newMessage}

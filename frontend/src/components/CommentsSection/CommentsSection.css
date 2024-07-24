@@ -61,10 +61,27 @@
     font-optical-sizing: auto;
 }
 
-.new-message-input:focus {
-    border: 1px solid #5c61ff96; 
+.new-message-input-name {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 0.1%;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 19px;
+    font-family: "Rajdhani", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.new-message-input-name:focus {
+    border: 1px solid #a4a6df7c; 
     outline: none; 
-    box-shadow: 0 0 5px rgba(92, 97, 255, 0.5); 
+}
+
+.new-message-input:focus {
+    border: 1px solid #a4a6df7c; 
+    outline: none; 
+    box-shadow: 0 0 8px rgb(255, 255, 255); 
 }
 
 .new-message-button {
@@ -82,7 +99,7 @@
 
 
 .new-message-button:focus {
-    box-shadow: 0 0 7px #96FF1F; 
+    box-shadow: 0 0 8px #96FF1F; 
     outline: none; 
 }
 
