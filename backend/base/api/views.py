@@ -16,6 +16,7 @@ from rest_framework.generics import (
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError as ValidationErrorDRF
+from rest_framework.exceptions import NotFound
 
 
 # NOTE: Importamos este decorador para poder customizar los 
@@ -39,6 +40,10 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from django.views.decorators.csrf import csrf_exempt
 import json
 
+class AnonUserListView(ListAPIView):
+    queryset = Anon_User.objects.all().order_by('id')
+    serializer_class = Anon_UserSerializer
+    permission_classes = [AllowAny] 
 
 class UserListView(ListAPIView):
     queryset = User.objects.all().order_by('id')
@@ -105,7 +110,8 @@ class CommentListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
         return Comment.objects.filter(post_id=self.kwargs['post_id'])
 
     def perform_create(self, serializer):
-        user, anon_user = self.handle_anon_user(self.request)
+        anon_username = self.request.data.get('anon_user')
+        user, anon_user = self.handle_anon_user(self.request, anon_username)
         post_id = self.kwargs['post_id']
         post = Post.objects.get(id=post_id)
         serializer.save(user=user, anon_user=anon_user, post=post)
@@ -121,7 +127,22 @@ class CommentRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
         self.check_object_permissions(self.request, obj)
         return obj
 
+class UpdateAnonUserNameView(UpdateAPIView):
+    queryset = Anon_User.objects.all()
+    serializer_class = Anon_UserSerializer
+    permission_classes = [AllowAny]
 
+    def get_object(self):
+        anon_user_id = self.request.session.get('anon_user_id')
+        if not anon_user_id:
+            raise NotFound('Anon user not found in session.')
+        try:
+            anon_user = Anon_User.objects.get(id=anon_user_id)
+        except Anon_User.DoesNotExist:
+            raise NotFound('Anon user does not exist.')
+        return anon_user
+    
+    
 class PostLikeListCreateAPIView(ReactionCountMixin, PreventDuplicateReactionMixin, ListCreateAPIView):
     serializer_class = PostLikeSerializer
     permission_classes = [AllowAny]

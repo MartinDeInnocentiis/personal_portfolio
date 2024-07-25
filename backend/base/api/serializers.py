@@ -97,10 +97,11 @@ class Anon_UserSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Anon_User
-        fields = '__all__'
+        fields = ['id', 'name']
 
 class CommentSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
+    anon_user = Anon_UserSerializer(read_only=True)
     post = serializers.PrimaryKeyRelatedField(queryset=Post.objects.all(), required=False)
     
     class Meta:

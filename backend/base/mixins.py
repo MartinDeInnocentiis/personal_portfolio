@@ -6,18 +6,21 @@ from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError as ValidationErrorDRF
 
 class AnonUserInteractionMixin:
-    def handle_anon_user(self, request):
+    def handle_anon_user(self, request, anon_username=None):
         if request.user.is_authenticated:
             return request.user, None
         else:
             anon_user_id = request.session.get('anon_user_id')
             if not anon_user_id:
-                anon_user = Anon_User.objects.create(name=f"Anonymous_{get_random_string(8)}")
-                request.session['anon_user_id'] = anon_user.id
+                anon_user = Anon_User.objects.create(name=anon_username or f"Anonymous_{get_random_string(8)}")
+                request.session['anon_user_id'] = str(anon_user.id)  
+                request.session.save()  
             else:
                 anon_user = Anon_User.objects.get(id=anon_user_id)
+                if anon_username:
+                    anon_user.name = anon_username
+                    anon_user.save()
             return None, anon_user
-        
         
 class ReactionCountMixin:
     def list(self, request, *args, **kwargs):

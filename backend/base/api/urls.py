@@ -10,6 +10,7 @@ urlpatterns = [
     
     # URLs for Users
     path('list-user/', UserListView.as_view(), name='list-user'),
+    path('list-anonuser/', AnonUserListView.as_view(), name='list-anonuser'),
     path('create-user/', UserCreateView.as_view(), name='create-user'),
     path('user/<int:pk>/', UserDetailView.as_view(), name='user-detail'),
 
@@ -55,4 +56,8 @@ urlpatterns = [
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('custom-token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
+
+    path('update-anon-username/', UpdateAnonUserNameView.as_view(), name='update-anon-username'),
+
+
 ]

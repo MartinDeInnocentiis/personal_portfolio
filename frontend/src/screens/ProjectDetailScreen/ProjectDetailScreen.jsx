@@ -13,9 +13,11 @@ const ProjectDetailScreen = () => {
     
     const scrollToCommentInput = () => {
         if (commentInputRef.current) {
+            commentInputRef.current.scrollIntoView({ behavior: 'smooth' });
             commentInputRef.current.focus();
         }
     };
+
 
     const [projectDetail, setProjectDetail] = useState(null);
 
@@ -58,7 +60,7 @@ const ProjectDetailScreen = () => {
                 </div>
             </div>
             <div>
-                <CommentsSection comments={projectDetail.comments} postId= {id} inputRef={commentInputRef} />
+                <CommentsSection comments={projectDetail.comments} postId= {id}  inputRef={commentInputRef} />
             </div>
         </div>
     );
