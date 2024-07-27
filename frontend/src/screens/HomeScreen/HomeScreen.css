@@ -54,10 +54,22 @@
 .home-section2{
     background: linear-gradient(165deg, #b6a599 0% 20%, #8f7e72 90%);
     background-color: #b6a599;
-    height: 70vh;
+    height: 75vh;
     margin-bottom: -5rem;
 }
 
 .subcontainer-2{
-    padding: 8.2%;
+    padding: 4.2% 4%;
+}
+
+.subcontainer-2-text{
+    font-size: 3rem;
+    color: #221536; /*#96FF1F*/
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    letter-spacing: 4px;
 }

@@ -1,4 +1,5 @@
 import './HomeScreen.css'
+import TechTicker from '../../components/TechTicker/TechTicker'
 
 const HomeScreen = () => {
   return (
@@ -19,7 +20,8 @@ const HomeScreen = () => {
 
       <div className='home-section2'>
         <div className='subcontainer-2'>
-          HOLA
+          <p className='subcontainer-2-text'>My Tech Stack</p>
+          <TechTicker />
         </div>
       </div>
     </>
