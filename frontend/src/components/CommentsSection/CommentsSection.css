@@ -62,7 +62,7 @@
 }
 
 .new-message-input-name {
-    flex-grow: 1;
+    flex-grow: 0.44;
     padding: 10px;
     border: 1px solid #ddd;
     width: 0.1%;

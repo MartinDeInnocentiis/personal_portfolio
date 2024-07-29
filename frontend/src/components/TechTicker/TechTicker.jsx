@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './TechTicker.css';
 
-import { DiDjango, DiReact, DiDatabase, DiPython, DiJavascript, DiDocker, DiGithub, DiGoogleCloudPlatform, DiHtml5, DiCss3, DiSass } from 'react-icons/di';
+import { DiReact, DiPython, DiJavascript, DiGoogleCloudPlatform, DiHtml5, DiCss3, DiSass } from 'react-icons/di';
 import { BiLogoRedux, BiLogoDjango, BiLogoPostgresql  } from "react-icons/bi";
 import { GrDocker, GrMysql } from "react-icons/gr";
-import { SiMysql } from "react-icons/si";
+import { RiJavascriptFill } from "react-icons/ri";
 import { FaGithub } from "react-icons/fa";
 
 const items = [
@@ -12,7 +12,7 @@ const items = [
     { icon: <BiLogoRedux />, name: 'Redux' },
     { icon: <BiLogoDjango />, name: 'Django' },
     { icon: <DiPython />, name: 'Python' },
-    { icon: <DiJavascript />, name: 'JavaScript' },
+    { icon: <RiJavascriptFill />, name: 'JavaScript' },
     { icon: <DiGoogleCloudPlatform />, name: 'Google Cloud Platform' },
     { icon: <GrDocker />, name: 'Docker' },
     { icon: <BiLogoPostgresql  />, name: 'PostgreSQL' },

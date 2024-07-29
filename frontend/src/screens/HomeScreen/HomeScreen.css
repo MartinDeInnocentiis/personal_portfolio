@@ -54,7 +54,7 @@
 .home-section2{
     background: linear-gradient(165deg, #b6a599 0% 20%, #8f7e72 90%);
     background-color: #b6a599;
-    height: 75vh;
+    height: 82vh;
     margin-bottom: -5rem;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .subcontainer-2-text{
-    font-size: 3rem;
+    font-size: 3.3rem;
     color: #221536; /*#96FF1F*/
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
@@ -71,5 +71,5 @@
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 }

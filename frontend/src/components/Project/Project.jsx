@@ -21,6 +21,9 @@ const Project = ({ project }) => {
                         <span className="project-heart">
                             <img src="/heart.png" alt="heart icon" className="reaction-icon" /> {project.hearts}
                         </span>
+                        <span className="project-comment">
+                            <img src="/comment.png" alt="comment icon" className="reaction-icon" /> {project.total_comments}
+                        </span>
                     </div>
                 </div>
             </Link>

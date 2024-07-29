@@ -74,19 +74,33 @@
 }
 
 .reaction-icon-like {
-    width: 40px;
+    font-size: 2rem;
     margin-right: 5px;
+    
+}
+
+.reaction-icon-like:hover {
+    color:rgb(26, 49, 182);
+    cursor: pointer;
 }
 
 .reaction-icon-heart {
-    width: 32px;
+    font-size: 2rem;
     margin-right: 5px;
+}
+.reaction-icon-heart:hover{
+    color:rgb(209, 35, 35);
+    cursor: pointer;
 }
 
 .reaction-icon-comment {
-    width: 30px;
+    font-size: 2rem;
     margin-right: 5px;
     cursor: pointer;
+}
+
+.reaction-icon-comment:hover{
+    color:rgb(104, 105, 117);
 }
 
 .project-detail-extra-info {

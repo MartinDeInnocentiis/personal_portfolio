@@ -1,0 +1,34 @@
+.typewriter {
+    /*display: inline-block;
+    font-size: 1.8rem;
+    color: #221536;
+    font-family: 'Rajdhani', sans-serif; */
+    
+    
+    margin: 2rem 0 0 0;
+    font-size:xx-large;
+    font-size: 6rem;
+    font-weight: 500;
+    background:  linear-gradient(115deg, #5C61FF 0% 35%, #a57f64 65%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+    white-space: nowrap;
+    overflow: hidden;
+    content: '_'
+}
+  
+  @keyframes blink {
+    from { border-right-color: #221536; }
+    to { border-right-color: transparent; }
+  }
+  
+
+  .typewriter::after {
+    content: '';
+    border-right: 0.07em solid #221536;
+    animation: blink .7s steps(99999) infinite;
+    padding-right: 1.2rem;
+  }

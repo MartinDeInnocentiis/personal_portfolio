@@ -10,18 +10,18 @@
   .ticker-container {
     overflow: hidden;
     white-space: nowrap;
-    background: radial-gradient(#f8f9fa56 0% 5%, #f8f9fa00 62%);
+    background: radial-gradient(#f8f9fa48 0% 3%, #f8f9fa00 60%);
     width: 100%;
     display: flex;
     align-items: center;
-    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
   }
   
   .ticker-content {
     display: inline-block;
-    animation: marquee 30s linear infinite;
-    width: 200%; /* Asegúrate de que el contenido sea el doble de ancho */
+    animation: marquee 24s linear infinite;
+    width: 678%; 
   }
   
   .ticker-content.paused {
@@ -47,7 +47,7 @@
   }
   
   .icon {
-    font-size: 10rem; /* Aumentar el tamaño de los íconos */
+    font-size: 10rem; 
     margin-bottom: 0.5rem;
     color: #221536;
     display: flex;

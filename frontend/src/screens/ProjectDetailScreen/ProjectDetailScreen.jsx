@@ -3,14 +3,17 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import CommentsSection from '../../components/CommentsSection/CommentsSection';
 import axios from 'axios';
+import { CiHeart } from "react-icons/ci";
+import { BiCommentDetail, BiLike, BiHeart } from "react-icons/bi";
+
 
 
 const ProjectDetailScreen = () => {
-    
+
     const { id } = useParams();
     const commentInputRef = useRef(null);
 
-    
+
     const scrollToCommentInput = () => {
         if (commentInputRef.current) {
             commentInputRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -45,13 +48,13 @@ const ProjectDetailScreen = () => {
                     <p className="project-detail-description">{projectDetail.description}</p>
                     <div className="project-detail-reactions">
                         <span className="project-like">
-                            <img src="/like.png" alt="like icon" className="reaction-icon-like" /> {projectDetail.likes}
+                            <BiLike className='reaction-icon-like' /> <div> {projectDetail.likes}</div>
                         </span>
                         <span className="project-heart">
-                            <img src="/heart.png" alt="heart icon" className="reaction-icon-heart" /> {projectDetail.hearts}
+                            <BiHeart className='reaction-icon-heart' /> <div> {projectDetail.hearts}</div>
                         </span>
                         <span className="project-comment">
-                            <img src="/comment.png" alt="comment icon" className="reaction-icon-comment" onClick={scrollToCommentInput}/> {projectDetail.total_comments}
+                            <BiCommentDetail onClick={scrollToCommentInput} className='reaction-icon-comment' /> <div> {projectDetail.total_comments}</div>
                         </span>
                     </div>
                     <div className="project-detail-extra-info">
@@ -60,7 +63,7 @@ const ProjectDetailScreen = () => {
                 </div>
             </div>
             <div>
-                <CommentsSection comments={projectDetail.comments} postId= {id}  inputRef={commentInputRef} />
+                <CommentsSection comments={projectDetail.comments} postId={id} inputRef={commentInputRef} />
             </div>
         </div>
     );

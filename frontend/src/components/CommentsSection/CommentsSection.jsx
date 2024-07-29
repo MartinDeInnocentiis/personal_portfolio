@@ -78,8 +78,8 @@ const CommentsSection = ({ comments, postId, inputRef }) => {
                             type='text'
                             value={anonUsername}
                             onChange={handleAnonUsernameChange}
-                            placeholder='Enter your name...'
-                            className='new-message-input'
+                            placeholder='Enter your name'
+                            className='new-message-input-name'
                         />
                     )}
                     <input
@@ -90,7 +90,7 @@ const CommentsSection = ({ comments, postId, inputRef }) => {
                         placeholder='Write your message...'
                         className='new-message-input'
                     />
-                    <button type='submit' className='new-message-button'>Send</button>
+                    <button type='submit' className='new-message-button'>Enter</button>
                 </form>
             </div>
         </div>
