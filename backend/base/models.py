@@ -45,7 +45,7 @@ class Post (models.Model):
 class PostLike(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)
     user = models.ForeignKey(User, verbose_name='user', on_delete=models.CASCADE, related_name='userLikes', null=True, blank=True)
-    anon_user = models.ForeignKey('Anon_User', on_delete=models.CASCADE, related_name='anon_userLikes', null=True, blank=True)
+    anon_user = models.ForeignKey('Anon_User', on_delete=models.CASCADE, related_name='anon_userLikes', null=True, blank=True) 
     post = models.ForeignKey(Post, verbose_name='post', on_delete=models.CASCADE, related_name='postLikes')
     created_at = models.DateTimeField(auto_now_add=True)
 

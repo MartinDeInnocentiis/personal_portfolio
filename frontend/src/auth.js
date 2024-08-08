@@ -3,7 +3,12 @@ import useAuthStore from './store-zustand';
 
 
 export const refreshToken = async () => {
-    const { refreshToken, setToken } = useAuthStore.getState(); 
+    const { refreshToken, setToken, logout  } = useAuthStore.getState(); 
+
+    if (!refreshToken) {
+        console.error('No refresh token available');
+        return null;
+    }
 
     try {
         const response = await axios.post('http://127.0.0.1:8000/api/token/refresh/', { refresh: refreshToken });
@@ -12,6 +17,7 @@ export const refreshToken = async () => {
         return access;
     } catch (error) {
         console.error('Error refreshing token:', error);
+        logout();
         return null;
     }
 };

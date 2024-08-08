@@ -10,11 +10,19 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
         
+        if request.method in permissions.SAFE_METHODS:
+            return True
+        
         if request.user.is_authenticated:
             return obj.user == request.user
+        # else:
+        #     anon_user_id = request.session.get('anon_user_id')
+        #     return str(obj.anon_user.id) == anon_user_id
         else:
             anon_user_id = request.session.get('anon_user_id')
-            return str(obj.anon_user.id) == anon_user_id
+            return obj.anon_user and obj.anon_user.id == anon_user_id
+            ##return str(obj.anon_user.id) == anon_user_id
+            #return str (anon_user_id and obj.anon_user_id == anon_user_id)
         
         
         # # Permisos de lectura siempre están permitidos

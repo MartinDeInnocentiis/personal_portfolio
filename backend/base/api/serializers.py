@@ -113,13 +113,28 @@ class CommentSerializer(serializers.ModelSerializer):
 class PostSerializer(serializers.ModelSerializer):
     comments = CommentSerializer(many=True, read_only=True, source='postComments')
     total_comments = serializers.SerializerMethodField()
+    user_has_liked = serializers.SerializerMethodField()
+    user_has_hearted = serializers.SerializerMethodField()
 
     class Meta:
         model = Post
-        fields = ['id', 'title', 'description', 'summary', 'stack', 'image', 'likes', 'hearts', 'comments', 'total_comments', 'github_link', 'website_link', 'status']
+        fields = ['id', 'title', 'description', 'summary', 'stack', 'image', 'likes', 'hearts', 'comments', 'total_comments', 'github_link', 'website_link', 'status', 'user_has_liked', 'user_has_hearted']
     
     def get_total_comments(self, obj):
-        return obj.postComments.count()    
+        return obj.postComments.count() 
+    
+    def get_user_has_liked(self, obj):
+        request = self.context.get('request')
+        if request and request.user.is_authenticated:
+            return PostLike.objects.filter(post=obj, user=request.user).exists()
+        return False
+
+    def get_user_has_hearted(self, obj):
+        request = self.context.get('request')
+        if request and request.user.is_authenticated:
+            return PostHeart.objects.filter(post=obj, user=request.user).exists()
+        return False
+       
 
 class PostLikeSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
@@ -127,7 +142,7 @@ class PostLikeSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = PostLike
-        fields = ['id', 'user', 'anon_user', 'post']
+        fields = ['id', 'user', 'anon_user', 'post', 'created_at']
         
 
 class PostHeartSerializer(serializers.ModelSerializer):
@@ -136,7 +151,7 @@ class PostHeartSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = PostHeart
-        fields = ['id', 'user', 'anon_user', 'post']      
+        fields = ['id', 'user', 'anon_user', 'post', 'created_at']      
         
           
 class CommentLikeSerializer(serializers.ModelSerializer):

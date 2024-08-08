@@ -17,7 +17,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError as ValidationErrorDRF
 from rest_framework.exceptions import NotFound
-
+from uuid import uuid4
 
 # NOTE: Importamos este decorador para poder customizar los 
 # parámetros y responses en Swagger, para aquellas
@@ -30,7 +30,7 @@ from rest_framework.exceptions import NotFound
 from .serializers import *
 from base.models import *
 from django.http import JsonResponse
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from django.core.mail import EmailMessage
 from django.conf import settings
 from ..forms import ContactForm
@@ -144,6 +144,24 @@ class UpdateAnonUserNameView(UpdateAPIView):
     
     
 class PostLikeListCreateAPIView(ReactionCountMixin, PreventDuplicateReactionMixin, ListCreateAPIView):
+    # queryset = PostLike.objects.all()
+    # serializer_class = PostLikeSerializer
+    # permission_classes = [AllowAny]
+
+    # def perform_create(self, serializer):
+    #     if self.request.user.is_authenticated:
+    #         serializer.save(user=self.request.user)
+    #     else:
+    #         anon_user_id = self.request.session.get('anon_user_id')
+    #         if not anon_user_id:
+    #             anon_user_id = str(uuid4())
+    #             self.request.session['anon_user_id'] = anon_user_id
+
+    #         anon_user, created = Anon_User.objects.get_or_create(id=anon_user_id)
+    #         serializer.save(anon_user=anon_user)
+            
+    #***************************************************************
+
     serializer_class = PostLikeSerializer
     permission_classes = [AllowAny]
     reaction_model = PostLike
@@ -153,19 +171,40 @@ class PostLikeListCreateAPIView(ReactionCountMixin, PreventDuplicateReactionMixi
 
     def perform_create(self, serializer):
         post_id = self.kwargs['post_id']
-        post = Post.objects.get(id=post_id)
+        #post = Post.objects.get(id=post_id)
+        post = get_object_or_404(Post, id=post_id)
         user, anon_user = self.check_duplicate_reaction(self.request, post_id=post)
 
-        serializer.save(user=user, anon_user=anon_user, post=post)
-        
+        #serializer.save(user=user, anon_user=anon_user, post=post)
+        instance = serializer.save(user=user, anon_user=anon_user, post=post)
+        return Response(PostLikeSerializer(instance).data)
+
         
 class PostLikeDestroyAPIView(DestroyAPIView):
     queryset = PostLike.objects.all()
     serializer_class = PostLikeSerializer
-    permission_classes = [IsOwnerOrReadOnly]  
+    permission_classes = [AllowAny]  
     lookup_field = 'id'
 
 
+# class PostLikeDestroyAPIView(DestroyAPIView):
+#     queryset = PostLike.objects.all()
+#     serializer_class = PostLikeSerializer
+#     permission_classes = [IsOwnerOrReadOnly]
+#     lookup_field = 'id'
+
+#     def delete(self, request, *args, **kwargs):
+#         self.check_permissions(request)
+#         instance = self.get_object()
+
+#         # Comprobar si el usuario anónimo tiene permiso
+#         anon_user_id = request.headers.get('anon_user_id')
+#         if instance.user != request.user and (anon_user_id is None or instance.anon_user_id != anon_user_id):
+#             return Response({'detail': 'No permission to delete this like.'}, status=status.HTTP_403_FORBIDDEN)
+
+#         self.perform_destroy(instance)
+#         return Response(status=status.HTTP_204_NO_CONTENT)
+ 
 
 class PostHeartListCreateAPIView(ReactionCountMixin, PreventDuplicateReactionMixin, ListCreateAPIView):
     serializer_class = PostHeartSerializer
@@ -177,18 +216,40 @@ class PostHeartListCreateAPIView(ReactionCountMixin, PreventDuplicateReactionMix
 
     def perform_create(self, serializer):
         post_id = self.kwargs['post_id']
-        post = Post.objects.get(id=post_id)
+        #post = Post.objects.get(id=post_id)
+        post = get_object_or_404(Post, id=post_id)
         user, anon_user = self.check_duplicate_reaction(self.request, post_id=post)
 
-        serializer.save(user=user, anon_user=anon_user, post=post)
-        
+        #serializer.save(user=user, anon_user=anon_user, post=post)
+        instance = serializer.save(user=user, anon_user=anon_user, post=post)
+        return Response(PostHeartSerializer(instance).data)
+
+
         
 class PostHeartDestroyAPIView(DestroyAPIView):
     queryset = PostHeart.objects.all()
     serializer_class = PostHeartSerializer
-    permission_classes = [IsOwnerOrReadOnly]  
+    permission_classes = [AllowAny]  
     lookup_field = 'id'
 
+
+# class PostHeartDestroyAPIView(DestroyAPIView):
+#     queryset = PostHeart.objects.all()
+#     serializer_class = PostHeartSerializer
+#     permission_classes = [IsOwnerOrReadOnly]
+#     lookup_field = 'id'
+
+#     def delete(self, request, *args, **kwargs):
+#         self.check_permissions(request)
+#         instance = self.get_object()
+
+#         # Comprobar si el usuario anónimo tiene permiso
+#         anon_user_id = request.headers.get('anon_user_id')
+#         if instance.user != request.user and (anon_user_id is None or instance.anon_user_id != anon_user_id):
+#             return Response({'detail': 'No permission to delete this like.'}, status=status.HTTP_403_FORBIDDEN)
+
+#         self.perform_destroy(instance)
+#         return Response(status=status.HTTP_204_NO_CONTENT)
         
         
 class CommentLikeListCreateAPIView(ReactionCountMixin, PreventDuplicateReactionMixin,  ListCreateAPIView):

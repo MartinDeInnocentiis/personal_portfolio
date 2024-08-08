@@ -84,11 +84,25 @@
     cursor: pointer;
 }
 
+.reaction-icon-like-solid{
+    font-size: 2rem;
+    margin-right: 5px;
+    color:rgb(26, 49, 182);
+    cursor: pointer;
+}
+
 .reaction-icon-heart {
     font-size: 2rem;
     margin-right: 5px;
 }
 .reaction-icon-heart:hover{
+    color:rgb(209, 35, 35);
+    cursor: pointer;
+}
+
+.reaction-icon-heart-solid{
+    font-size: 2rem;
+    margin-right: 5px;
     color:rgb(209, 35, 35);
     cursor: pointer;
 }

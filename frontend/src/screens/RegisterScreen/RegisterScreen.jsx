@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './RegisterScreen.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { PiEyeClosed, PiEyeBold } from "react-icons/pi";
 
 
 const RegisterScreen = () => {

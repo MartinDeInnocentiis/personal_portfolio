@@ -90,6 +90,19 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Cambiar al dominio del frontend
 ]
 
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'anon_user_id',
+]
+
 ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [

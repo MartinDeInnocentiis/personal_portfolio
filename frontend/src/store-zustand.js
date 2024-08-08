@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { v4 as uuidv4 } from 'uuid';
 
 const useAuthStore = create(
   persist(
@@ -7,6 +8,7 @@ const useAuthStore = create(
       user: null,
       token: null,
       refreshToken: null,
+      anonUserId: localStorage.getItem('anonUserId') || uuidv4(),
       login: (user, token, refreshToken) => set({ 
         user: {
           id: user.id,
@@ -17,7 +19,7 @@ const useAuthStore = create(
       }),
       logout: () => {
         set({ user: null, token: null, refreshToken: null});
-        localStorage.removeItem('refreshToken');
+        localStorage.removeItem('auth-storage');
       },
       setToken: (token) => set({ token }),
     }),

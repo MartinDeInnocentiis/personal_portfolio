@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useAuthStore from '../../store-zustand';
-import api from '../../api'; // Aquí importamos la configuración de axios
+import api from '../../api'; 
 import './CommentsSection.css';
 
 const CommentsSection = ({ comments, postId, inputRef }) => {
