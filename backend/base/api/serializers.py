@@ -112,16 +112,35 @@ class CommentSerializer(serializers.ModelSerializer):
         
 class PostSerializer(serializers.ModelSerializer):
     comments = CommentSerializer(many=True, read_only=True, source='postComments')
+    likes = serializers.SerializerMethodField()
+    hearts = serializers.SerializerMethodField()
     total_comments = serializers.SerializerMethodField()
     user_has_liked = serializers.SerializerMethodField()
     user_has_hearted = serializers.SerializerMethodField()
+    total_likes = serializers.SerializerMethodField()
+    total_hearts = serializers.SerializerMethodField()
 
     class Meta:
         model = Post
-        fields = ['id', 'title', 'description', 'summary', 'stack', 'image', 'likes', 'hearts', 'comments', 'total_comments', 'github_link', 'website_link', 'status', 'user_has_liked', 'user_has_hearted']
+        fields = ['id', 'title', 'description', 'summary', 'stack', 'image', 'likes', 'hearts', 'comments', 'total_comments', 'total_likes', 'total_hearts', 'github_link', 'website_link', 'status', 'user_has_liked', 'user_has_hearted']
     
     def get_total_comments(self, obj):
         return obj.postComments.count() 
+    
+    def get_likes(self, obj):
+        from .serializers import PostLikeSerializer  
+        return PostLikeSerializer(obj.postLikes.all(), many=True).data
+    
+    def get_hearts(self, obj):
+        from .serializers import PostHeartSerializer  
+        return PostHeartSerializer(obj.postHearts.all(), many=True).data
+    
+
+    def get_total_likes(self, obj):
+        return obj.postLikes.count() 
+    
+    def get_total_hearts(self, obj):
+        return obj.postHearts.count() 
     
     def get_user_has_liked(self, obj):
         request = self.context.get('request')

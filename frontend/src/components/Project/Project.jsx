@@ -16,10 +16,10 @@ const Project = ({ project }) => {
                     </div>
                     <div className="project-reactions">
                         <span className="project-like">
-                            <img src="/like.png" alt="like icon" className="reaction-icon" /> {project.likes}
+                            <img src="/like.png" alt="like icon" className="reaction-icon" /> {project.total_likes}
                         </span>
                         <span className="project-heart">
-                            <img src="/heart.png" alt="heart icon" className="reaction-icon" /> {project.hearts}
+                            <img src="/heart.png" alt="heart icon" className="reaction-icon" /> {project.total_hearts}
                         </span>
                         <span className="project-comment">
                             <img src="/comment.png" alt="comment icon" className="reaction-icon" /> {project.total_comments}

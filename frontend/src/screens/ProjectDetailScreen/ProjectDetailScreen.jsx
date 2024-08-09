@@ -23,6 +23,8 @@ const ProjectDetailScreen = () => {
     const [hearted, setHearted] = useState(false);
     const [likeId, setLikeId] = useState(null);
     const [heartId, setHeartId] = useState(null);
+    const [totalLikes, setTotalLikes] = useState(null);
+    const [totalHearts, setTotalHearts] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -31,7 +33,7 @@ const ProjectDetailScreen = () => {
             setLiked(data.user_has_liked);
             setHearted(data.user_has_hearted);
 
-            // Encuentra el ID del like y heart si existen
+            // FIND LIKE & HEART IDs IF THEY EXIST
             if (data.likes.length > 0) {
                 const userLike = data.likes.find(like => like.user === user.id || like.anon_user === user.anon_user_id);
                 if (userLike) setLikeId(userLike.id);
@@ -43,6 +45,7 @@ const ProjectDetailScreen = () => {
         }
         fetchData();
     }, [id, user]);
+
 
     /*const handleLike = async (likeId) => {
         try {
@@ -69,7 +72,6 @@ const ProjectDetailScreen = () => {
                 console.log('Post Like Response:', response);
                 const likeId = parseInt(response.data.id); // Asegúrate de que response.data.id es un número
                 setLikeId(likeId);
-                console.log(`El ID del like es: /posts/likes/${likeId}/`);
             } else {
                 const response = await api.delete(`/posts/likes/${likeId}/`);
                 console.log('Delete Like Response:', response);
@@ -88,7 +90,6 @@ const ProjectDetailScreen = () => {
                 console.log('Post HEART Response:', response);
                 const heartId = parseInt(response.data.id); 
                 setHeartId(heartId);
-                console.log(`El ID del HEART es: /posts/hearts/${heartId}/`);
             } else {
                 const response = await api.delete(`/posts/hearts/${heartId}/`);
                 console.log('Delete HEART Response:', response);
@@ -131,10 +132,10 @@ const ProjectDetailScreen = () => {
                     <p className="project-detail-description">{projectDetail.description}</p>
                     <div className="project-detail-reactions">
                         <span className="project-like" onClick={handleLike}>
-                            {liked ? <BiSolidLike className='reaction-icon-like-solid' /> : <BiLike className='reaction-icon-like' />} <div> {projectDetail.likes}</div>
+                            {liked ? <BiSolidLike className='reaction-icon-like-solid' /> : <BiLike className='reaction-icon-like' />} <div> {projectDetail.total_likes}</div>
                         </span>
                         <span className="project-heart" onClick={handleHeart}>
-                            {hearted ? <BiSolidHeart className='reaction-icon-heart-solid' /> : <BiHeart className='reaction-icon-heart' />} <div> {projectDetail.hearts}</div>
+                            {hearted ? <BiSolidHeart className='reaction-icon-heart-solid' /> : <BiHeart className='reaction-icon-heart' />} <div> {projectDetail.total_hearts}</div>
                         </span>
                         <span className="project-comment">
                             <BiCommentDetail onClick={scrollToCommentInput} className='reaction-icon-comment' /> <div> {projectDetail.total_comments}</div>

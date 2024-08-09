@@ -13,6 +13,10 @@ class Anon_UserAdmin(admin.ModelAdmin):
 @admin.register(PostLike)
 class PostLikeAdmin(admin.ModelAdmin):
     list_display = ['id', 'user', 'anon_user', 'post', 'created_at']
+
+@admin.register(PostHeart)
+class PostHeartAdmin(admin.ModelAdmin):
+    list_display = ['id', 'user', 'anon_user', 'post', 'created_at']
     
 
 @admin.register(Comment)
