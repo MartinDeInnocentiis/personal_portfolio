@@ -49,8 +49,8 @@ class PreventDuplicateReactionMixin(AnonUserInteractionMixin):
         else:
             existing_reaction = self.reaction_model.objects.filter(anon_user=anon_user, **filter_params).exists()
         
-        if existing_reaction:
-            raise ValidationErrorDRF("You have already reacted to this item.")
+        #if existing_reaction:
+        #    raise ValidationErrorDRF("You have already reacted to this item.")
 
         return user, anon_user
     

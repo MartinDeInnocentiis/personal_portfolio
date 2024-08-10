@@ -3,7 +3,7 @@ import Project from '../../components/Project/Project';
 
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
-
+import api from '../../api';
 
 
 
@@ -13,7 +13,7 @@ const ProjectsScreen = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const { data } = await axios.get('http://127.0.0.1:8000/api/posts/')
+            const { data } = await api.get('/posts/')
             setProjects(data)
         }
         fetchData()

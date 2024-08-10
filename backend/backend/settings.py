@@ -101,6 +101,7 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
     'anon_user_id',
+    'X-Anon-User-ID',
 ]
 
 ROOT_URLCONF = 'backend.urls'

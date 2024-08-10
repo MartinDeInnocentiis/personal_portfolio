@@ -119,10 +119,13 @@ class PostSerializer(serializers.ModelSerializer):
     user_has_hearted = serializers.SerializerMethodField()
     total_likes = serializers.SerializerMethodField()
     total_hearts = serializers.SerializerMethodField()
+    
+    like_id = serializers.SerializerMethodField()
+    heart_id = serializers.SerializerMethodField()
 
     class Meta:
         model = Post
-        fields = ['id', 'title', 'description', 'summary', 'stack', 'image', 'likes', 'hearts', 'comments', 'total_comments', 'total_likes', 'total_hearts', 'github_link', 'website_link', 'status', 'user_has_liked', 'user_has_hearted']
+        fields = ['id', 'title', 'description', 'summary', 'stack', 'image', 'likes', 'hearts', 'comments', 'total_comments', 'total_likes', 'total_hearts', 'github_link', 'website_link', 'status', 'user_has_liked', 'user_has_hearted', 'like_id', 'heart_id']
     
     def get_total_comments(self, obj):
         return obj.postComments.count() 
@@ -142,17 +145,87 @@ class PostSerializer(serializers.ModelSerializer):
     def get_total_hearts(self, obj):
         return obj.postHearts.count() 
     
+    # def get_user_has_liked(self, obj):
+    #     request = self.context.get('request')
+    #     if request and request.user.is_authenticated:
+    #         return PostLike.objects.filter(post=obj, user=request.user).exists()
+    #     return False
+
+    # def get_user_has_hearted(self, obj):
+    #     request = self.context.get('request')
+    #     if request and request.user.is_authenticated:
+    #         return PostHeart.objects.filter(post=obj, user=request.user).exists()
+    #     return False
+    
+    
     def get_user_has_liked(self, obj):
-        request = self.context.get('request')
-        if request and request.user.is_authenticated:
-            return PostLike.objects.filter(post=obj, user=request.user).exists()
-        return False
+        user = self.context['request'].user
+        if user.is_authenticated:
+            return PostLike.objects.filter(post=obj, user=user).exists()
+        else:
+            anon_user_id = self.context['request'].headers.get('X-Anon-User-ID')
+            if not anon_user_id:
+                raise DjangoValidationError("No anonymous user ID provided!!")
+            return PostLike.objects.filter(post=obj, anon_user=anon_user_id).exists()
+    
+    #*!*!ESTE ERA EL ULTIMO. FUNCIONA OK PARA USERS REGISTRADOS
+    #def get_user_has_liked(self, obj):
+    #    user = self.context['request'].user
+    #    if user.is_authenticated:
+    #        return PostLike.objects.filter(post=obj, user=user).exists()
+    #    return False
+    
+    def get_like_id(self, obj):
+        user = self.context['request'].user
+        if user.is_authenticated:
+            like = PostLike.objects.filter(post=obj, user=user).first()
+            return like.id if like else None
+        else:
+            anon_user_id = self.context['request'].headers.get('X-Anon-User-ID')
+            if not anon_user_id:
+                raise DjangoValidationError("No anonymous user ID provided!!")
+            like = PostLike.objects.filter(post=obj, anon_user=anon_user_id).first()
+            return like.id if like else None
+        
+    def get_heart_id(self, obj):
+        user = self.context['request'].user
+        if user.is_authenticated:
+            heart = PostHeart.objects.filter(post=obj, user=user).first()
+            return heart.id if heart else None
+        else:
+            anon_user_id = self.context['request'].headers.get('X-Anon-User-ID')
+            if not anon_user_id:
+                raise DjangoValidationError("No anonymous user ID provided!!")
+            heart = PostHeart.objects.filter(post=obj, anon_user=anon_user_id).first()
+            return heart.id if heart else None
+    
+    #!*!*DEJE POR ACA...
+    # def get_like_id(self, obj):
+    #     user = self.context['request'].user
+    #     like = PostLike.objects.filter(post=obj, user=user).first()
+    #     return like.id if like else None
+    
+    # def get_heart_id(self, obj):
+    #     user = self.context['request'].user
+    #     heart = PostHeart.objects.filter(post=obj, user=user).first()
+    #     return heart.id if heart else None
 
     def get_user_has_hearted(self, obj):
-        request = self.context.get('request')
-        if request and request.user.is_authenticated:
-            return PostHeart.objects.filter(post=obj, user=request.user).exists()
-        return False
+        user = self.context['request'].user
+        if user.is_authenticated:
+            return PostHeart.objects.filter(post=obj, user=user).exists()
+        else:
+            anon_user_id = self.context['request'].headers.get('X-Anon-User-ID')
+            if not anon_user_id:
+                raise DjangoValidationError("No anonymous user ID provided!!")
+            return PostHeart.objects.filter(post=obj, anon_user=anon_user_id).exists()
+    
+        
+        #*!*!ASÍ ERA EL METODO has_hearted
+        # user = self.context['request'].user
+        # if user.is_authenticated:
+        #     return PostHeart.objects.filter(post=obj, user=user).exists()
+        # return False
        
 
 class PostLikeSerializer(serializers.ModelSerializer):

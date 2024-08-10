@@ -49,6 +49,24 @@
     margin: 0 0 20px 0;
 }
 
+.project-not-found-div {
+    height: 42vh;
+    font-family: "Rajdhani", sans-serif;
+    color: #5C61FF;
+    letter-spacing: 4px;
+    font-size: 4.5em;
+    font-weight: 500;
+    margin: 7% 6%;
+    padding-bottom: 5%;
+}
+
+.oops {
+    font-weight: 400;
+    font-size: 1.3em;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
+
 .project-detail-description {
     font-family: "Rajdhani", sans-serif;
     font-weight: 500;
@@ -80,15 +98,27 @@
 }
 
 .reaction-icon-like:hover {
-    color:rgb(26, 49, 182);
+    color:rgb(77, 98, 216);
     cursor: pointer;
+}
+
+.reaction-icon-like:active{
+    transform: scale(0.95);
 }
 
 .reaction-icon-like-solid{
     font-size: 2rem;
     margin-right: 5px;
-    color:rgb(26, 49, 182);
+    color:rgb(77, 98, 216);
     cursor: pointer;
+}
+
+.reaction-icon-like-solid:hover{
+    color:rgba(77, 98, 216, 0.726);
+}
+
+.reaction-icon-like-solid:active{
+    transform: scale(0.95);
 }
 
 .reaction-icon-heart {
@@ -96,15 +126,28 @@
     margin-right: 5px;
 }
 .reaction-icon-heart:hover{
-    color:rgb(209, 35, 35);
+    color:rgb(236, 91, 91);
     cursor: pointer;
+}
+
+.reaction-icon-heart:active{
+    transform: scale(0.95);
 }
 
 .reaction-icon-heart-solid{
     font-size: 2rem;
     margin-right: 5px;
-    color:rgb(209, 35, 35);
+    color:rgb(236, 91, 91);
     cursor: pointer;
+}
+
+.reaction-icon-heart-solid:hover{
+    color:rgba(236, 91, 91, 0.788);
+}
+
+
+.reaction-icon-heart-solid:active{
+    transform: scale(0.95);
 }
 
 .reaction-icon-comment {

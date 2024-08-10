@@ -3,7 +3,7 @@ import useAuthStore from '../../store-zustand';
 import api from '../../api'; 
 import './CommentsSection.css';
 
-const CommentsSection = ({ comments, postId, inputRef }) => {
+const CommentsSection = ({ comments, postId, inputRef, onCommentAdded }) => {
     const [messages, setMessages] = useState(comments || []);
     const [newMessage, setNewMessage] = useState('');
     const [anonUsername, setAnonUsername] = useState('');
@@ -49,6 +49,7 @@ const CommentsSection = ({ comments, postId, inputRef }) => {
                 setMessages((prevMessages) => [...prevMessages, createdComment]);
                 setNewMessage('');
                 setAnonUsername('');
+                onCommentAdded();
                 /*if (inputRef.current) {
                     inputRef.current.value = ''; 
                 }*/

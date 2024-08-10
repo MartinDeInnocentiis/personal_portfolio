@@ -2,6 +2,50 @@ import axios from 'axios';
 import useAuthStore from './store-zustand';
 import { refreshToken } from './auth';
 
+const api = axios.create({
+    baseURL: 'http://127.0.0.1:8000/api/',
+});
+
+api.interceptors.request.use(
+    async (config) => {
+        const { token, anonUserId } = useAuthStore.getState();
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        } else {
+            config.headers['X-Anon-User-ID'] = anonUserId;
+        }
+        return config;
+    },
+    (error) => Promise.reject(error)
+);
+
+api.interceptors.response.use(
+    (response) => response,
+    async (error) => {
+        const { refreshToken: refresh } = useAuthStore.getState();
+        const originalRequest = error.config;
+
+        if (error.response.status === 401 && !originalRequest._retry) {
+            originalRequest._retry = true;
+            const newToken = await refreshToken();
+            if (newToken) {
+                originalRequest.headers.Authorization = `Bearer ${newToken}`;
+                return axios(originalRequest);
+            }
+        }
+
+        return Promise.reject(error);
+    }
+);
+
+export default api;
+
+//ESTO ERA LO ULTIMO
+
+/*import axios from 'axios';
+import useAuthStore from './store-zustand';
+import { refreshToken } from './auth';
+
 
 const api = axios.create({
     baseURL: 'http://127.0.0.1:8000/api/',
@@ -38,7 +82,7 @@ api.interceptors.response.use(
     }
 );
 
-export default api;
+export default api;*/
 
 
 
