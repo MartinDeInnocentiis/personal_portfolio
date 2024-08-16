@@ -10,7 +10,6 @@ import RegisterScreen from './screens/RegisterScreen/RegisterScreen.jsx';
 import LoginScreen from './screens/LoginScreen/LoginScreen.jsx';
 
 
-
 function App() {
 
   return (

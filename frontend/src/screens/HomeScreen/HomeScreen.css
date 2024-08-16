@@ -73,3 +73,46 @@
     font-weight: 600;
     letter-spacing: 5px;
 }
+
+  @keyframes blink-advanced {
+    0%, 40% {
+        color: #221536;
+      }
+      10% {
+        color: #96FF1F;
+      }
+      20% {
+        color: #221536;
+      }
+      22% {
+        color: #96FF1F;
+      }
+      25% {
+        color: #221536;
+      }
+      30% {
+        color: #96FF1F;
+      }
+      35% {
+        color: #221536;
+      }
+      38% {
+        color: #96FF1F;
+      }
+      45%, 100% {
+        color: #221536; 
+      }
+    }
+  
+  
+  .blinking-text {
+    animation: blink-advanced 9s infinite;
+    font-size: 3.3rem;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    letter-spacing: 5px;
+  }

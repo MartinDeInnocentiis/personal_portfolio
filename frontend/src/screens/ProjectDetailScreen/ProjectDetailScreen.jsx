@@ -153,7 +153,6 @@ const ProjectDetailScreen = () => {
                 localStorage.setItem('heartId', response.data.id);
 
                 setTotalHearts(prev => prev + 1);
-                console.log('HEARTEADO:', heartId)
             } else {
                 if (heartId) {
                     await api.delete(`/posts/hearts/${heartId}/`);

@@ -1,6 +1,7 @@
 import './HomeScreen.css'
 import TechTicker from '../../components/TechTicker/TechTicker'
 import Typewriter from '../../components/Typewriter/Typewriter'
+import BackgroundContainer from '../../components/BackgroundContainer/BackgroundContainer'
 
 const HomeScreen = () => {
   return (
@@ -21,8 +22,14 @@ const HomeScreen = () => {
 
       <div className='home-section2'>
         <div className='subcontainer-2'>
-          <p className='subcontainer-2-text'>My Tech Stack</p>
+          <p className='blinking-text'>My Tech Stack</p>
           <TechTicker />
+        </div>
+      </div>
+
+      <div className='home-section3'>
+        <div className='subcontainer-3'>
+          <BackgroundContainer />
         </div>
       </div>
     </>
