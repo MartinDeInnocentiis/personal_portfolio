@@ -116,3 +116,21 @@
     font-weight: 600;
     letter-spacing: 5px;
   }
+
+.home-section3{
+  height: 80vh;
+}
+
+.background-text {
+  height: 20%;  
+  margin-top: 10rem;
+  font-size: 3.3rem;
+  color: #221536; /*#96FF1F*/
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 5px;
+}

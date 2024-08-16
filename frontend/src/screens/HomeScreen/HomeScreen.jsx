@@ -1,7 +1,8 @@
 import './HomeScreen.css'
 import TechTicker from '../../components/TechTicker/TechTicker'
 import Typewriter from '../../components/Typewriter/Typewriter'
-import BackgroundContainer from '../../components/BackgroundContainer/BackgroundContainer'
+import SliderCards from '../../components/SliderCards/SliderCards'
+
 
 const HomeScreen = () => {
   return (
@@ -29,7 +30,8 @@ const HomeScreen = () => {
 
       <div className='home-section3'>
         <div className='subcontainer-3'>
-          <BackgroundContainer />
+          <p className='background-text'>My Background</p>
+          <SliderCards />
         </div>
       </div>
     </>
