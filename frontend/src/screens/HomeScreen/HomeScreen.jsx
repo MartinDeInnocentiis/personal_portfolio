@@ -30,7 +30,6 @@ const HomeScreen = () => {
 
       <div className='home-section3'>
         <div className='subcontainer-3'>
-          <p className='background-text'>My Background</p>
           <SliderCards />
         </div>
       </div>

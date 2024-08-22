@@ -113,7 +113,7 @@ const ProjectDetailScreen = () => {
     };*/
 
 
-    //DEJE POR ACA...
+
     const handleLike = async () => {
         try {
             if (!liked) {

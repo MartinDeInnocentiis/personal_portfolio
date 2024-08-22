@@ -1,6 +1,7 @@
 .comments-container{
     background: linear-gradient( 175deg, #b6a59941 0% 20%, #8f7e72c4 90%);
-    height: 80vh;
+    min-height: 80vh;
+    padding: 1rem 0 9.5rem 0; 
     margin: 0 -3rem -7rem -2rem;
 }
 
@@ -13,6 +14,11 @@
 .title-divider{
     border: none;
     border-top: 2px solid #5C61FF;
+}
+
+.title-divider2{
+    border: none;
+    border-top: 1px solid #2215363d;
 }
 
 .comments-title{
@@ -29,25 +35,37 @@
 .messages-box {
     list-style: none;
     padding: 0;
-    margin: 0 0 20px 0;
-    max-height: 400px;
+    margin: 0 0 3.3% 0;
+    max-height: none;
     overflow-y: auto;
-    border-radius: 8px;
-    background-color: #fff;
 }
 
 .message-item {
-    padding: 10px;
+    padding: 1.5%;
     border-bottom: 1px solid #eee;
+    margin-bottom: 2%; 
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    background-color: #f7f7fa; 
+    border-radius: 8px; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .message-item:last-child {
     border-bottom: none;
 }
 
+
+.comment-reactions-container {
+    margin-top: 2.2%;
+    border-top: 1px solid rgba(0, 0, 0, 0.205); 
+    padding-top: 1.5%;
+}
+
+
 .new-message-form {
     display: flex;
     gap: 10px;
+    margin: 3% 0 4% 0;
 }
 
 .new-message-input {
@@ -55,7 +73,7 @@
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 12px 1px 12px 1px;
-    background-color: #ffffff;
+    background-color: #f8f8ff; 
     font-size: 19px;
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
@@ -79,9 +97,9 @@
 }
 
 .new-message-input:focus {
-    border: 1px solid #a4a6df7c; 
+    border: 1px solid #5c61ff9a;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     outline: none; 
-    box-shadow: 0 0 8px rgb(255, 255, 255); 
 }
 
 .new-message-button {
@@ -123,6 +141,12 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.219);
 }
 
+.name-date-container{
+    display:flex;
+    justify-content: space-between; 
+    align-items: baseline;
+}
+
 .message-author{
     margin-left: 0.3rem;
     color:#5C61FF;
@@ -139,3 +163,55 @@
     font-size: 15px;
     letter-spacing: 1px;
 }
+
+
+
+.com-reaction-icon-like {
+    font-size: 1.4rem;
+    margin-left: 1.5%;
+    
+}
+
+.com-reaction-icon-like:hover {
+    color:rgb(77, 98, 216);
+    cursor: pointer;
+}
+
+.com-reaction-icon-like:active{
+    transform: scale(0.95);
+}
+
+
+.com-reaction-icon-heart {
+    font-size: 1.4rem;
+}
+.com-reaction-icon-heart:hover{
+    color:rgb(236, 91, 91);
+    cursor: pointer;
+}
+
+.com-reaction-icon-heart:active{
+    transform: scale(0.95);
+}
+
+
+.see-more-button {
+    background: rgba(255, 255, 255, 0.055);
+    border-radius: 8px;
+    padding: 5px 8px;
+    border: none;
+    color: #221536;
+    cursor: pointer;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    margin-bottom: 4%;
+}
+
+.see-more-button:hover {
+    background: rgba(255, 255, 255, 0.185);
+    color: #5C61FF;
+}
+
+
+
