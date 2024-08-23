@@ -198,6 +198,10 @@ const ProjectDetailScreen = () => {
         setTotalComments(prevTotalComments => prevTotalComments + 1);
     };
 
+    const handleCommentDeleted = () => {
+        setTotalComments(prevTotalComments => prevTotalComments - 1);
+    };
+
     if (!projectDetail) {
         return <div className='project-not-found-div'> <p className='oops'> Oops! </p>  <p className='project-not-found'>Project not found... </p></div>
 
@@ -233,6 +237,7 @@ const ProjectDetailScreen = () => {
                     postId={id}
                     inputRef={commentInputRef}
                     onCommentAdded={handleNewCommentAdded} // PROPAGATING THE HANDLER DOWN
+                    onCommentDeleted={handleCommentDeleted}
                 />
             </div>
         </div>

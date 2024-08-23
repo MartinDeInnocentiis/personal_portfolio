@@ -18,9 +18,8 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
         # else:
         #     anon_user_id = request.session.get('anon_user_id')
         #     return str(obj.anon_user.id) == anon_user_id
-        else:
-            anon_user_id = request.session.get('anon_user_id')
-            return obj.anon_user and obj.anon_user.id == anon_user_id
+        anon_user_id = request.session.get('anon_user_id')
+        return obj.anon_user and str(obj.anon_user.id) == anon_user_id
             ##return str(obj.anon_user.id) == anon_user_id
             #return str (anon_user_id and obj.anon_user_id == anon_user_id)
         

@@ -55,21 +55,15 @@
 }
 
 
-.comment-reactions-container {
-    margin-top: 2.2%;
-    border-top: 1px solid rgba(0, 0, 0, 0.205); 
-    padding-top: 1.5%;
-}
-
-
 .new-message-form {
-    display: flex;
     gap: 10px;
     margin: 3% 0 4% 0;
 }
 
 .new-message-input {
     flex-grow: 1;
+    width: 84%;
+    margin-right: 1%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 12px 1px 12px 1px;
@@ -79,20 +73,26 @@
     font-optical-sizing: auto;
 }
 
+.input-name-container{
+    display: flex;
+    width: 40%;
+}
+
 .new-message-input-name {
     flex-grow: 0.44;
     padding: 10px;
     border: 1px solid #ddd;
-    width: 0.1%;
-    border-radius: 8px;
-    background-color: #ffffff;
+    margin-bottom: 2%;
+    border-radius: 12px 1px 12px 1px;
+    background-color: #f8f8ff; 
     font-size: 19px;
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
 }
 
 .new-message-input-name:focus {
-    border: 1px solid #a4a6df7c; 
+    border: 1px solid #5c61ff9a;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     outline: none; 
 }
 
@@ -105,6 +105,7 @@
 .new-message-button {
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
+    width: 12%;
     font-size: 20px;
     padding: 10px 20px;
     background-color: #5C61FF;
@@ -164,11 +165,24 @@
     letter-spacing: 1px;
 }
 
+.comment-reactions-delete-container {
+    margin-top: 2.2%;
+    border-top: 1px solid rgba(0, 0, 0, 0.205); 
+    padding-top: 1.5%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: baseline;
+}
+
+.comment-reactions-container {
+    display: flex;
+    font-size: 1.5rem;
+}
 
 
 .com-reaction-icon-like {
-    font-size: 1.4rem;
-    margin-left: 1.5%;
+    
+    margin-left: 0.7rem;
     
 }
 
@@ -183,7 +197,8 @@
 
 
 .com-reaction-icon-heart {
-    font-size: 1.4rem;
+    
+    margin-left: 0.1rem;
 }
 .com-reaction-icon-heart:hover{
     color:rgb(236, 91, 91);
@@ -193,6 +208,37 @@
 .com-reaction-icon-heart:active{
     transform: scale(0.95);
 }
+
+
+.com-reaction-icon-dislike {
+    
+    margin-left: 0.7rem;
+    
+}
+
+.com-reaction-icon-dislike:hover {
+    color:rgb(165, 77, 216);
+    cursor: pointer;
+}
+
+.com-reaction-icon-dislike:active{
+    transform: scale(0.95);
+}
+
+
+.com-reaction-icon-trash{
+    margin-right: 0.7rem;
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.com-reaction-icon-trash:hover{
+    cursor: pointer;
+    color:rgb(155, 27, 27);
+    transform: skew(0deg, 6deg) scale(1.05);
+}
+
+
 
 
 .see-more-button {

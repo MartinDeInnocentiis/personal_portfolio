@@ -13,7 +13,7 @@ from rest_framework.generics import (
     GenericAPIView,
 )
 
-from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly, AllowAny
 from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError as ValidationErrorDRF
 from rest_framework.exceptions import NotFound
@@ -110,8 +110,8 @@ class CommentListCreateAPIView(AnonUserInteractionMixin, ListCreateAPIView):
         return Comment.objects.filter(post_id=self.kwargs['post_id'])
 
     def perform_create(self, serializer):
-        anon_username = self.request.data.get('anon_user')
-        user, anon_user = self.handle_anon_user(self.request, anon_username)
+        anon_user_data = self.request.data.get('anon_user')
+        user, anon_user = self.handle_anon_user(self.request, anon_user_data)
         post_id = self.kwargs['post_id']
         post = Post.objects.get(id=post_id)
         serializer.save(user=user, anon_user=anon_user, post=post)

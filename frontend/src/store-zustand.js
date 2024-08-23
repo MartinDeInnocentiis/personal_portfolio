@@ -9,6 +9,7 @@ const useAuthStore = create(
       token: null,
       refreshToken: null,
       anonUserId: localStorage.getItem('anonUserId') || uuidv4(),
+
       login: (user, token, refreshToken) => set({ 
         user: {
           id: user.id,
@@ -17,16 +18,26 @@ const useAuthStore = create(
         token,
         refreshToken
       }),
+
       logout: () => {
         set({ user: null, token: null, refreshToken: null});
         localStorage.removeItem('auth-storage');
       },
+
+      setAnonUserId: (anonUserId) => {
+        set({ anonUserId });
+        localStorage.setItem('anonUserId', anonUserId); 
+      },
+
       setToken: (token) => set({ token }),
+
     }),
+
     {
       name: 'auth-storage', // NAME FOR STORING AT localStorage
       getStorage: () => localStorage,
     }
+
   )
 );
 
