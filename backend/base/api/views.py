@@ -307,13 +307,16 @@ class CommentHeartListCreateAPIView(ReactionCountMixin, PreventDuplicateReaction
     def perform_create(self, serializer):
         comment_id = self.kwargs['comment_id']
         comment = Comment.objects.get(id=comment_id)
-        user, anon_user = self.check_duplicate_reaction(self.request, comment_id=comment)
+        
+        
+        #24/8 se cambia esto por la linea de abajo     user, anon_user = self.check_duplicate_reaction(self.request, comment_id=comment)
+        user, anon_user = self.handle_anon_user(self.request)
         serializer.save(user=user, anon_user=anon_user, comment=comment)
         
 class CommentHeartDestroyAPIView(DestroyAPIView):
     queryset = CommentHeart.objects.all()
     serializer_class = CommentHeartSerializer
-    permission_classes = [IsOwnerOrReadOnly]  
+    permission_classes = [AllowAny]  
     lookup_field = 'id'
 
 

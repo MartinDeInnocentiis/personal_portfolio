@@ -104,12 +104,40 @@ class CommentSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     anon_user = Anon_UserSerializer(read_only=True)
     post = serializers.PrimaryKeyRelatedField(queryset=Post.objects.all(), required=False)
+    total_reactions = serializers.SerializerMethodField()
+    has_reacted = serializers.SerializerMethodField()
+    heart_id = serializers.SerializerMethodField()
 
     class Meta:
         model = Comment
-        fields = ['id', 'user', 'anon_user', 'post', 'content', 'created_at']
+        fields = ['id', 'user', 'anon_user', 'post', 'content', 'created_at', 'total_reactions', 'has_reacted', 'heart_id']
         read_only_fields = ['id', 'user', 'anon_user', 'created_at']
-
+        
+    def get_total_reactions (self, obj):
+        return obj.hearts_from_comment_hearts.count()
+    
+    def get_has_reacted(self, obj):
+        request = self.context.get('request')
+        anon_user_id = request.headers.get('X-Anon-User-ID')
+        
+        if request.user.is_authenticated:
+            return obj.hearts_from_comment_hearts.filter(user=request.user).exists()
+        elif anon_user_id:
+            return obj.hearts_from_comment_hearts.filter(anon_user_id=anon_user_id).exists()
+        return False
+         
+    def get_heart_id(self, obj):
+        request = self.context.get('request')
+        anon_user_id = request.headers.get('X-Anon-User-ID')
+        
+        if request.user.is_authenticated:
+            heart = obj.hearts_from_comment_hearts.filter(user=request.user).first()
+        elif anon_user_id:
+            heart = obj.hearts_from_comment_hearts.filter(anon_user_id=anon_user_id).first()
+        else:
+            heart = None
+    
+        return heart.id if heart else None
         
 class PostSerializer(serializers.ModelSerializer):
     comments = CommentSerializer(many=True, read_only=True, source='postComments')

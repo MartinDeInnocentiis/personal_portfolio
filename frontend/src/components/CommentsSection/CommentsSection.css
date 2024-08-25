@@ -197,7 +197,6 @@
 
 
 .com-reaction-icon-heart {
-    
     margin-left: 0.1rem;
 }
 .com-reaction-icon-heart:hover{
@@ -206,6 +205,20 @@
 }
 
 .com-reaction-icon-heart:active{
+    transform: scale(0.95);
+}
+
+.com-reaction-icon-heart-solid {
+    color:rgb(236, 91, 91);
+    margin-left: 0.1rem;
+}
+
+.com-reaction-icon-heart-solid:hover{
+    color:rgba(236, 91, 91, 0.733);
+    cursor: pointer;
+}
+
+.com-reaction-icon-heart-solid:active{
     transform: scale(0.95);
 }
 
