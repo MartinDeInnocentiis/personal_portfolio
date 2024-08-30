@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useAuthStore from '../../store-zustand';
 import api from '../../api';
-import { BiCommentDetail, BiHeart, BiSolidHeart, BiLike, BiDislike } from "react-icons/bi";
+import { BiCommentDetail, BiHeart, BiSolidHeart, BiLike, BiSolidLike, BiDislike, BiSolidDislike } from "react-icons/bi";
 import { BsTrash3 } from "react-icons/bs";
 import './CommentsSection.css';
 
@@ -29,7 +29,7 @@ const CommentsSection = ({ comments, postId, inputRef, onCommentAdded, onComment
                 setAnonUserId(newAnonUserId);
                 localStorage.setItem('anonUserId', newAnonUserId);
             }
-            console.log("Current Anon User ID:", storedAnonUserId);
+            //console.log("Current Anon User ID:", storedAnonUserId);
         }
         fetchComments();
     }, [user, storedAnonUserId, setAnonUserId]);
@@ -45,12 +45,12 @@ const CommentsSection = ({ comments, postId, inputRef, onCommentAdded, onComment
         }
     };
 
-    const handleHeartClick = async (commentId, hasReacted, heartId) => {
+    const handleHeartClick = async (commentId, hasHeartReacted, heartId) => {
         try {
             const { anonUserId } = useAuthStore.getState();
             console.log("Anon User ID being sent:", anonUserId);
-            
-            if (hasReacted) {
+
+            if (hasHeartReacted) {
                 const response = await api.delete(`/comments/hearts/${heartId}/`);
                 console.log("DELETED:", response.data);
                 fetchComments();
@@ -65,6 +65,48 @@ const CommentsSection = ({ comments, postId, inputRef, onCommentAdded, onComment
             console.error("Error handling heart:", error);
         }
     };
+
+    const handleLikeClick = async (commentId, hasLikeReacted, likeId) => {
+        try {
+            const { anonUserId } = useAuthStore.getState();
+
+            if (hasLikeReacted) {
+                const response = await api.delete(`/comments/likes/${likeId}/`);
+                console.log("DELETED:", response.data);
+                fetchComments();
+            } else {
+                const response = await api.post(`/comments/${commentId}/likes/`, null, {
+                    headers: { 'X-Anon-User-ID': anonUserId }
+                });
+                console.log("POSTEO:", response.data);
+                fetchComments();
+            }
+        } catch (error) {
+            console.error("Error handling LIKE:", error);
+        }
+    };
+
+    const handleDislikeClick = async (commentId, hasDislikeReacted, dislikeId) => {
+        try {
+            const { anonUserId } = useAuthStore.getState();
+
+            if (hasDislikeReacted) {
+                const response = await api.delete(`/comments/dislikes/${dislikeId}/`);
+                console.log("DELETED:", response.data);
+                fetchComments();
+            } else {
+                const response = await api.post(`/comments/${commentId}/dislikes/`, null, {
+                    headers: { 'X-Anon-User-ID': anonUserId }
+                });
+                console.log("POSTEO:", response.data);
+                fetchComments();
+            }
+        } catch (error) {
+            console.error("Error handling DISLIKE:", error);
+        }
+    };
+
+
     const updateAnonUsername = async (newName) => {
         try {
             await api.patch('/update-anon-username/', { name: newName });
@@ -153,8 +195,17 @@ const CommentsSection = ({ comments, postId, inputRef, onCommentAdded, onComment
                             ? message.user && message.user.id === user.id
                             : message.anon_user && message.anon_user.id === storedAnonUserId;
 
-                        const hasReacted = message.has_reacted;  
-                        const heartId = message.heart_id; 
+                        const hasHeartReacted = message.has_heart_reacted;
+                        const heartId = message.heart_id;
+                        const totalHeart = message.total_heart_reactions;
+
+                        const hasLikeReacted = message.has_like_reacted;
+                        const likeId = message.like_id;
+                        const totalLike = message.total_like_reactions;
+
+                        const hasDislikeReacted = message.has_dislike_reacted;
+                        const dislikeId = message.dislike_id;
+                        const totalDislike = message.total_dislike_reactions;
 
                         return (
                             <li key={index} className='message-item'>
@@ -177,13 +228,27 @@ const CommentsSection = ({ comments, postId, inputRef, onCommentAdded, onComment
                                 <div className='message-content'>{message.content}</div>
                                 <div className='comment-reactions-delete-container'>
                                     <div className='comment-reactions-container'>
-                                        {hasReacted ? (
-                                            <BiSolidHeart className='com-reaction-icon-heart-solid' onClick={() => handleHeartClick(message.id, hasReacted, heartId)} />
+                                        {hasHeartReacted ? (
+                                            <BiSolidHeart className='com-reaction-icon-heart-solid' onClick={() => handleHeartClick(message.id, hasHeartReacted, heartId)} />
                                         ) : (
-                                            <BiHeart className='com-reaction-icon-heart' onClick={() => handleHeartClick(message.id, hasReacted, null)} />
+                                            <BiHeart className='com-reaction-icon-heart' onClick={() => handleHeartClick(message.id, hasHeartReacted, null)} />
                                         )}
-                                        <BiLike className='com-reaction-icon-like' />
-                                        <BiDislike className='com-reaction-icon-dislike' />
+                                        <span className='total-comment-reactions'>{totalHeart}</span>
+
+                                        {hasLikeReacted ? (
+                                            <BiSolidLike className='com-reaction-icon-like-solid' onClick={() => handleLikeClick(message.id, hasLikeReacted, likeId)} />
+                                        ) : (
+                                            <BiLike className='com-reaction-icon-like' onClick={() => handleLikeClick(message.id, hasLikeReacted, null)} />
+                                        )}
+                                        <span className='total-comment-reactions'>{totalLike}</span>
+
+                                        {hasDislikeReacted ? (
+                                            <BiSolidDislike className='com-reaction-icon-dislike-solid' onClick={() => handleDislikeClick(message.id, hasDislikeReacted, dislikeId)} />
+                                        ) : (
+                                            <BiDislike className='com-reaction-icon-dislike' onClick={() => handleDislikeClick(message.id, hasDislikeReacted, null)} />
+                                        )}
+                                        <span className='total-comment-reactions'>{totalDislike}</span>
+
                                     </div>
                                     <div className='delete-comment-container'>
                                         {isOwner && (

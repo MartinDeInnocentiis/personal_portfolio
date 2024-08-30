@@ -104,19 +104,78 @@ class CommentSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     anon_user = Anon_UserSerializer(read_only=True)
     post = serializers.PrimaryKeyRelatedField(queryset=Post.objects.all(), required=False)
-    total_reactions = serializers.SerializerMethodField()
-    has_reacted = serializers.SerializerMethodField()
+    has_like_reacted = serializers.SerializerMethodField()
+    like_id = serializers.SerializerMethodField()
+    has_dislike_reacted = serializers.SerializerMethodField()
+    dislike_id = serializers.SerializerMethodField()
+    total_heart_reactions = serializers.SerializerMethodField()
+    total_like_reactions = serializers.SerializerMethodField()
+    total_dislike_reactions = serializers.SerializerMethodField()
+    has_heart_reacted = serializers.SerializerMethodField()
     heart_id = serializers.SerializerMethodField()
 
     class Meta:
         model = Comment
-        fields = ['id', 'user', 'anon_user', 'post', 'content', 'created_at', 'total_reactions', 'has_reacted', 'heart_id']
+        fields = ['id', 'user', 'anon_user', 'post', 'content', 'created_at', 'total_heart_reactions', 'total_like_reactions', 'total_dislike_reactions','has_like_reacted', 'like_id','has_dislike_reacted', 'dislike_id','has_heart_reacted', 'heart_id']
         read_only_fields = ['id', 'user', 'anon_user', 'created_at']
         
-    def get_total_reactions (self, obj):
+    def get_has_like_reacted(self, obj):
+        request = self.context.get('request')
+        anon_user_id = request.headers.get('X-Anon-User-ID')
+        
+        if request.user.is_authenticated:
+            return obj.likes_from_comment_likes.filter(user=request.user).exists()
+        elif anon_user_id:
+            return obj.likes_from_comment_likes.filter(anon_user_id=anon_user_id).exists()
+        return False
+         
+    def get_like_id(self, obj):
+        request = self.context.get('request')
+        anon_user_id = request.headers.get('X-Anon-User-ID')
+        
+        if request.user.is_authenticated:
+            like = obj.likes_from_comment_likes.filter(user=request.user).first()
+        elif anon_user_id:
+            like = obj.likes_from_comment_likes.filter(anon_user_id=anon_user_id).first()
+        else:
+            like = None
+    
+        return like.id if like else None 
+    
+        
+    def get_has_dislike_reacted(self, obj):
+        request = self.context.get('request')
+        anon_user_id = request.headers.get('X-Anon-User-ID')
+        
+        if request.user.is_authenticated:
+            return obj.dislikes_from_comment_dislikes.filter(user=request.user).exists()
+        elif anon_user_id:
+            return obj.dislikes_from_comment_dislikes.filter(anon_user_id=anon_user_id).exists()
+        return False
+         
+    def get_dislike_id(self, obj):
+        request = self.context.get('request')
+        anon_user_id = request.headers.get('X-Anon-User-ID')
+        
+        if request.user.is_authenticated:
+            dislike = obj.dislikes_from_comment_dislikes.filter(user=request.user).first()
+        elif anon_user_id:
+            dislike = obj.dislikes_from_comment_dislikes.filter(anon_user_id=anon_user_id).first()
+        else:
+            dislike = None
+    
+        return dislike.id if dislike else None 
+        
+    def get_total_heart_reactions (self, obj):
         return obj.hearts_from_comment_hearts.count()
     
-    def get_has_reacted(self, obj):
+    def get_total_like_reactions (self, obj):
+        return obj.likes_from_comment_likes.count()
+    
+    def get_total_dislike_reactions (self, obj):
+        return obj.dislikes_from_comment_dislikes.count()
+    
+    def get_has_heart_reacted(self, obj):
         request = self.context.get('request')
         anon_user_id = request.headers.get('X-Anon-User-ID')
         

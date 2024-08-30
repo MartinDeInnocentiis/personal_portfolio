@@ -195,6 +195,19 @@
     transform: scale(0.95);
 }
 
+.com-reaction-icon-like-solid {
+    margin-left: 0.7rem;
+    color:rgb(77, 98, 216);
+}
+
+.com-reaction-icon-like-solid:hover{
+    color:rgba(77, 98, 216, 0.726);
+    cursor: pointer;
+}
+
+.com-reaction-icon-like-solid:active{
+    transform: scale(0.95);
+}
 
 .com-reaction-icon-heart {
     margin-left: 0.1rem;
@@ -214,7 +227,7 @@
 }
 
 .com-reaction-icon-heart-solid:hover{
-    color:rgba(236, 91, 91, 0.733);
+    color:rgba(236, 91, 91, 0.726);
     cursor: pointer;
 }
 
@@ -224,9 +237,7 @@
 
 
 .com-reaction-icon-dislike {
-    
     margin-left: 0.7rem;
-    
 }
 
 .com-reaction-icon-dislike:hover {
@@ -235,6 +246,22 @@
 }
 
 .com-reaction-icon-dislike:active{
+    transform: scale(0.95);
+}
+
+
+
+.com-reaction-icon-dislike-solid {
+    margin-left: 0.7rem;
+    color:rgb(165, 77, 216);
+}
+
+.com-reaction-icon-dislike-solid:hover{
+    color:rgba(165, 77, 216, 0.726);
+    cursor: pointer;
+}
+
+.com-reaction-icon-dislike-solid:active{
     transform: scale(0.95);
 }
 
@@ -251,7 +278,12 @@
     transform: skew(0deg, 6deg) scale(1.05);
 }
 
-
+.total-comment-reactions{
+    margin: 0 .2rem;
+    font-size: 70%;
+    font-weight: 500;
+    color: #221536;
+}
 
 
 .see-more-button {
