@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+.swal2-title {
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+}
+
+.swal2-content {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.swal2-html-container {
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 500 !important;
+}
+
+.swal2-container {
+    backdrop-filter: blur(2.4px); 
+    -webkit-backdrop-filter: blur(2.4px);
+  }
+
+.swal2-confirm {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 400;
+    font-size: 20px;  
+    border: none; 
+    border-radius: 4px; 
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #5C61FF 0% 10%, #C6B5A9 110%);
+    border: solid 1px #ffffff;
+}
+
+.swal2-confirm:hover{
+    background: linear-gradient(135deg, #444af8 0% 10%, #e4c9b6 130%) !important;
+    box-shadow: 0 0 8px #97ff1f3d; 
+    border: solid 1px #96FF1F;
+}
+
+.swal2-cancel {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    border: solid 1px #ffffff;
+}
+
+.swal2-cancel:hover{
+    box-shadow: 0 0 8px #838a7a2c; 
+    border: solid 1px #838a7a2c;
+}
+
+.swal2-popup {
+    width: 24%;
+    height: auto;
+    border-radius: 38px 0 38px 0;
+    background-color: #F0F9FA;
+}

@@ -3,6 +3,8 @@ import useAuthStore from '../../store-zustand';
 import api from '../../api';
 import { BiCommentDetail, BiHeart, BiSolidHeart, BiLike, BiSolidLike, BiDislike, BiSolidDislike } from "react-icons/bi";
 import { BsTrash3 } from "react-icons/bs";
+import Swal from 'sweetalert2';
+import '../customSwal2.css';
 import './CommentsSection.css';
 
 const CommentsSection = ({ comments, postId, inputRef, onCommentAdded, onCommentDeleted }) => {
@@ -12,6 +14,7 @@ const CommentsSection = ({ comments, postId, inputRef, onCommentAdded, onComment
     const [isRegisteredUser, setIsRegisteredUser] = useState(false);
     const [username, setUsername] = useState('');
     const [showAllComments, setShowAllComments] = useState(false);
+    const [nameError, setNameError] = useState(false);
 
     const { user, anonUserId: storedAnonUserId, setAnonUserId } = useAuthStore();
 
@@ -137,14 +140,59 @@ const CommentsSection = ({ comments, postId, inputRef, onCommentAdded, onComment
                 setMessages((prevMessages) => [...prevMessages, createdComment]);
                 setNewMessage('');
                 setAnonUsername('');
+                setNameError(false);
+                Swal.fire({
+                    title: "Posted!",
+                    customClass: {
+                        title: 'swal2-title',
+                        content: 'swal2-content',
+                    },
+                    text: "Your comment has been successfully posted.",
+                    timer: 1500
+                });
                 onCommentAdded();
             } catch (error) {
                 console.error("There was an error creating the comment!", error);
             }
+        } else if (!isRegisteredUser && !anonUsername.trim()) {
+            setNameError(true);
         }
     };
 
     const handleDeleteComment = async (commentId) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this...",
+            customClass: {
+                title: 'swal2-title',
+                content: 'swal2-content',
+            },
+            showCancelButton: true,
+            cancelButtonColor: "#807d7dd6",
+            confirmButtonText: "Delete it",
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await api.delete(`/comments/${commentId}/`);
+                    setMessages(prevMessages => prevMessages.filter(message => message.id !== commentId));
+                    Swal.fire({
+                        title: "Deleted!",
+                        customClass: {
+                            title: 'swal2-title',
+                            content: 'swal2-content',
+                        },
+                        text: "Your comment has been deleted.",
+                        timer: 1500
+                    });
+                    onCommentDeleted();
+                } catch (error) {
+                    console.error("There was an error deleting the comment", error);
+                }
+            }
+        });
+    };
+
+    /*const handleDeleteComment = async (commentId) => {
         try {
             await api.delete(`/comments/${commentId}/`);
             setMessages(prevMessages => prevMessages.filter(message => message.id !== commentId));
@@ -152,7 +200,7 @@ const CommentsSection = ({ comments, postId, inputRef, onCommentAdded, onComment
         } catch (error) {
             console.error("There was an error deleting the comment", error);
         }
-    };
+    };*/
 
     const handleSeeMoreClick = () => {
         setShowAllComments(true);
@@ -174,7 +222,7 @@ const CommentsSection = ({ comments, postId, inputRef, onCommentAdded, onComment
                                 value={anonUsername}
                                 onChange={handleAnonUsernameChange}
                                 placeholder='Enter your name'
-                                className='new-message-input-name'
+                                className={nameError ? 'input-error' : 'new-message-input-name'}
                             />
                         )}
                     </div>
