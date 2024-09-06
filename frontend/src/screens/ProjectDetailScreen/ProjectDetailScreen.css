@@ -18,6 +18,7 @@
 }
 
 .project-detail-card {
+    position:relative;
     border-radius: 38px 0 38px 0;
     overflow: hidden;
     max-width: 800px;
@@ -25,6 +26,7 @@
     margin-bottom: 7rem;
     box-shadow: 0 3px 16px rgba(44, 43, 40, 0.233);
     box-sizing: border-box;
+    overflow: visible;
 }
 
 .project-detail-image {
@@ -169,4 +171,287 @@
 
 .project-detail-extra-info p {
     margin: 10px 0;
+}
+
+
+
+.details-p{
+    font-weight: 500;
+    font-size: 100%;
+}
+
+.hr-details{
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: -2%;
+}
+
+.website-link{
+    font-family: "Rajdhani", sans-serif;
+    font-size: 120%;
+    color:rgb(77, 98, 216);
+    margin-left: .1rem;
+}
+
+.website-link:hover{
+    color:#b49781;
+    cursor: pointer;
+}
+
+.github-link{
+    font-family: "Rajdhani", sans-serif;
+    font-size: 120%;
+    color:rgb(77, 98, 216);
+    margin-left: 1rem;
+}
+
+.github-link:hover{
+    color:#b49781;
+    cursor: pointer;
+}
+
+.status{
+    font-family: "Rajdhani", sans-serif;
+    font-size: 130%;
+    color:rgb(77, 98, 216);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-left: 1rem;
+}
+
+.expand-button-container{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.expand-button{
+    position: relative;
+    background-color: #5C61FF;
+    box-shadow: 0 4px 30px rgba(2, 2, 2, 0.801); 
+    color: white;
+    width: 60px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    overflow: hidden;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.expand-button:hover{
+    width: 200px;
+    transition-delay: 0.2s;
+}
+
+.expand-button::before{
+    content:"";
+    position:absolute;
+    right: 25px;
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid #96FF1F;
+    border-right: 3px solid #96FF1F;
+    transform: rotate(45deg);
+}
+
+.expand-button:hover::before{
+    transform: rotate(45deg) translate(50px, -50px);
+}
+
+.expand-button::after{
+    content:"";
+    position: absolute;
+    left: -50px;
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid #96FF1F;
+    border-right: 3px solid #96FF1F;
+    transform: rotate(45deg) translate(-50px, 50px);
+
+}
+
+.expand-button:hover::after{
+    transform: rotate(45deg) translate(50px, -50px);
+    transition-delay: .8s;
+}
+
+.expand-button span{
+    visibility: hidden;
+    opacity: 0;
+    white-space: nowrap;
+    transition: 0.5s;
+    transform: translate(-30px);
+}
+
+.expand-button:hover span{
+    visibility: visible;
+    opacity: 1;
+    transition-delay: .4s;
+    transform: translate(10px);
+}
+
+.span-button-detail{
+    color: #96FF1F;
+    font-weight: 500;
+}
+
+
+.stack-container {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.stack-container.expanded {
+    max-height: 1000px; /* Ajusta el tamaño máximo según el contenido */
+    opacity: 1;
+}
+
+.stack-container.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.stack-container2 {
+    background: linear-gradient(180deg, #f5efeb 80%,  #f3f3ed 100%);
+    padding: 2rem 0 0.5rem 2.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(183, 216, 226, 0.465);
+    transition: all 0.3s ease-in-out;
+}
+
+.stack-container2:hover {
+    border: 1px solid rgba(176, 227, 243, 0.465);
+    box-shadow: 0 4px 30px rgba(2, 2, 2, 0.164); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.stack-container {
+    position: absolute;
+    right: -80%; 
+    top: 40%; 
+    transform: translateY(-50%); 
+    width: 110%;
+    max-width: 770px;
+}
+
+
+.stack-container2{
+    max-width: 70%;
+    padding: 2rem 0 .5rem 2.5rem;
+    background: linear-gradient(180deg, #f5efeb 80%,  #f3f3ed 100%);
+    border-radius: 10px;
+    border:1px solid rgba(183, 216, 226, 0.465);
+    transition: all 0.3s ease-in-out;
+}
+
+.stack-container2:hover{
+    border:1px solid rgba(176, 227, 243, 0.465);
+    box-shadow: 0 4px 30px rgba(2, 2, 2, 0.164); 
+    transition: all 0.3s ease-in-out;
+}
+
+
+.stack-title {
+    color:#221536;
+    font-weight: bold;
+    font-size: 1.33rem;
+    margin: 1rem 0 1.5rem .5rem; 
+}
+
+
+.stack-tags {
+    margin: 3rem 0;
+    max-width: 78%;
+    padding: 1.5rem;
+    padding-left: 2.2rem;
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(204, 0, 255, 0.322) 2%,rgba(199, 47, 47, 0.267) 12%,rgba(57, 41, 202, 0.199) 31%, #53c77f3d 57%,  #f5ad7a46 80%,  #fbff0849 110%);
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    border: 2px solid rgba(173, 166, 166, 0.301); 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column; 
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.stack-tags::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.61) 0%, rgba(255, 255, 255, 0.0) 60%);
+    transform: rotate(45deg);
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.stack-tags:hover::before {
+    opacity: 1;
+    top: -30%;
+    left: -30%;
+    transform: rotate(45deg);
+}
+
+.stack-tags:hover {
+    transform: scale(1.007);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.267);
+}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(31%, 1fr)); 
+    gap: 10px; 
+}
+
+.stack-hashtag {
+    z-index: 1;
+    font-family: "Rajdhani", sans-serif;
+    background: linear-gradient(135deg, #5C61FF 0% 10%, #C6B5A9 110%);
+    box-shadow: 3px 4px 8px rgba(44, 43, 40, 0.247);
+    color:#96FF1F;
+    letter-spacing: .5px;
+    font-weight: 500;
+    font-size: 110%;
+    max-width: 90%;
+    margin: 0.5rem;
+    padding-left: .5rem !important;
+    padding: .25%;
+    border-radius: 8px;
+    border: 2px solid rgb(110, 103, 103);
+}
+
+.stack-hashtag:hover{
+    background: linear-gradient(160deg, #363ceb 0% 10%, #e9c4aa 130%);
+    border: 2px solid rgba(88, 84, 84, 0.575);
+    box-shadow: 3px 4px 6px rgba(7, 7, 7, 0.253);
 }
