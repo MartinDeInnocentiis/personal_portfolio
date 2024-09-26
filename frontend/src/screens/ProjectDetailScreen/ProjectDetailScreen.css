@@ -5,11 +5,13 @@
 }
 
 .back-button {
+    font-family: "Orbitron", sans-serif;
     text-decoration: none;
     color: #221536;
     font-size: 1.2em;
-    margin: 0 0 1rem 1rem;
+    margin: 2rem 0 1rem 3rem;
     display: inline-block;
+    letter-spacing: 1px;
 }
 
 .back-button:hover{
@@ -195,6 +197,7 @@
 
 .website-link:hover{
     color:#b49781;
+    border-bottom: 1px solid #b49781;
     cursor: pointer;
 }
 
@@ -207,6 +210,7 @@
 
 .github-link:hover{
     color:#b49781;
+    border-bottom: 1px solid #b49781;
     cursor: pointer;
 }
 
@@ -300,6 +304,7 @@
 }
 
 .span-button-detail{
+    font-family: "Rajdhani", sans-serif;
     color: #96FF1F;
     font-weight: 500;
 }
@@ -322,32 +327,6 @@
     opacity: 0;
 }
 
-.stack-container2 {
-    background: linear-gradient(180deg, #f5efeb 80%,  #f3f3ed 100%);
-    padding: 2rem 0 0.5rem 2.5rem;
-    border-radius: 10px;
-    border: 1px solid rgba(183, 216, 226, 0.465);
-    transition: all 0.3s ease-in-out;
-}
-
-.stack-container2:hover {
-    border: 1px solid rgba(176, 227, 243, 0.465);
-    box-shadow: 0 4px 30px rgba(2, 2, 2, 0.164); 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .stack-container {
     position: absolute;
@@ -360,10 +339,12 @@
 
 
 .stack-container2{
+    position: relative;
     max-width: 70%;
     padding: 2rem 0 .5rem 2.5rem;
-    background: linear-gradient(180deg, #f5efeb 80%,  #f3f3ed 100%);
-    border-radius: 10px;
+    background: linear-gradient(180deg, #fcf5f5 10%, #fafafa 80%,  #ffffff 100%);
+    box-shadow: 0 3px 6px rgba(44, 43, 40, 0.233);
+    border-radius: 2px;
     border:1px solid rgba(183, 216, 226, 0.465);
     transition: all 0.3s ease-in-out;
 }

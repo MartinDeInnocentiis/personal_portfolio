@@ -20,3 +20,17 @@
     gap: 20px;
     justify-content: center;
 }
+
+.loader-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:1rem;
+    width: 95vw !important;
+    height: 60vh !important;
+}
+
+svg.blocks-wrapper{
+    height: 25vh;
+    width: 25vw;
+}

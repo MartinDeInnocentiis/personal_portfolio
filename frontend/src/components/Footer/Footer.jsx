@@ -48,7 +48,7 @@ const Footer = () => {
 
                 </div>
             </div>
-            <div className='copyright'>2024 | Martín De Innocentiis</div>
+            <div className='copyright'>2024 <span className='copyright-span'> | </span> Martín De Innocentiis</div>
         </footer>
     )
 }
