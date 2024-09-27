@@ -12,6 +12,7 @@ const ProjectsScreen = () => {
 
     const [projects, setProjects] = useState([])
     const [loading, setLoading] = useState(true);
+    
 
     useEffect(() => {
         async function fetchData() {
