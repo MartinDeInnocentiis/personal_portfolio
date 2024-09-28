@@ -6,6 +6,8 @@ import { BiCommentDetail, BiLike, BiSolidLike, BiHeart, BiSolidHeart } from "rea
 import { ColorRing } from 'react-loader-spinner'
 import useAuthStore from '../../store-zustand';
 import api from '../../api';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
+
 
 const ProjectDetailScreen = () => {
     const { id } = useParams();
@@ -163,7 +165,7 @@ const ProjectDetailScreen = () => {
 
     return (
         <>
-            <Link to="/projects" className="back-button">Back</Link>
+            <Link to='/projects'> <IoArrowBackCircleSharp className='back-arrow-projects' /> </Link>
             {loading ? (
                 <div className="loader-container">
                     <ColorRing

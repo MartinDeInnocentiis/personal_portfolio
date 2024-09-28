@@ -63,7 +63,7 @@ const ContactScreen = () => {
                         title: 'swal2-error',
                         content: 'swal2-content',
                     },
-                    text: { error },
+                    text: "There was an error sending the message. Try again later...",
                     timer: 1500
                 });
             });

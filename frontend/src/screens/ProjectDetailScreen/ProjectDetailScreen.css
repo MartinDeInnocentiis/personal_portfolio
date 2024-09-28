@@ -4,20 +4,21 @@
     font-optical-sizing: auto;
 }
 
-.back-button {
-    font-family: "Orbitron", sans-serif;
-    text-decoration: none;
-    color: #221536;
-    font-size: 1.2em;
-    margin: 2rem 0 1rem 3rem;
+.back-arrow-projects {
+    font-size: 380%;
+    transition: transform 0.3s;
+    margin: 2rem 0 1rem 5rem !important;
+    color: #5C61FF;
     display: inline-block;
-    letter-spacing: 1px;
 }
 
-.back-button:hover{
-    color: #5C61FF;
-    font-weight: 600;
+.back-arrow-projects:hover {
+    transform: scale(1.1);
+    color:#221536;
+    background: radial-gradient(#96FF1F 0% 50%, #f8f9fa00 55%);
+
 }
+
 
 .project-detail-card {
     position:relative;

@@ -6,6 +6,7 @@ import useAuthStore from '../../store-zustand';
 import './LoginScreen.css';
 import Swal from 'sweetalert2';
 import '../customSwal.css';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 
 const LoginScreen = () => {
@@ -30,12 +31,12 @@ const LoginScreen = () => {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-  
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://127.0.0.1:8000/api/custom-token/', { username, password });
-            const { access, refresh,  id, username: responseUsername } = response.data;
+            const { access, refresh, id, username: responseUsername } = response.data;
             login({ id, username: responseUsername }, access, refresh); // STORES LOGIN STATE WITH ZUSTAND
             localStorage.setItem('refreshToken', refresh); // SAVES REFRESH TOKEN ON LOCALSTORAGE
             setError('');
@@ -49,7 +50,7 @@ const LoginScreen = () => {
                 },
                 showConfirmButton: false,
                 timer: 1200
-              });
+            });
             navigate('/'); // REDIRECTS USER TO THE HOME PAGE
         } catch (error) {
             if (error.response && error.response.data) {
@@ -65,6 +66,9 @@ const LoginScreen = () => {
     return (
         <div className='login-screen'>
             <form className='login-form' onSubmit={handleSubmit}>
+                <div className='div-login-text-back'>
+                    <Link to='/'> <IoArrowBackCircleSharp className='back-arrow-login' /> </Link>
+                </div>
                 <h1>Log in</h1>
                 {error && <p className='register-error-message'>ERROR: {error}</p>}
                 <label htmlFor='username'>Username</label>
@@ -94,7 +98,7 @@ const LoginScreen = () => {
                         type="button"
                     >
                         <img src={showPassword ? "/openeye.png" : "/closedeye.png"} alt="See Password" className="eye-password" />
-                        </button>
+                    </button>
                 </div>
                 <div className='login-buttons'>
                     <button type='submit'>Enter</button>
@@ -102,9 +106,6 @@ const LoginScreen = () => {
                         Not a user? <Link to='/register/'>Register.</Link>
                     </p>
                 </div>
-                <p className='login-text-back'>
-                    <Link to='/'>Back</Link>
-                </p>
             </form>
         </div>
     );

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './RegisterScreen.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 
 const RegisterScreen = () => {
@@ -26,7 +27,7 @@ const RegisterScreen = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    
+
     const toggleShowPassword = () => {
         setShowPassword(prevShowPassword => !prevShowPassword);
     };
@@ -64,7 +65,7 @@ const RegisterScreen = () => {
                 title: "Your registration was successful! Please log in",
                 showConfirmButton: false,
                 timer: 2500
-              });
+            });
 
             setError('');
             navigate('/login/'); // REDIRECT USER TO LOGIN PAGE
@@ -87,6 +88,9 @@ const RegisterScreen = () => {
     return (
         <div className='register-screen'>
             <form className='register-form' onSubmit={handleSubmit}>
+                <div className='div-login-text-back'>
+                    <Link to='/'> <IoArrowBackCircleSharp className='back-arrow-register' /> </Link>
+                </div>
                 <h1>Register</h1>
                 {error && <p className='register-error-message'>ERROR: {error}</p>}
                 <label htmlFor='username'>Username:</label>
@@ -126,7 +130,7 @@ const RegisterScreen = () => {
                         type="button"
                     >
                         <img src={showPassword ? "/openeye.png" : "/closedeye.png"} alt="See Password" className="eye-password" />
-                        </button>
+                    </button>
                 </div>
                 <label htmlFor='confirmPassword'>Confirm Password:</label>
                 <div className='password-eye-container'>
@@ -145,18 +149,15 @@ const RegisterScreen = () => {
                         type="button"
                     >
                         <img src={showConfirmPassword ? "/openeye.png" : "/closedeye.png"} alt="See Password" className="eye-password" />
-                        </button>
+                    </button>
                 </div>
                 <h4 className='all-fields'>* All fields are required.</h4>
                 <div className='register-buttons'>
                     <button type='submit'>Register</button>
                     <p className='login-text'>
-                        Already a user? <Link to='/login/'>Log in.</Link>
+                        Already a user? <Link to='/login/' className='login-text-link'>Log in.</Link>
                     </p>
                 </div>
-                <p className='login-text-back'>
-                    <Link to='/'>Back</Link>
-                </p>
             </form>
         </div>
     );

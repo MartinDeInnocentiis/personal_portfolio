@@ -10,11 +10,25 @@
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
     background: white;
-    padding: 2rem 2rem 2rem 5rem;
+    padding: 2rem 2rem 4rem 5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 550px;
     width: 100%;
+}
+
+.back-arrow-login {
+    font-size: 280%;
+    transition: transform 0.3s;
+    margin-left: -2.5rem;
+    color: #5C61FF;
+}
+
+.back-arrow-login:hover {
+    transform: scale(1.1);
+    color:#221536;
+    background: radial-gradient(#96FF1F 0% 50%, #f8f9fa00 55%);
+
 }
 
 .login-form h1 {
@@ -110,6 +124,11 @@
     text-decoration: none;
     font-weight: bold;
     font-size: 22px;
+    transition: color 0.2s;
+}
+
+.register-text a:hover{
+    color:#221536;
 }
 
 .register-text-back a{
@@ -119,8 +138,4 @@
     font-size: 20px;
     padding-left: 14.5rem;
     transition: transform 0.3s;
-}
-
-.login-text-back a:hover{
-    transform: scale(1.2);
 }
