@@ -27,7 +27,8 @@
     max-width: 800px;
     margin: 0 auto;
     margin-bottom: 7rem;
-    box-shadow: 0 3px 16px rgba(44, 43, 40, 0.233);
+    box-shadow: 17px 17px 38px #c3c0c0,
+    -17px -17px 38px #ffffff;
     box-sizing: border-box;
     overflow: visible;
 }
@@ -233,7 +234,7 @@
 .expand-button{
     position: relative;
     background-color: #5C61FF;
-    box-shadow: 0 4px 30px rgba(2, 2, 2, 0.801); 
+    box-shadow: 1px 4px 20px rgba(2, 2, 2, 0.637); 
     color: white;
     width: 60px;
     padding: 10px 20px;
@@ -319,7 +320,7 @@
 }
 
 .stack-container.expanded {
-    max-height: 1000px; /* Ajusta el tamaño máximo según el contenido */
+    max-height: 1000px; 
     opacity: 1;
 }
 
@@ -418,8 +419,8 @@
 .stack-hashtag {
     z-index: 1;
     font-family: "Rajdhani", sans-serif;
-    background: linear-gradient(135deg, #5C61FF 0% 10%, #C6B5A9 110%);
-    box-shadow: 3px 4px 8px rgba(44, 43, 40, 0.247);
+    background-color: #5C61FF;
+    box-shadow: 3px 4px 8px rgba(68, 67, 65, 0.247);
     color:#96FF1F;
     letter-spacing: .5px;
     font-weight: 500;
@@ -433,7 +434,7 @@
 }
 
 .stack-hashtag:hover{
-    background: linear-gradient(160deg, #363ceb 0% 10%, #e9c4aa 130%);
+    background: linear-gradient(160deg, #5C61FF 0% 50%, #151bcc 120%);
     border: 2px solid rgba(88, 84, 84, 0.575);
     box-shadow: 3px 4px 6px rgba(7, 7, 7, 0.253);
 }

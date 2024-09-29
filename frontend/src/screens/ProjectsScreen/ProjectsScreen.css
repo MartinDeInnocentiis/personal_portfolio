@@ -1,6 +1,6 @@
 
 .projectsscreen-container{
-    margin: 6rem 0 0 6rem;
+    margin: 6rem 0rem 5.5rem 6rem;
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
 }
@@ -9,8 +9,15 @@
     width: 35%;
     padding:15px;
     font-size: 75px;
-    background: #5C61FF;
     color:#96FF1F;
+
+
+    /*background: #5C61FF;*/
+
+    border-radius: 10px;
+    background: linear-gradient(145deg, #6268ff, #5357e6);
+    box-shadow:  6px 6px 17px #363996,
+                 -6px -6px 17px #8288ff73;
 }
 
 .projects-container{

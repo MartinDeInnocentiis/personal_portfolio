@@ -9,13 +9,20 @@
 .login-form {
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
-    background: white;
     padding: 2rem 2rem 4rem 5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 550px;
     width: 100%;
-}
+
+    /*
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    */
+    border: 1px solid rgba(145, 126, 126, 0.205);
+    background: linear-gradient(315deg, #ffffff, #e6e6e6);
+    box-shadow: -21px -21px 42px #d4d4d4,
+        21px 21px 42px #ffffff94;
+    }
 
 .back-arrow-login {
     font-size: 280%;
@@ -55,18 +62,26 @@
     padding: 10px;
     margin-top: 8px;
     margin-bottom: 12px;
-    border: 1px solid #C6B5A9;
+    border: 1px solid #c6b5a969;
     border-radius: 4px;
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
     font-size: 20px;
+
+    box-shadow: inset 4px 4px 10px #bcbcbc70, inset -4px -4px 10px #fffffffa;
+
 }
 
 .login-form input:focus,
 .login-form textarea:focus {
+    /*
     border: 1px solid #5C61FF; 
-    outline: none; 
     box-shadow: 0 0 5px rgba(92, 97, 255, 0.5); 
+
+    box-shadow: inset 2px 2px 15px rgba(92, 97, 255, 0.342), inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+    */
+    outline: none; 
+    box-shadow: rgba(92, 97, 255, 0.342) 0px 2px 18px inset, rgba(0, 0, 0, 0.116) 0px 18px 26px -18px inset;
 }
 
 .login-form button {

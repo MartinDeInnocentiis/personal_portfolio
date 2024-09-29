@@ -48,6 +48,32 @@
     letter-spacing: 1px;
 }
 
+
+.see-more {
+  color: #221536;
+  font-family: "Rajdhani", sans-serif;
+  padding: 0.7em 1.7em;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 0.5em;
+  background: linear-gradient(165deg, #e8e8e8bb 0% 20%, #fffefebb 90%);
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 6px 6px 12px #c5c5c5a9, -6px -6px 12px #ffffff;
+}
+
+.see-more:hover {
+  color: #5C61FF;
+  background: linear-gradient(165deg, #f0ededbb 0% 20%, #fffefedc 100%);
+}
+
+.see-more:active {
+  color: #5C61FF;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
 .home-container2{
     width: 30vw;
 }

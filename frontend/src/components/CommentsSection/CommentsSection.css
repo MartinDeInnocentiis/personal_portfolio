@@ -76,6 +76,7 @@
 .input-name-container{
     display: flex;
     width: 40%;
+    
 }
 
 .new-message-input-name {
@@ -84,15 +85,15 @@
     border: 1px solid #ddd;
     margin-bottom: 2%;
     border-radius: 12px 1px 12px 1px;
-    background-color: #f8f8ff; 
     font-size: 19px;
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
+    background-color: #f8f8ff; 
 }
 
 .new-message-input-name:focus {
-    border: 1px solid #5c61ff9a;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #5c61ff4d;
+    box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.1), inset -4px -4px 12px #ffffff;
     outline: none; 
 }
 
@@ -120,8 +121,9 @@
 }
 
 .new-message-input:focus {
-    border: 1px solid #5c61ff9a;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #5c61ff4d;
+    box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.1), inset -4px -4px 12px #ffffff;
+
     outline: none; 
 }
 

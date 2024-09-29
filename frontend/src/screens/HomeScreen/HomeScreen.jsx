@@ -1,10 +1,19 @@
 import './HomeScreen.css'
+import { useRef } from 'react';
 import TechTicker from '../../components/TechTicker/TechTicker'
 import Typewriter from '../../components/Typewriter/Typewriter'
 import SliderCards from '../../components/SliderCards/SliderCards'
 
 
 const HomeScreen = () => {
+  const homeSection2Ref = useRef(null);
+
+  const handleScroll = () => {
+    window.scrollBy({
+      top: window.innerHeight * 0.4, 
+      behavior: 'smooth',
+    });
+  };
   return (
     <>
       <div className='home-general-container'>
@@ -14,9 +23,10 @@ const HomeScreen = () => {
             <Typewriter />
           </h1>
           <h3 className='home-h3'>Welcome to my digital portfolio. I am a Software and FullStack Web Developer. In here, you will find more about who I am and what I´ve been working on.</h3>
+          <button className='see-more' onClick={handleScroll}>See more</button>
         </div>
         <div className='home-container2'>
-          AAAAAAAAAAAAAAAAAAAAAAAA
+          FOTO
 
         </div>
       </div>

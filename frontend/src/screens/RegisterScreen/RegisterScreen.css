@@ -15,7 +15,7 @@
 
 .back-arrow-register:hover {
     transform: scale(1.1);
-    color:#221536;
+    color: #221536;
     background: radial-gradient(#96FF1F 0% 50%, #f8f9fa00 55%);
 
 }
@@ -23,12 +23,19 @@
 .register-form {
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
-    background: white;
     padding: 2rem 2rem 4rem 7.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 550px;
     width: 100%;
+    /*background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+
+
+
+    border: 1px solid rgba(145, 126, 126, 0.205);
+    background: linear-gradient(315deg, #ffffff, #e6e6e6);
+    box-shadow: -21px -21px 42px #d4d4d4,
+        21px 21px 42px #ffffff94;
 }
 
 .register-form h1 {
@@ -47,7 +54,7 @@
     font-size: 20px;
     letter-spacing: 1px;
     text-align: left;
-    color:#221536;
+    color: #221536;
 }
 
 .register-form input {
@@ -55,30 +62,38 @@
     padding: 10px;
     margin-top: 8px;
     margin-bottom: 12px;
-    border: 1px solid #C6B5A9;
+    border: 1px solid #c6b5a969;
     border-radius: 4px;
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
     font-size: 20px;
+
+    box-shadow: inset 4px 4px 10px #bcbcbc70, inset -4px -4px 10px #fffffffa;
 }
 
 .register-form input:focus,
 .register-form textarea:focus {
-    border: 1px solid #5C61FF; 
-    outline: none; 
-    box-shadow: 0 0 5px rgba(92, 97, 255, 0.5); 
+    /*
+    border: 1px solid #5C61FF;
+    box-shadow: 0 0 5px rgba(92, 97, 255, 0.5);
+
+    box-shadow: inset 2px 2px 15px rgba(92, 97, 255, 0.342), inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+
+    */
+    outline: none;
+    box-shadow: rgba(92, 97, 255, 0.342) 0px 2px 18px inset, rgba(0, 0, 0, 0.116) 0px 18px 26px -18px inset;
 }
 
 .all-fields {
     margin-top: 0rem;
     font-weight: 400;
     font-size: 15px;
-    color:rgb(54, 47, 47);
+    color: rgb(54, 47, 47);
 
 }
 
 .register-error-message {
-    color:red;
+    color: red;
     font-weight: 500;
     font-size: 18px;
 }
@@ -113,9 +128,9 @@
     box-shadow: none;
 }
 
-.register-buttons{
+.register-buttons {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     margin-top: 0.5rem;
 }
@@ -124,12 +139,12 @@
     width: 35%;
 }
 
-.register-buttons p{
+.register-buttons p {
     font-size: 18px;
     font-style: none;
 }
 
-.login-text{
+.login-text {
     margin-right: 6.5rem;
 }
 
@@ -147,7 +162,7 @@
     margin-right: 4.5rem;
 }
 
-.login-text-back a{
+.login-text-back a {
     text-align: center;
     margin-top: 1rem;
     color: #221536;
@@ -157,45 +172,45 @@
     transition: color 0.3s;
 }
 
-.login-text-back a:hover{
+.login-text-back a:hover {
     transform: scale(1.2);
     background-color: rgba(0, 0, 0, 0.082);
 }
 
-.login-text-link{
+.login-text-link {
     transition: color 0.3s;
 }
 
-.login-text-link:hover{
+.login-text-link:hover {
     color: #221536;
 }
 
 
-.view-password-button{
-    width: 10%  !important;
+.view-password-button {
+    width: 10% !important;
     height: 50% !important;
     margin-top: 0 !important;
     margin-bottom: .2rem !important;
     border: 1px solid rgba(109, 102, 102, 0) !important;
-    background-color: #c6b5a900  !important;
+    background-color: #c6b5a900 !important;
 }
 
-.password-eye-container{
+.password-eye-container {
     display: flex;
     align-items: center !important;
 }
 
-.eye-password{
+.eye-password {
     transition: transform 0.6s ease;
     max-height: 25px !important;
     max-width: 25px !important;
 }
 
-.eye-password:hover{
+.eye-password:hover {
     transform: scale(1.05);
     transition: all 0.3s ease;
 }
 
-.view-password-button:focus{
+.view-password-button:focus {
     outline: none;
 }

@@ -1,4 +1,4 @@
-footer{
+footer {
     font-family: "Rajdhani", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -6,6 +6,8 @@ footer{
     background: linear-gradient(135deg, #5C61FF 0% 20%, #C6B5A9);
     color: #F0F9FA;
     border-radius: 72% 27% 10% 10% / 17% 2% 0% 0%;
+    /*box-shadow: 20px 20px 60px #000000,
+    -20px -20px 60px #5c61ff67;*/
 }
 
 .footerContainer {
@@ -17,11 +19,11 @@ footer{
     transition: all .5s ease;
 }
 
-.copyright{
+.copyright {
     display: flex;
     justify-content: center;
     align-items: center;
-    border:none;
+    border: none;
     background-color: #221536;
     color: #F0F9FA;
     font-size: large;
@@ -55,7 +57,7 @@ ul {
     transition: all .5s ease;
 }
 
-.footerList{
+.footerList {
     margin-bottom: .5em;
 }
 

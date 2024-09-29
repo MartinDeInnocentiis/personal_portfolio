@@ -5,9 +5,7 @@ const AboutScreen = () => {
         <div className='about-general-container'>
 
             <div className='about-container1'>
-
                 <h1 className='about-h1'> About me... </h1>
-
                 <h3 className='about-h3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus vero deleniti aliquam nulla veritatis rem? Veritatis sapiente nisi consequuntur beatae. Excepturi eveniet eius incidunt omnis, deserunt fugiat quae minima.
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe vitae fuga minima repellendus, ducimus veritatis corporis officiis, quas iure soluta aperiam sit quo consequatur ullam dignissimos vel aspernatur animi inventore.
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates totam aliquam, itaque libero ab nisi repellendus velit deserunt quibusdam pariatur sequi, nobis omnis dicta nihil ducimus aspernatur beatae rerum ut!

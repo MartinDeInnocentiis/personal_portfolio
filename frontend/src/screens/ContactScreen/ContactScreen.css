@@ -1,32 +1,44 @@
-
-.contactscreen-container{
-    position:relative;
-    margin: 2rem 0 5rem 6rem;
+.contactscreen-container {
+    position: relative;
+    margin: 4rem 0 7rem 6rem;
     padding: 1rem 1rem 0 5rem;
     width: 55vw;
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
+
+    /*
     background-color: rgb(255, 255, 255);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    */
+    border-radius: 20px;
+    background: linear-gradient(315deg, #ffffff, #dadddc);
+    box-shadow: -11px -11px 23px #ced0cf,
+        11px 11px 23px #dadfdd;
 }
 
 
-.contact-h1{
+.contact-h1 {
     width: 51%;
-    padding:15px;
+    padding: 15px;
     font-size: 75px;
-    background: #5C61FF;
-    color:#96FF1F;
+    color: #96FF1F;
+
+    /*background: #5C61FF;*/
+
+    border-radius: 10px;
+    background: linear-gradient(145deg, #6268ff, #5357e6);
+    box-shadow: 6px 6px 17px #363996b9,
+        -6px -6px 17px #8288ff73;
 }
 
-.contact-container{
+.contact-container {
     width: 100%;
-    max-width: 1000px;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
+    max-width: 1000px;
 }
 
 .contact-form label {
@@ -38,9 +50,12 @@
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border: 1px solid #5C61FF; 
-    outline: none; 
-    box-shadow: 0 0 5px rgba(92, 97, 255, 0.5); 
+    /*
+    box-shadow: 0 0 5px rgba(92, 97, 255, 0.5);
+    */
+    border: 1px solid #5c61ff25;
+    outline: none;
+    box-shadow: rgba(92, 97, 255, 0.342) 0px 2px 18px inset, rgba(0, 0, 0, 0.116) 0px 18px 26px -18px inset;
 }
 
 
@@ -50,12 +65,17 @@
     padding: 10px;
     margin-top: 8px;
     margin-bottom: 12px;
-    border: 1px solid #C6B5A9;
+    border: 1px solid #c6b5a986;
     border-radius: 4px;
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
     font-size: 18px;
     resize: none;
+
+
+    background: #f3f3f3;
+    box-shadow: inset -5px 5px 10px #d5d8d7,
+        inset 5px -5px 10px #e1e6e4;
 }
 
 .form-message {
@@ -76,32 +96,36 @@
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
     box-sizing: border-box;
-    transition: box-shadow 1s, letter-spacing 0.3s ease-in-out;
+    transition: box-shadow .3s ease-in-out;
 }
 
 .contact-form button:hover {
-    background:  linear-gradient(135deg, #5C61FF 0% 5%, #221536 100%);
+    background: linear-gradient(135deg, #5C61FF 0% 5%, #221536 100%);
     box-shadow: 0 3px 16px rgba(44, 43, 40, 0.288), 2px 2px 8px 1px #96FF1F;
-    letter-spacing: 1px;
+
+
+    box-shadow: -11px -11px 23px #ced0cf,
+    5px 5px 8px #97ff1f83;
+
 }
 
 
 .contact-form button:active {
-    background:  linear-gradient(135deg, #2026cf 0% 5%, #170b2b  100%);
+    background: linear-gradient(135deg, #2026cf 0% 5%, #170b2b 100%);
 }
 
 .contact-form button:focus {
-    border: 1px solid #96FF1F; 
-    outline: none; 
+    border: 1px solid #96FF1F;
+    outline: none;
 }
 
-.swal2-error{
+.swal2-error {
     color: rgba(201, 42, 42, 0.884);
 
 }
 
 
-.loader-contactform svg.blocks-wrapper{
+.loader-contactform svg.blocks-wrapper {
     margin-top: 20px;
     margin-bottom: 2.1rem;
     margin-left: 40%;

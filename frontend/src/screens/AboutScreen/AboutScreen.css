@@ -16,16 +16,24 @@
     height: 73vh;
     border-radius:  48px 0 48px 0;
     padding-left: 3rem;
-    background-color: rgba(255, 255, 255, 0.719);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /*background-color: rgba(255, 255, 255, 0.719);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    background: linear-gradient(145deg, #ffffff, #e3e3e3);
+    box-shadow: 28px 28px 56px #c7c7c7,
+        -28px -28px 56px #ffffff;
 }
+
 
 .about-h1{
     width: 68%;
     padding:15px;
     font-size: 75px;
-    background: #5C61FF;
     color:#96FF1F;
+    
+    border-radius: 10px;
+    background: linear-gradient(145deg, #6268ff, #5357e6);
+    box-shadow:  6px 6px 17px #363996,
+                 -6px -6px 17px #8288ff73;
 }
 
 .about-h3{
