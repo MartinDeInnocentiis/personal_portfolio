@@ -100,7 +100,7 @@
 .input-error{
     flex-grow: 0.44;
     padding: 10px;
-    border: 1px solid #ff0d0dbb;
+    border: 1px solid #ff0d0d79;
     box-shadow: 0px 2px 4px rgba(212, 32, 32, 0.233);
     outline: none; 
     margin-bottom: 2%;
@@ -116,7 +116,7 @@
 }
 
 .input-error::placeholder {
-    color: #ff0d0dc7;
+    color: #d64a4a;
     opacity: 1; 
 }
 
@@ -133,12 +133,15 @@
     width: 12%;
     font-size: 20px;
     padding: 10px 20px;
-    background-color: #5C61FF;
     color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color .3s ease-in-out;
+    
+    background: linear-gradient(145deg, #6268ff, #5357e6);
+    box-shadow:  4px 4px 12px #3639969c,
+                 -4px -4px 12px #8288ff4f;
 }
 
 
@@ -148,7 +151,7 @@
 }
 
 .new-message-button:hover {
-    background-color: #363cec;
+    background: linear-gradient(145deg, #363cec, #5357e6);
 }
 
 .new-message-button:active {

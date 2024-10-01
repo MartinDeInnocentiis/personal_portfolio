@@ -4,19 +4,27 @@
     align-items: center;
 }
 
+/*
 .auth-status:hover{
     transform: scale(0.97) !important;
 }
+*/
 
 .auth-links {
     text-decoration: none;
     color: inherit; 
     margin: 0 5px;
-    font-size: 85% !important;
+    font-size: 90% !important;
 }
 
 .auth-links:hover {
     color: #5C61FF;
+    font-weight: 500;
+    transform: scale(1.1) !important;
+}
+
+.auth-links:focus {
+    outline: none;
 }
 
 .hi{

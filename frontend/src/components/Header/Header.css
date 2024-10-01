@@ -1,5 +1,3 @@
-
-
 header {
     font-family: "Rajdhani", sans-serif;
     font-weight: 500;
@@ -12,12 +10,12 @@ header {
     margin-bottom: 2rem;
 }
 
-.navbar{
+.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 14vh;
-    
+
 }
 
 .logo-header {
@@ -38,33 +36,69 @@ header {
 .objectList {
     display: inline-block;
     margin: 1.5rem;
-    cursor:pointer;
-    font-size:large;
+    cursor: pointer;
+    font-size: large;
     font-size: 21px;
 }
 
+/*
 .objectList:hover {
     transform: scale(1.03);
     font-weight: 600;
 }
+*/
 
-.nav-link {
-    text-decoration: none; 
-    color: inherit; 
+.nav-link-logo:focus {
+    outline: none;
 }
 
-.nav-link:hover, .nav-link:focus {
-    transition: all .5s ease;
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    padding: .7em 1.2em;
+    border-radius: 14px;
+}
+
+.nav-link:hover {
+    transition: all .3s ease;
+    color: #5C61FF;
+    background: linear-gradient(145deg, #ffffff, #d8e0e1b2);
+    box-shadow:  7px 7px 20px #c0c7c893,
+                 -7px -7px 20px #eeececb6;
+}
+
+.nav-link:focus {
+    outline: none;
+}
+
+.nav-link:active{
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+    color: #2025c9;
+
 }
 
 .vertical-separator {
     width: 1px;
-    height: 35px; 
+    height: 35px;
     background-color: #080a3f;
-    margin: 0 15px; 
-  }
+    margin: 0 15px;
+}
 
-  .active-nav-link {
+.active-nav-link {
     color: #5C61FF;
     font-weight: 600;
-  }
+    border-radius: 14px;
+    background: #f0f9fa;
+    box-shadow: inset 7px 7px 20px #c0c7c88f,
+        inset -7px -7px 20px #f1f0f0;
+
+}
+
+
+.active-nav-link:hover,
+.active-nav-link:active{
+    border-radius: 14px;
+    background: #f0f9fa;
+    box-shadow: inset 7px 7px 20px #c0c7c88f,
+        inset -7px -7px 20px #f1f0f0;
+}

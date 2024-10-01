@@ -258,6 +258,10 @@
     transition-delay: 0.2s;
 }
 
+.expand-button:focus {
+    outline: none;
+}
+
 .expand-button::before{
     content:"";
     position:absolute;

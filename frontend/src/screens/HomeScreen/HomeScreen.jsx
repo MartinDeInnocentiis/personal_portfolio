@@ -1,5 +1,6 @@
 import './HomeScreen.css'
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import TechTicker from '../../components/TechTicker/TechTicker'
 import Typewriter from '../../components/Typewriter/Typewriter'
 import SliderCards from '../../components/SliderCards/SliderCards'
@@ -7,13 +8,13 @@ import SliderCards from '../../components/SliderCards/SliderCards'
 
 const HomeScreen = () => {
   const homeSection2Ref = useRef(null);
+  const history = useNavigate()
 
   const handleScroll = () => {
-    window.scrollBy({
-      top: window.innerHeight * 0.4, 
-      behavior: 'smooth',
-    });
+    history('/projects/');
+    window.scrollTo(0, 0);
   };
+
   return (
     <>
       <div className='home-general-container'>

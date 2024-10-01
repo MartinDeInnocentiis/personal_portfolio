@@ -37,48 +37,86 @@ const ProjectDetailScreen = () => {
     useEffect(() => {
         async function fetchData() {
             const minimumLoadTime = new Promise(resolve => setTimeout(resolve, 400));
+            try {
+                const storedLikeId = localStorage.getItem('likeId');
+                const storedHeartId = localStorage.getItem('heartId');
 
-            const storedLikeId = localStorage.getItem('likeId');
-            const storedHeartId = localStorage.getItem('heartId');
+                if (storedLikeId) {
+                    setLikeId(storedLikeId);
+                    setLiked(true);
+                }
 
-            if (storedLikeId) {
-                setLikeId(storedLikeId);
-                setLiked(true);
-            }
+                if (storedHeartId) {
+                    setHeartId(storedHeartId);
+                    setHearted(true);
+                }
 
-            if (storedHeartId) {
-                setHeartId(storedHeartId);
-                setHearted(true);
-            }
-
-            const { data } = await api.get(`/posts/${id}/`);
-            setProjectDetail(data);
-            setTotalLikes(data.total_likes);
-            setTotalHearts(data.total_hearts);
-            setTotalComments(data.total_comments);
+                const { data } = await api.get(`/posts/${id}/`);
+                setProjectDetail(data);
+                setTotalLikes(data.total_likes);
+                setTotalHearts(data.total_hearts);
+                setTotalComments(data.total_comments);
 
 
-            await Promise.all([minimumLoadTime]);
-            setLoading(false);
+                await Promise.all([minimumLoadTime]);
+                setLoading(false);
 
-            const userLike = data.likes.find(like => (user && like.user === user.id) || (user && user.anon_user_id && like.anon_user === user.anon_user_id));
-            if (userLike) {
-                setLikeId(userLike.id);
-                localStorage.setItem('likeId', userLike.id);
-            }
+                const userLike = data.likes.find(like => (user && like.user === user.id) || (user && user.anon_user_id && like.anon_user === user.anon_user_id));
+                if (userLike) {
+                    setLikeId(userLike.id);
+                    localStorage.setItem('likeId', userLike.id);
+                }
 
-            const userHeart = data.hearts.find(heart => (user && heart.user === user.id) || (user && user.anon_user_id && heart.anon_user === user.anon_user_id));
-            if (userHeart) {
-                setHeartId(userHeart.id);
-                localStorage.setItem('heartId', userHeart.id);
+                const userHeart = data.hearts.find(heart => (user && heart.user === user.id) || (user && user.anon_user_id && heart.anon_user === user.anon_user_id));
+                if (userHeart) {
+                    setHeartId(userHeart.id);
+                    localStorage.setItem('heartId', userHeart.id);
+                }
+            } catch (error) {
+                console.error('Error fetching project details:', error);
+                setProjectDetail(null);
+            } finally {
+                await minimumLoadTime;
+                setLoading(false);
             }
         }
         fetchData();
     }, [id, user]);
 
     // Verificamos si projectDetail está disponible
+    //if (!projectDetail) {
+    //    return <div>Loading...</div>;
+    //}
+
+    //if (!projectDetail) {
+    //    return <div className='project-not-found-div'> <p className='oops'> Oops! </p>  <p className='project-not-found'>Project not found... </p></div>
+
+    //}
+
+
+    if (loading) {
+        return (
+            <div className="loader-container">
+                <ColorRing
+                    visible={true}
+                    height="80"
+                    width="80"
+                    ariaLabel="blocks-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="blocks-wrapper"
+                    colors={['#252053', '#5C61FF', '#5c90ff', '#96FF1F', '#bfd1a9']}
+                />
+            </div>
+        );
+    }
+
     if (!projectDetail) {
-        return <div>Loading...</div>;
+        return (
+            <div className='project-not-found-div'>
+                <p className='oops'>Oops!</p>
+                <p className='project-not-found'>Project not found...</p>
+            </div>
+        );
     }
 
     // Mapeamos las tecnologías con #
@@ -158,27 +196,10 @@ const ProjectDetailScreen = () => {
         setTotalComments(prevTotalComments => prevTotalComments - 1);
     };
 
-    if (!projectDetail) {
-        return <div className='project-not-found-div'> <p className='oops'> Oops! </p>  <p className='project-not-found'>Project not found... </p></div>
-
-    }
 
     return (
         <>
-            <Link to='/projects'> <IoArrowBackCircleSharp className='back-arrow-projects' /> </Link>
-            {loading ? (
-                <div className="loader-container">
-                    <ColorRing
-                        visible={true}
-                        height="80"
-                        width="80"
-                        ariaLabel="blocks-loading"
-                        wrapperStyle={{}}
-                        wrapperClass="blocks-wrapper"
-                        colors={['#252053', '#5C61FF', '#5c90ff', '#96FF1F', '#bfd1a9']}
-                    />
-                </div>
-            ) : (
+            <Link to='/projects/'> <IoArrowBackCircleSharp className='back-arrow-projects' title='Back'/> </Link>
 
                 <div className='project-detail-container'>
 
@@ -191,14 +212,14 @@ const ProjectDetailScreen = () => {
 
 
                             <div className="project-detail-reactions">
-                                <span className="project-like" onClick={handleLike}>
-                                    {liked ? <BiSolidLike className='reaction-icon-like-solid' /> : <BiLike className='reaction-icon-like' />} <div> {totalLikes}</div>
+                                <span className="project-like">
+                                    {liked ? <BiSolidLike className='reaction-icon-like-solid' onClick={handleLike} title='Like'/> : <BiLike className='reaction-icon-like' onClick={handleLike} title='Like'/>} <div> {totalLikes}</div>
                                 </span>
-                                <span className="project-heart" onClick={handleHeart}>
-                                    {hearted ? <BiSolidHeart className='reaction-icon-heart-solid' /> : <BiHeart className='reaction-icon-heart' />} <div> {totalHearts}</div>
+                                <span className="project-heart">
+                                    {hearted ? <BiSolidHeart className='reaction-icon-heart-solid' onClick={handleHeart} title='Heart'/> : <BiHeart className='reaction-icon-heart' onClick={handleHeart} title='Heart'/>} <div> {totalHearts}</div>
                                 </span>
                                 <span className="project-comment">
-                                    <BiCommentDetail onClick={scrollToCommentInput} className='reaction-icon-comment' /> <div> {totalComments}</div>
+                                    <BiCommentDetail onClick={scrollToCommentInput} className='reaction-icon-comment' title='Comment'/> <div> {totalComments}</div>
                                 </span>
                             </div>
                             <div className="project-detail-extra-info">
@@ -243,7 +264,7 @@ const ProjectDetailScreen = () => {
                         />
                     </div>
 
-                </div>)}
+                </div>
         </>
     );
 };

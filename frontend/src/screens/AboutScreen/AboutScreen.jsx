@@ -15,7 +15,9 @@ const AboutScreen = () => {
 
             <div className='about-container2'>
 
-                <h2 className='about-h2'>Educational profile</h2>
+                <div className='h2-container'>
+
+                    <h2 className='about-h2'>Educational profile</h2></div>
                 <div className='about-container3'>
                     <div className='column1'>
                         <p className='about-p'>mundosE </p>
@@ -35,7 +37,9 @@ const AboutScreen = () => {
                     </div>
                 </div>
 
-                <h2 className='about-h2'>Work Experience</h2>
+
+                <div className='h2-container'>
+                    <h2 className='about-h2'>Work Experience</h2></div>
                 <div className='about-container3'>
                     <div className='column1'>
                         <p className='about-p'>2023 - up to date </p>

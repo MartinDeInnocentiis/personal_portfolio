@@ -80,7 +80,6 @@ const SliderCards = () => {
           </p>
         <section className="slider">
             <div className="slides-container">
-
                 {renderedSlides.map((slide, index) => (
                     <div
                         className={index === active ? 'slide active' : 'slide'}

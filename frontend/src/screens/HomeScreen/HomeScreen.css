@@ -1,51 +1,51 @@
-.home-general-container{
-    display: flex;
-    /*margin-right: 4rem;*/
-    background: linear-gradient(165deg, #f8feff 0% 7%,#F0F9FA 11% 17%, #c6b5a900 31%, #F0F9FA 54%, rgb(47, 0, 255) 205%);
-    z-index: 3;
+.home-general-container {
+  display: flex;
+  /*margin-right: 4rem;*/
+  background: linear-gradient(165deg, #f8feff 0% 7%, #F0F9FA 11% 17%, #c6b5a900 31%, #F0F9FA 54%, rgb(47, 0, 255) 205%);
+  z-index: 3;
 }
 
 
-.home-container1{
-    width: 58vw;
-    color: #221536;
-    font-family: "Orbitron", sans-serif;
-    font-optical-sizing: auto;
-    align-items:center;
-    justify-content:center;
-    margin: 5rem 0 0 10rem;
-    height: 76vh;
-    font-size: 30px;
+.home-container1 {
+  width: 58vw;
+  color: #221536;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem 0 0 10rem;
+  height: 76vh;
+  font-size: 30px;
 }
 
-.home-h1{
-    font-weight: 400;
-    font-style: normal;
+.home-h1 {
+  font-weight: 400;
+  font-style: normal;
 }
 
-.my-name{
-    margin-left: 10px;
-    font-weight: 800;
-    font-size:70px;
-    letter-spacing: 1px;
+.my-name {
+  margin-left: 10px;
+  font-weight: 800;
+  font-size: 70px;
+  letter-spacing: 1px;
 }
 
-.home-fullstack{
-    margin: 2rem 0 0 0;
-    font-size:xx-large;
-    font-size: 90.5px;
-    font-weight: 500;
-    background:  linear-gradient(115deg, #5C61FF 0% 35%, #a57f64 65%);
-    -webkit-background-clip: text;
-            background-clip: text;
-    -webkit-text-fill-color: transparent;
+.home-fullstack {
+  margin: 2rem 0 0 0;
+  font-size: xx-large;
+  font-size: 90.5px;
+  font-weight: 500;
+  background: linear-gradient(115deg, #5C61FF 0% 35%, #a57f64 65%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.home-h3{
-    width: 65%;
-    font-weight: 100;
-    font-size: 29.5px;
-    letter-spacing: 1px;
+.home-h3 {
+  width: 65%;
+  font-weight: 100;
+  font-size: 29.5px;
+  letter-spacing: 1px;
 }
 
 
@@ -55,7 +55,7 @@
   padding: 0.7em 1.7em;
   font-size: 22px;
   font-weight: 500;
-  border-radius: 0.5em;
+  border-radius: 18px 0 18px 0;
   background: linear-gradient(165deg, #e8e8e8bb 0% 20%, #fffefebb 90%);
   cursor: pointer;
   border: 1px solid #e8e8e8;
@@ -74,76 +74,94 @@
   box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
 
-.home-container2{
-    width: 30vw;
+.see-more:focus {
+  outline: none;
 }
 
-.home-section2{
-    background: linear-gradient(165deg, #b6a599 0% 20%, #8f7e72 90%);
-    background-color: #b6a599;
-    height: 82vh;
-    margin-bottom: -5rem;
+.home-container2 {
+  margin: 5rem 0;
+  width: 30vw;
 }
 
-.subcontainer-2{
-    padding: 4.2% 4%;
+
+.home-section2 {
+  background: linear-gradient(165deg, #b6a599 0% 20%, #8f7e72 90%);
+  background-color: #b6a599;
+  height: 82vh;
+  margin-bottom: -5rem;
 }
 
-.subcontainer-2-text{
-    font-size: 3.3rem;
-    color: #221536; /*#96FF1F*/
-    font-family: "Orbitron", sans-serif;
-    font-optical-sizing: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    letter-spacing: 5px;
+.subcontainer-2 {
+  padding: 4.2% 4%;
 }
 
-  @keyframes blink-advanced {
-    0%, 40% {
-        color: #221536;
-      }
-      10% {
-        color: #96FF1F;
-      }
-      20% {
-        color: #221536;
-      }
-      22% {
-        color: #96FF1F;
-      }
-      25% {
-        color: #221536;
-      }
-      30% {
-        color: #96FF1F;
-      }
-      35% {
-        color: #221536;
-      }
-      38% {
-        color: #96FF1F;
-      }
-      45%, 100% {
-        color: #221536; 
-      }
-    }
-  
-  
-  .blinking-text {
-    animation: blink-advanced 9s infinite;
-    font-size: 3.3rem;
-    font-family: "Orbitron", sans-serif;
-    font-optical-sizing: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    letter-spacing: 5px;
+.subcontainer-2-text {
+  font-size: 3.3rem;
+  color: #221536;
+  /*#96FF1F*/
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+
+@keyframes blink-advanced {
+
+  0%,
+  40% {
+    color: #221536;
   }
 
-.home-section3{
+  10% {
+    color: #96FF1F;
+  }
+
+  20% {
+    color: #221536;
+  }
+
+  22% {
+    color: #96FF1F;
+  }
+
+  25% {
+    color: #221536;
+  }
+
+  30% {
+    color: #96FF1F;
+  }
+
+  35% {
+    color: #221536;
+  }
+
+  38% {
+    color: #96FF1F;
+  }
+
+  45%,
+  100% {
+    color: #221536;
+  }
+}
+
+
+.blinking-text {
+  animation: blink-advanced 9s infinite;
+  font-size: 3.3rem;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+
+.home-section3 {
   height: 80vh;
 }

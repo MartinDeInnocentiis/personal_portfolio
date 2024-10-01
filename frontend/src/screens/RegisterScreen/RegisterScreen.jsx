@@ -89,7 +89,7 @@ const RegisterScreen = () => {
         <div className='register-screen'>
             <form className='register-form' onSubmit={handleSubmit}>
                 <div className='div-login-text-back'>
-                    <Link to='/'> <IoArrowBackCircleSharp className='back-arrow-register' /> </Link>
+                    <Link to='/'> <IoArrowBackCircleSharp className='back-arrow-register' title='Back'/> </Link>
                 </div>
                 <h1>Register</h1>
                 {error && <p className='register-error-message'>ERROR: {error}</p>}
@@ -129,7 +129,7 @@ const RegisterScreen = () => {
                         onClick={toggleShowPassword}
                         type="button"
                     >
-                        <img src={showPassword ? "/openeye.png" : "/closedeye.png"} alt="See Password" className="eye-password" />
+                        <img src={showPassword ? "/openeye.png" : "/closedeye.png"} title="See Password" className="eye-password" />
                     </button>
                 </div>
                 <label htmlFor='confirmPassword'>Confirm Password:</label>
@@ -148,12 +148,12 @@ const RegisterScreen = () => {
                         onClick={toggleShowPassword2}
                         type="button"
                     >
-                        <img src={showConfirmPassword ? "/openeye.png" : "/closedeye.png"} alt="See Password" className="eye-password" />
+                        <img src={showConfirmPassword ? "/openeye.png" : "/closedeye.png"} title="See Password" className="eye-password" />
                     </button>
                 </div>
                 <h4 className='all-fields'>* All fields are required.</h4>
                 <div className='register-buttons'>
-                    <button type='submit'>Register</button>
+                    <button type='submit-register'>Register</button>
                     <p className='login-text'>
                         Already a user? <Link to='/login/' className='login-text-link'>Log in.</Link>
                     </p>

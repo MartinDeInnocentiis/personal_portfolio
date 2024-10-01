@@ -17,7 +17,10 @@
     transform: scale(1.1);
     color: #221536;
     background: radial-gradient(#96FF1F 0% 50%, #f8f9fa00 55%);
+}
 
+.back-arrow-register:focus {
+    outline: none;
 }
 
 .register-form {
@@ -39,6 +42,7 @@
 }
 
 .register-form h1 {
+    width: 84%;
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
     text-align: center;
@@ -101,8 +105,12 @@
 .register-form button {
     margin-top: 10px;
     padding: 10px;
+
+/*
     background-color: #5C61FF;
+
     border: 1px solid #96FF1F;
+*/
     color: white;
     border-radius: 4px;
     cursor: pointer;
@@ -115,10 +123,11 @@
     transition: background-color 0.3s, transform 0.3s;
 }
 
+
+/*
 .register-form button:hover {
     background-color: #F0F9FA;
     color: #5C61FF;
-    letter-spacing: 1px;
     border: 2px solid #96FF1F;
 }
 
@@ -126,6 +135,11 @@
     background-color: #dee4e4;
     color: #5C61FF;
     box-shadow: none;
+}
+*/
+
+.register-form button:focus {
+    outline: none;
 }
 
 .register-buttons {
@@ -137,6 +151,25 @@
 
 .register-buttons button {
     width: 35%;
+    letter-spacing: 1px;
+    border:1px solid rgba(128, 0, 128, 0.185);
+    background: linear-gradient(315deg, #5357e6, #6268ff);
+    box-shadow: -3px -3px 6px #4e53d9b2,
+        3px 3px 6px #6a6fff9d;
+    transition: all 0.3s ease-in-out;
+}
+
+.register-buttons button:hover {
+    background: linear-gradient(315deg, #383ef3, #5358fc);
+    box-shadow: -3px -3px 6px #4e53d977,
+        3px 3px 6px #6a6fff70;
+    color: #96FF1F;
+}
+
+.register-buttons button:active {
+    background: linear-gradient(315deg, #5c61ff, #484eee);
+    box-shadow: inset -7px -7px 14px #4347ba,
+                inset 7px 7px 14px #757bff;
 }
 
 .register-buttons p {
@@ -153,6 +186,10 @@
     text-decoration: none;
     font-weight: bold;
     font-size: 22px;
+}
+
+.login-text a:focus {
+    outline: none;
 }
 
 

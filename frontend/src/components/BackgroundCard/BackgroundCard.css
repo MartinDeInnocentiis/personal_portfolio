@@ -2,6 +2,8 @@
     display: block;
     margin: 0rem 1.5rem;
     background-color: rgba(255, 255, 255, 0.555);
+    background: linear-gradient(165deg, #ffffffd2 0% 10%, rgba(255, 255, 255, 0.555) 90%);
+
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 27px 0 27px 0;
@@ -12,8 +14,13 @@
 }
 
 .background-card-title-container {
+    background: linear-gradient(165deg, #94eb31 0% 10%, #96FF1F 90%);
+    
+    /*
     background-color: #96FF1F;
-    /*#b6a599;*/
+    #b6a599;
+    */
+    
     height: 22%;
     display: flex;
     align-items: center;

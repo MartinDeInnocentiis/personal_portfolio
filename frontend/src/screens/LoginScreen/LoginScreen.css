@@ -38,7 +38,12 @@
 
 }
 
+.back-arrow-login:focus {
+    outline: none;
+}
+
 .login-form h1 {
+    width: 90%;
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
     text-align: center;
@@ -114,6 +119,10 @@
     box-shadow: none;
 }
 
+.login-form button:focus {
+    outline: none;
+}
+
 .login-buttons{
     display: flex;
     justify-content:space-between;
@@ -123,6 +132,27 @@
 
 .login-buttons button {
     width: 35%;
+    letter-spacing: 1px;
+    border:1px solid rgba(128, 0, 128, 0.185);
+    background: linear-gradient(315deg, #5357e6, #6268ff);
+    box-shadow: -3px -3px 6px #4e53d9b2,
+        3px 3px 6px #6a6fff9d;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-buttons button:hover {
+    border:1px solid rgba(128, 0, 128, 0.185);
+    background: linear-gradient(315deg, #383ef3, #5358fc);
+    box-shadow: -3px -3px 6px #4e53d977,
+        3px 3px 6px #6a6fff70;
+    color: #96FF1F;
+}
+
+.login-buttons button:active {
+    border:1px solid rgba(128, 0, 128, 0.185);
+    background: linear-gradient(315deg, #5c61ff, #484eee);
+    box-shadow: inset -7px -7px 14px #4347ba,
+                inset 7px 7px 14px #757bff;
 }
 
 .login-buttons p{
@@ -144,6 +174,10 @@
 
 .register-text a:hover{
     color:#221536;
+}
+
+.register-text a:focus {
+    outline: none;
 }
 
 .register-text-back a{

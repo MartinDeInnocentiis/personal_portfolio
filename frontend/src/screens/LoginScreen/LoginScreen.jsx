@@ -67,7 +67,7 @@ const LoginScreen = () => {
         <div className='login-screen'>
             <form className='login-form' onSubmit={handleSubmit}>
                 <div className='div-login-text-back'>
-                    <Link to='/'> <IoArrowBackCircleSharp className='back-arrow-login' /> </Link>
+                    <Link to='/'> <IoArrowBackCircleSharp className='back-arrow-login' title='Back'/> </Link>
                 </div>
                 <h1>Log in</h1>
                 {error && <p className='register-error-message'>ERROR: {error}</p>}
@@ -97,7 +97,7 @@ const LoginScreen = () => {
                         onClick={toggleShowPassword}
                         type="button"
                     >
-                        <img src={showPassword ? "/openeye.png" : "/closedeye.png"} alt="See Password" className="eye-password" />
+                        <img src={showPassword ? "/openeye.png" : "/closedeye.png"} title="See Password" className="eye-password" />
                     </button>
                 </div>
                 <div className='login-buttons'>

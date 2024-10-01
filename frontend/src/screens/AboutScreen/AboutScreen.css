@@ -1,21 +1,22 @@
-.about-general-container{
+.about-general-container {
     display: flex;
     margin-bottom: 5rem;
 }
 
-.about-container1{
+.about-container1 {
     margin: 1rem 3rem 0 6rem;
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
     width: 45vw;
 }
 
-.about-container2{
+.about-container2 {
     margin: 4rem 0 3rem 0;
     width: 25vw;
-    height: 73vh;
-    border-radius:  48px 0 48px 0;
-    padding-left: 3rem;
+    height: 75vh;
+    border-radius: 48px 0 48px 0;
+    border:1px solid rgba(221, 173, 173, 0.096);
+    padding: 1.5rem 0rem 1.5rem 3rem;
     /*background-color: rgba(255, 255, 255, 0.719);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
     background: linear-gradient(145deg, #ffffff, #e3e3e3);
@@ -24,19 +25,19 @@
 }
 
 
-.about-h1{
+.about-h1 {
     width: 68%;
-    padding:15px;
+    padding: 15px;
     font-size: 75px;
-    color:#96FF1F;
-    
+    color: #96FF1F;
+
     border-radius: 10px;
     background: linear-gradient(145deg, #6268ff, #5357e6);
-    box-shadow:  6px 6px 17px #363996,
-                 -6px -6px 17px #8288ff73;
+    box-shadow: 6px 6px 17px #363996,
+        -6px -6px 17px #8288ff73;
 }
 
-.about-h3{
+.about-h3 {
     font-family: "Rajdhani", sans-serif;
     font-weight: 500;
     font-size: 24px;
@@ -44,27 +45,42 @@
     color: #221536;
 }
 
-.about-container3{
+.about-container3 {
     display: flex;
     margin-bottom: 3rem;
 }
 
-.column1{
+.column1 {
     width: 35%;
 }
 
-.column2{
+.column2 {
     width: 65%;
 }
 
-.about-h2{
+/*
+.h2-container {
+    padding: .5em;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    width: 62%;
+    border-radius: 8px;
+    border:1px solid rgba(221, 173, 173, 0.096);
+    background: linear-gradient(315deg, #dfdfdf6e, #ffffff34);
+    box-shadow:  -9px -9px 17px #dfdfdf98,
+                 9px 9px 17px #ffffff;
+}
+*/
+
+.about-h2 {
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
     color: #5C61FF;
     font-size: 30px;
 }
 
-.about-p{
+.about-p {
     font-family: "Rajdhani", sans-serif;
     font-weight: 500;
     font-size: 20px;
