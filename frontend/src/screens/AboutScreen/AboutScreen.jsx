@@ -1,16 +1,52 @@
+import { useState } from 'react';
 import './AboutScreen.css'
 
 const AboutScreen = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const toggleReadMore = () => {
+        setIsExpanded(!isExpanded);
+    };
+
+
     return (
         <div className='about-general-container'>
 
             <div className='about-container1'>
                 <h1 className='about-h1'> About me... </h1>
-                <h3 className='about-h3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus vero deleniti aliquam nulla veritatis rem? Veritatis sapiente nisi consequuntur beatae. Excepturi eveniet eius incidunt omnis, deserunt fugiat quae minima.
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe vitae fuga minima repellendus, ducimus veritatis corporis officiis, quas iure soluta aperiam sit quo consequatur ullam dignissimos vel aspernatur animi inventore.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates totam aliquam, itaque libero ab nisi repellendus velit deserunt quibusdam pariatur sequi, nobis omnis dicta nihil ducimus aspernatur beatae rerum ut!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque neque dolores quisquam voluptatum voluptates maxime eaque, laboriosam delectus amet necessitatibus dolore dicta doloribus quo aut in natus magni quaerat sint.
-                </h3>
+                <div className={`about-h3 ${isExpanded ? 'expanded' : 'collapsed'}`}>
+                    <p>
+                        I’m Martin De Innocentiis, a versatile Full Stack Developer and Data Engineer with a passion for problem-solving and creating impactful digital solutions.
+                    </p>
+
+                    <p>
+                        My expertise spans both the Frontend—crafting seamless, responsive interfaces using ReactJS, HTML, and CSS—and the Backend, where I leverage Python, Django, DRF, PostgreSQL, and Docker to build robust, scalable web applications.
+                    </p>
+
+                    <p>
+                        With extensive freelance experience in Frontend development, I’ve built sleek, user-friendly SPAs primarily with ReactJS for businesses and startups. On the Backend, I’ve developed and maintained APIs with Django and DRF, managing everything from API Views to PostgreSQL integration, and successfully deployed full-stack projects to AWS using EC2 and RDS.
+                    </p>
+
+                    <p>
+                        As a Data Engineer, I specialize in orchestrating complex ETL processes with Python and GCP tools, ensuring data pipelines are efficient and reliable. My proficiency in Cloud Computing, particularly in Google Cloud Platform (GCP), includes creating and managing virtual machines, SQL databases, VPCs, IAM, BigQuery, Cloud Storage, and infrastructure automation with Terraform. I’ve implemented CI/CD pipelines utilizing GitHub Actions, Docker, and GCP Artifact Registry, and automated deployments with Cloud Functions, Cloud Run, and Cloud Scheduler.
+                    </p>
+
+
+                    <p>
+                        I take a detail-oriented approach to my work, always striving to view projects from the client or end-user's perspective. My programming logic and mastery of OOP principles allow me to write clean, modular, and efficient code. I’m constantly seeking to refine my skill set, stay ahead of the latest tech trends, and take on new challenges.
+                    </p>
+
+                    <p>
+                        Beyond my professional life, I’ve been practicing martial arts for many years. This journey has instilled in me a strong sense of discipline, focus, and mental resilience—qualities I bring into every challenge I take on.
+                    </p>
+
+                    <p>
+                        Above all, I’m a team player, adaptable to changing environments, and passionate about delivering high-quality results.
+                    </p>
+                </div>
+                <button className='read-more-button' onClick={toggleReadMore}>
+                    {isExpanded ? 'See less' : 'See more'}
+                </button>
             </div>
 
             <div className='about-container2'>

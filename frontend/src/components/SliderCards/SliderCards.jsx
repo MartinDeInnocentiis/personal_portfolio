@@ -5,16 +5,14 @@ import BackgroundCard from '../BackgroundCard/BackgroundCard';
 
 const SliderCards = () => {
     const slidesData = [
-        { title: 'Card 1', description: 'Description of Card 1' },
-        { title: 'Frontend Developer', description: 'Description of Card 2' },
-        { title: 'Backend Developer', description: 'Description of Card 3' },
-        { title: 'Full Stack Developer', description: 'Description of Card 4' },
-        { title: 'Data Engineer', description: 'Description of Card 5' },
-        { title: 'Cloud Engineer', description: 'Description of Card 6' },
-        { title: 'Card 7', description: 'Description of Card 7' }
+        { title: 'Frontend Developer', description: 'Creating responsive and interactive user interfaces with ReactJS, or NextJS is my forte. I bring concepts to life with HTML, CSS, and JavaScript, using Zustand - Redux for effective state management and streamlined user experiences, while maintaining a clean, well-structured designs.' },
+        { title: 'Backend Developer', description: 'Specialized in Python, Django, and Flask, I develop robust APIs with DRF and ensure smooth backend operations. I’m experienced in Docker, PostgreSQL, and integrating Swagger for API documentation, ensuring secure and scalable systems.' },
+        { title: 'Full Stack Developer', description: 'I build end-to-end web applications, seamlessly integrating the frontend and backend. Using Django, DRF, ReactJS, NextJS, and Redux, I deliver scalable and dynamic solutions. Skilled in Python, Docker, and managing databases, I ensure smooth deployments and performance.' },
+        { title: 'Data Engineer', description: 'With a focus on Python, GCP, and big data tools like Spark and Dask, I orchestrate complex ETL processes. Proficient in Numpy, Pandas, and workflow automation, I deliver efficient and optimized data pipelines for large-scale operations.' },
+        { title: 'Cloud Engineer', description: 'Leveraging the power of GCP and AWS, I deploy and manage scalable cloud infrastructures. From setting up VMs, VPCs, and databases to automating tasks with Terraform, Cloud Functions, and CI/CD pipelines, I ensure secure and efficient cloud solutions.' }
     ];
 
-    const [active, setActive] = useState(3);
+    const [active, setActive] = useState(2); 
 
     useEffect(() => {
         const target = document.querySelector(".background-text");
