@@ -1,11 +1,18 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AboutScreen.css'
 
 const AboutScreen = () => {
     const [isExpanded, setIsExpanded] = useState(false);
+    const history = useNavigate()
 
     const toggleReadMore = () => {
         setIsExpanded(!isExpanded);
+    };
+
+    const handleScroll = () => {
+        history('/contact/');
+        window.scrollTo(0, 0);
     };
 
 
@@ -16,7 +23,7 @@ const AboutScreen = () => {
                 <h1 className='about-h1'> About me... </h1>
                 <div className={`about-h3 ${isExpanded ? 'expanded' : 'collapsed'}`}>
                     <p>
-                        I’m Martin De Innocentiis, a versatile Full Stack Developer and Data Engineer with a passion for problem-solving and creating impactful digital solutions.
+                        I’m Martin De Innocentiis, a versatile Full Stack Developer and Data Engineer from Argentina, with a passion for problem-solving and creating impactful digital solutions.
                     </p>
 
                     <p>
@@ -24,7 +31,7 @@ const AboutScreen = () => {
                     </p>
 
                     <p>
-                        With extensive freelance experience in Frontend development, I’ve built sleek, user-friendly SPAs primarily with ReactJS for businesses and startups. On the Backend, I’ve developed and maintained APIs with Django and DRF, managing everything from API Views to PostgreSQL integration, and successfully deployed full-stack projects to AWS using EC2 and RDS.
+                        With extensive freelance experience in Frontend development, I’ve built sleek, user-friendly SPAs primarily with ReactJS for businesses and startups. On the Backend, I’ve developed and maintained APIs with Django and DRF, managing everything from API Views to PostgreSQL integration, and successfully deployed full-stack projects to AWS using EC2 and RDS, or to GCP using Cloud Engine and Cloud SQL.
                     </p>
 
                     <p>
@@ -33,7 +40,7 @@ const AboutScreen = () => {
 
 
                     <p>
-                        I take a detail-oriented approach to my work, always striving to view projects from the client or end-user's perspective. My programming logic and mastery of OOP principles allow me to write clean, modular, and efficient code. I’m constantly seeking to refine my skill set, stay ahead of the latest tech trends, and take on new challenges.
+                        I take a detail-oriented approach to my work, always striving to view projects from the client or end-user's perspective. My programming logic and expertise in OOP principles allow me to write clean, modular, and efficient code. I’m constantly seeking to refine my skill set, stay ahead of the latest tech trends, and take on new challenges.
                     </p>
 
                     <p>
@@ -42,6 +49,10 @@ const AboutScreen = () => {
 
                     <p>
                         Above all, I’m a team player, adaptable to changing environments, and passionate about delivering high-quality results.
+                    </p>
+
+                    <p className='final-p'>
+                        If you’d like to learn more about my skills, discuss a project, or simply have a chat about how we can bring your ideas to life, feel free to <span className='reachout' onClick={handleScroll}> reach out</span>. I’m always open to new opportunities and collaborations, and I’d love to help turn your vision into reality.
                     </p>
                 </div>
                 <button className='read-more-button' onClick={toggleReadMore}>
@@ -56,7 +67,8 @@ const AboutScreen = () => {
                     <h2 className='about-h2'>Educational profile</h2></div>
                 <div className='about-container3'>
                     <div className='column1'>
-                        <p className='about-p'>mundosE </p>
+                        <p className='about-p'>Google </p>
+                        <p className='about-p'>mundosE</p>
                         <p className='about-p'>Inove </p>
                         <p className='about-p'>Coderhouse </p>
                         <p className='about-p'>ITMasters </p>
@@ -70,6 +82,7 @@ const AboutScreen = () => {
                         <p className='about-p'>|  asdasd</p>
                         <p className='about-p'>|  asdasd</p>
                         <p className='about-p'>|  asdads</p>
+                        <p className='about-p'>|  asdasd</p>
                     </div>
                 </div>
 

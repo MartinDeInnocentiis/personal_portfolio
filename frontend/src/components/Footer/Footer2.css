@@ -1,0 +1,114 @@
+footer {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 18px;
+    background: linear-gradient(135deg, #5C61FF 0% 20%, #C6B5A9);
+    color: #F0F9FA;
+    border-radius: 72% 27% 10% 10% / 17% 2% 0% 0%;
+    /*box-shadow: 20px 20px 60px #000000,
+    -20px -20px 60px #5c61ff67;*/
+}
+
+.footerContainer {
+    padding: 1rem;
+    padding-bottom: 3rem;
+    height: 42vh;
+    display: flex;
+    justify-content: space-around;
+    transition: all .5s ease;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #221536;
+    color: #F0F9FA;
+    font-size: large;
+    padding-bottom: .7rem;
+    padding-top: .7rem;
+    letter-spacing: 4px;
+    font-weight: 400;
+
+}
+
+
+.copyright-span {
+    color: #f0f9fad5;
+    font-weight: 100;
+    font-size: 3rem;
+    margin: -.5rem 1rem;
+}
+
+.footer-row {
+    display: flex;
+    align-items: center;
+}
+
+.footer-col {
+    padding-right: 12rem;
+    height: 60%;
+}
+
+.footer-item-title{
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    transition: all .5s ease;
+}
+
+.footerList {
+    margin-bottom: .5em;
+}
+
+.footerList:hover {
+    transform: scale(1.1);
+    color: rgb(255, 255, 255);
+    transition: all .5s ease;
+}
+
+.footlink{
+    color: #F0F9FA;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-bottom: 22.5em;
+}
+
+.footlink:hover{
+    cursor: pointer;
+}
+
+.footlink:focus {
+    outline: none;
+}
+
+.logofoot {
+    width: 250px;
+    height: auto;
+    margin-left: 70%;
+    margin-right: 3rem;
+    transition: transform 0.5s ease;
+
+    /*
+    border-radius: 38px 0 38px 0;
+    background: linear-gradient(145deg, #a69ed3, #8c85b1);
+    box-shadow:  15px 15px 38px #827ca5,
+                 -15px -15px 38px #b4ace5;
+    */
+}
+
+.logofoot:hover {
+    transform: scale(1.015);
+    transition: all 0.5s ease;
+}
+
+.logofoot:focus {
+    outline: none;
+}

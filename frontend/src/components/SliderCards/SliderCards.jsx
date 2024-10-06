@@ -5,28 +5,28 @@ import BackgroundCard from '../BackgroundCard/BackgroundCard';
 
 const SliderCards = () => {
     const slidesData = [
-        { title: 'Frontend Developer', description: 'Creating responsive and interactive user interfaces with ReactJS, or NextJS is my forte. I bring concepts to life with HTML, CSS, and JavaScript, using Zustand - Redux for effective state management and streamlined user experiences, while maintaining a clean, well-structured designs.' },
-        { title: 'Backend Developer', description: 'Specialized in Python, Django, and Flask, I develop robust APIs with DRF and ensure smooth backend operations. I’m experienced in Docker, PostgreSQL, and integrating Swagger for API documentation, ensuring secure and scalable systems.' },
-        { title: 'Full Stack Developer', description: 'I build end-to-end web applications, seamlessly integrating the frontend and backend. Using Django, DRF, ReactJS, NextJS, and Redux, I deliver scalable and dynamic solutions. Skilled in Python, Docker, and managing databases, I ensure smooth deployments and performance.' },
         { title: 'Data Engineer', description: 'With a focus on Python, GCP, and big data tools like Spark and Dask, I orchestrate complex ETL processes. Proficient in Numpy, Pandas, and workflow automation, I deliver efficient and optimized data pipelines for large-scale operations.' },
+        { title: 'Frontend Developer', description: 'Creating responsive and interactive user interfaces with ReactJS, or NextJS is my forte. I bring concepts to life with HTML, CSS, and JavaScript, using Zustand - Redux for effective state management and streamlined user experiences, while maintaining a clean, well-structured designs.' },
+        { title: 'Full Stack Developer', description: 'I build end-to-end web applications, seamlessly integrating the frontend and backend. Using Django, DRF, ReactJS, and Redux -  Zustand, I deliver scalable and dynamic solutions. Skilled in Python, Docker, and managing databases, I ensure smooth deployments and performance.' },
+        { title: 'Backend Developer', description: 'Specialized in Python, Django, and Flask, I develop robust APIs with DRF and ensure smooth backend operations. I’m experienced in Docker, PostgreSQL, and integrating Swagger for API documentation, ensuring secure and scalable systems.' },
         { title: 'Cloud Engineer', description: 'Leveraging the power of GCP and AWS, I deploy and manage scalable cloud infrastructures. From setting up VMs, VPCs, and databases to automating tasks with Terraform, Cloud Functions, and CI/CD pipelines, I ensure secure and efficient cloud solutions.' }
     ];
 
-    const [active, setActive] = useState(2); 
+    const [active, setActive] = useState(2);
 
     useEffect(() => {
         const target = document.querySelector(".background-text");
-        
-        const observer = new IntersectionObserver(function(entries) {
+
+        const observer = new IntersectionObserver(function (entries) {
             if (entries[0].isIntersecting) {
                 target.classList.add("animate");
-                observer.unobserve(target); // Dejar de observar una vez que la animación comienza
+                observer.unobserve(target);
             }
-        }, { threshold: 0.1 }); // El umbral define el porcentaje de visibilidad requerido para activar la animación
-    
+        }, { threshold: 0.1 });
+
         observer.observe(target);
 
-        // Limpieza para cuando el componente se desmonta
+
         return () => {
             if (target) {
                 observer.unobserve(target);
@@ -72,28 +72,30 @@ const SliderCards = () => {
 
     return (
         <>
-        <p className='background-text'>
-          <span>M</span><span>y</span> <span class="space"> </span> <span>B</span><span>a</span><span>c</span><span>k</span><span>g</span><span>r</span><span>o</span><span>u</span><span>n</span><span>d</span>
+            <p className='background-text'>
+                <span>M</span><span>y</span> <span class="space"> </span> <span>B</span><span>a</span><span>c</span><span>k</span><span>g</span><span>r</span><span>o</span><span>u</span><span>n</span><span>d</span>
 
-          </p>
-        <section className="slider">
-            <div className="slides-container">
-                {renderedSlides.map((slide, index) => (
-                    <div
-                        className={index === active ? 'slide active' : 'slide'}
-                        key={index}
-                        style={slide.style}
-                    >
-                        <BackgroundCard title={slide.title} description={slide.description} />
+            </p>
+            <section className="slider">
+                <div className='container-slider'>
+                    <div className="slides-container">
+                        {renderedSlides.map((slide, index) => (
+                            <div
+                                className={index === active ? 'slide active' : 'slide'}
+                                key={index}
+                                style={slide.style}
+                            >
+                                <BackgroundCard title={slide.title} description={slide.description} />
+                            </div>
+                        ))}
+
                     </div>
-                ))}
-
-            </div>
-            <div className='arrows-container'>
-                <button className="left-arrow" onClick={prevSlide}>&#10094;</button>
-                <button className="right-arrow" onClick={nextSlide}>&#10095;</button>
-            </div>
-        </section>
+                    <div className='arrows-container'>
+                        <button className="left-arrow" onClick={prevSlide}>&#10094;</button>
+                        <button className="right-arrow" onClick={nextSlide}>&#10095;</button>
+                    </div>
+                </div>
+            </section>
         </>
     );
 };

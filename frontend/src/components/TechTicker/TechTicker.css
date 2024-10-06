@@ -64,58 +64,34 @@
   }
 
 
-/*@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
+/* Estilos para smartphones pequeños en adelante */
+@media (max-width: 320px) {
+  .ticker-content {
+    width: 800%;  
+  }
 
-    100% {
-        transform: translateX(-50%);
-    }
+  .ticker-item {
+    padding: 1rem;
+    width: 5rem;
+    margin:1.2rem;
+  }
+  
+  .ticker-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .ticker-item:hover .icon, .ticker-item:hover .item-name-div {
+    color: #96FF1F;
+    font-weight: 500;
+  }
+  
+  .icon {
+    font-size: 10rem; 
+    margin-bottom: 0.5rem;
+  }
+  
+  .item-name-div {
+    font-size: 1.1rem;
+  }
+
 }
-
-.ticker-container {
-    overflow: hidden;
-    white-space: nowrap;
-    background: radial-gradient(#f8f9fa56 0% 7%, #f8f9fa00 75%);
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.ticker-content {
-    display: inline-block;
-    animation: marquee 20s linear infinite;
-    width: 20%;
-}
-
-.ticker-content.paused {
-    animation-play-state: paused;
-}
-
-.ticker-item {
-    display: inline-block;
-    margin: 0% 12%;
-    padding: 2rem 2rem;
-    width: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.ticker-item:hover {
-    background-color: #0000001c;
-    color: white;
-    transform: scale(1.1);
-}
-
-.icon {
-    font-size: 12rem;
-    margin-bottom: -3rem;
-}
-
-.item-name-div {
-    font-family: "Rajdhani", sans-serif;
-    display: flex;
-    justify-content: center;
-    font-size: 1.8rem;
-}*/

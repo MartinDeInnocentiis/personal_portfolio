@@ -38,19 +38,9 @@
 }
 
 
-/*
 .about-h3 {
     font-family: "Rajdhani", sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    width: 70%;
-    color: #221536;
-}
-*/
-
-.about-h3 {
-    font-family: "Rajdhani", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 24px;
     width: 80%;
     color: #221536;
@@ -110,6 +100,22 @@
   
   .read-more-button:focus {
     outline: none;
+  }
+
+
+  .final-p{
+    font-weight: 500;
+  }
+
+
+  .reachout{
+    font-weight: 650;
+    color:#5C61FF;
+    margin: 0px 3px 0px 0px;
+  }
+
+  .reachout:hover{
+    cursor: pointer;
   }
   
 

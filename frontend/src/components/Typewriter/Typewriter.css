@@ -32,3 +32,14 @@
     animation: blink .7s steps(99999) infinite;
     padding-right: 1.2rem;
   }
+
+
+
+  /* Estilos para smartphones pequeños en adelante */
+@media (max-width: 320px) {
+  .typewriter{
+    font-size: 1.4rem;
+    margin: .4rem 0 0 0;
+    font-weight: 700;
+  }
+}

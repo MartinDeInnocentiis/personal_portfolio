@@ -70,6 +70,7 @@ const ContactScreen = () => {
     };
 
     return (
+        <div className='contactscreen-general-container'>
         <div className='contactscreen-container'>
             <h1 className='contact-h1'>Contact me</h1>
             <div className='contact-container'>
@@ -133,7 +134,7 @@ const ContactScreen = () => {
 
                 </form>
             </div>
-        </div>
+        </div></div>
     )
 }
 

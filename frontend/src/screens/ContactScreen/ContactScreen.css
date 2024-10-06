@@ -1,3 +1,7 @@
+.contactscreen-general-container{
+    height: 120vh;
+}
+
 .contactscreen-container {
     position: relative;
     margin: 4rem 0 7rem 6rem;
