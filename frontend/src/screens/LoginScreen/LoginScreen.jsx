@@ -71,7 +71,7 @@ const LoginScreen = () => {
                 </div>
                 <h1>Log in</h1>
                 {error && <p className='register-error-message'>ERROR: {error}</p>}
-                <label htmlFor='username'>Username</label>
+                <label htmlFor='username'>Username:</label>
                 <input
                     type='text'
                     id='username'

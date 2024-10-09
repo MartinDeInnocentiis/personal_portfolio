@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   margin: 5rem 0 0 10rem;
-  height: 76vh;
+  height: 82vh;
   font-size: 30px;
 }
 
@@ -171,8 +171,8 @@
 @media (max-width: 320px) {
   .home-container1 {
     width: 100vw;
-    margin: 1rem 0 0 1.5rem;
-    height: 56vh;
+    margin: 3rem 0 0 1.5rem;
+    height: 74vh;
     font-size: 13px;
   }
 
@@ -180,29 +180,33 @@
     font-weight: 400;
     font-style: normal;
     padding-right: 2rem;
+    font-size: 33px;
   }
 
   .my-name {
     display: flex;
     margin: 11px 0px;
     font-weight: 600;
-    font-size: 26px;
+    font-size: 40px;
   }
 
   .home-h3 {
     width: 88%;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .home-h3, p{
-    margin:.7rem 0rem;
+    margin:1.2rem 0rem;
   }
 
   .see-more {
-    font-size: 15px;
-    margin-top: 1.5rem;
-    box-shadow: 3px 3px 8px #c5c5c5a9, -3px -3px 8px #ffffff98;
+    font-size: 16px;
+    margin-top: 2.5rem;
+    border: 1px solid rgb(214, 215, 241);
+    background: #d9d7eb;
+    box-shadow:  20px 20px 58px #9a96bb,
+                 -20px -20px 58px #faf6ff;
   }
 
   .home-container2 {
