@@ -177,7 +177,7 @@ header {
         height: 100vh;
         color:#221536;
         flex-direction: column;
-        background: linear-gradient(165deg, #97ff1f -8% -1%, #dafdb2 8% 13%, #F0F9FA 22%, #f7f0ec 31%, #F0F9FA 54%, rgb(189, 179, 235) 75%, rgb(162, 144, 245) 90%, rgb(47, 0, 255) 115%);
+        background: linear-gradient(165deg, #97ff1f -8% -1%, #dafdb2 8% 13%, #e9f8e0 22%, #eff7eb 31%, #e0e1ee 54%, rgb(189, 179, 235) 75%, rgb(162, 144, 245) 90%, rgb(47, 0, 255) 115%);
 
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         z-index: 9;

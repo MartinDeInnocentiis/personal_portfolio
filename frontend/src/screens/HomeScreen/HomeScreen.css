@@ -213,6 +213,10 @@
     display: none;
   }
 
+  .subcontainer-2{
+    padding-top: 3.5rem;
+  }
+
   .home-section2 {
     height: 56vh;
   }
@@ -224,7 +228,7 @@
   }
   
   .home-section3 {
-    height: 75vh;
+    height: 86vh;
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
   }

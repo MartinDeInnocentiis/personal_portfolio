@@ -79,3 +79,26 @@
 .logout-button:active {
     background-color: #353bdd5b;
 }
+
+
+
+/* Estilos para smartphones pequeños en adelante */
+@media (max-width: 320px) {
+    
+.logout-container {
+    background-color: #ffffff77;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    padding: 10px 0px 18px 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.212);
+}
+
+.logout-button {
+    background-color: #1900ff1f;
+    width: 100%;
+    color:rgb(12, 3, 46);
+    border-radius: 3px;
+}
+
+}

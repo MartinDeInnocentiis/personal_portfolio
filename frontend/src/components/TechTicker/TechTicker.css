@@ -66,6 +66,7 @@
 
 /* Estilos para smartphones pequeños en adelante */
 @media (max-width: 320px) {
+
   .ticker-content {
     width: 800%;  
   }

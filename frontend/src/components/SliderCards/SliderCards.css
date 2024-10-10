@@ -201,6 +201,7 @@
     .background-text {
         height: 20%;
         margin-top: 8rem;
+        padding-top: 8rem;
         font-size: 1.4rem;
         letter-spacing: 3px;
     }
