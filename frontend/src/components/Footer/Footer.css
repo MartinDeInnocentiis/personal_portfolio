@@ -151,7 +151,7 @@ ul {
     
     .footerContainer {
         height: 33vh;
-        padding: 2.2rem 1rem 0rem 1rem;
+        padding: .5rem 1rem 0.5rem 1rem;
         margin-bottom: -1rem;
         justify-content: space-around;
         transition: all .5s ease;
@@ -159,7 +159,8 @@ ul {
     
     .footer-cols-container{
         width: 60vw;
-        margin-top: 5%;
+        height: 70%;
+        margin-top: 0%;
         margin-left: 0%;
         padding: 0 0%;
     }
@@ -171,6 +172,7 @@ ul {
     .footer-col3{
         width: 40vw;
         margin-left: -3%;
+        padding-top: 5rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -188,6 +190,9 @@ ul {
         padding: 0;
         transition: all .5s ease;
     }
+    .explore-list{
+        height: 70%;
+    }
 
     .footer-li{
         font-size: .9em;
@@ -196,7 +201,7 @@ ul {
     
 
     .footerhr{
-        margin-right: 4rem;
+        margin: -.2rem 4rem -.2rem 0rem;
         width: 70%;
     }
 
@@ -211,7 +216,7 @@ ul {
     }
     
     .footerList {
-        margin-bottom: .3em;
+        margin-bottom: .9em;
         letter-spacing: 2px;
         font-weight: 400;
         transition: all .5s ease;

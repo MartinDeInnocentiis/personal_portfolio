@@ -47,11 +47,12 @@ svg.blocks-wrapper {
 @media (max-width: 320px) {
     .projectsscreen-container {
         margin: 3rem 0rem 5.5rem 1.3rem;
+        width: 100vw;
         height: 100%;
     }
 
     .projects-h1 {
-        width: 85%;
+        width: 79%;
         padding: 12px;
         font-size: 32px;
         border-radius: 10px;

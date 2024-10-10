@@ -66,6 +66,25 @@
 @media (max-width: 320px) {
 
     .swal2-popup {
-        width: 64%;
+        width: 85vw;
+        margin-left: -3.2rem;
+        font-size: 12px;
+        padding: 0 0 10px 0;
     }
+
+    .swal2-title {
+        font-size: 20px;
+    }
+
+    .swal2-confirm {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
+
+
+    .swal2-cancel {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
+
 }

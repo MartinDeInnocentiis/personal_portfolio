@@ -29,6 +29,7 @@
   }
   
   .ticker-item {
+    margin-top: 3rem;
     display: inline-block;
     padding: 2rem;
     width: 15rem;
@@ -73,8 +74,9 @@
 
   .ticker-item {
     padding: 1rem;
-    width: 5rem;
     margin:1.2rem;
+    width: 5rem;
+    margin-top: 0rem;
   }
   
   .ticker-item:hover {

@@ -142,6 +142,7 @@
 /* Estilos para smartphones pequeños en adelante */
 @media (max-width: 320px) {
     .contactscreen-general-container {
+        width: 100vw;
         height: 105vh;
     }
 
@@ -208,7 +209,7 @@
         margin-bottom: 2rem;
         padding: 7px;
         width: 36%;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .contact-form button:hover {

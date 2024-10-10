@@ -42,11 +42,17 @@
 }
 
 .home-h3 {
-  width: 65%;
+  width: 72%;
   font-weight: 100;
   font-size: 29.5px;
   letter-spacing: 1px;
 }
+
+.home-h3,
+p {
+  margin: .55rem 0rem;
+}
+
 
 
 .see-more {
@@ -59,7 +65,7 @@
   background: linear-gradient(165deg, #e8e8e8bb 0% 20%, #fffefebb 90%);
   cursor: pointer;
   border: 1px solid #e8e8e8;
-  margin-top: 1.5rem;
+  margin-top: 1.8rem;
   transition: all 0.3s ease;
   box-shadow: 6px 6px 12px #c5c5c5a9, -6px -6px 12px #ffffff;
 }
@@ -87,7 +93,7 @@
 .home-section2 {
   background: linear-gradient(165deg, #b6a599 0% 20%, #8f7e72 90%);
   background-color: #b6a599;
-  height: 82vh;
+  height: 72vh;
   margin-bottom: -5rem;
 }
 
@@ -169,8 +175,13 @@
 
 /* Estilos para smartphones pequeños en adelante */
 @media (max-width: 320px) {
-  .home-container1 {
+  .home-general-container{
     width: 100vw;
+    
+  }
+
+  .home-container1 {
+    width: 100%;
     margin: 3rem 0 0 1.5rem;
     height: 74vh;
     font-size: 13px;
@@ -219,6 +230,7 @@
   }
 
   .home-section2 {
+    width: 100vw;
     height: 56vh;
   }
 
@@ -229,6 +241,7 @@
   }
 
   .home-section3 {
+    width: 100vw;
     height: 86vh;
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);

@@ -7,3 +7,27 @@
 .swal2-content {
     font-family: 'Rajdhani', sans-serif;
 }
+
+
+
+/* Estilos para smartphones pequeños en adelante */
+@media (max-width: 320px) {
+    .swal2-popup {
+        width: 80vw;
+        margin: -.3rem 2.8rem 0 0;
+        padding: 0 0 10px 0;
+        display: flex;
+        justify-content: space-evenly !important;
+        border-radius: 7px;
+        border-bottom: 5px solid rgb(16, 216, 16);
+    }
+    .swal2-success{
+        display: none !important;
+    }
+
+    .swal2-title{
+        height: 3.8vh;
+        margin-top: 7px;
+        font-size: 16px;
+    }
+}
