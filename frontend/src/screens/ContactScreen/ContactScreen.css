@@ -1,4 +1,4 @@
-.contactscreen-general-container{
+.contactscreen-general-container {
     height: 120vh;
 }
 
@@ -109,7 +109,7 @@
 
 
     box-shadow: -11px -11px 23px #ced0cf,
-    5px 5px 8px #97ff1f83;
+        5px 5px 8px #97ff1f83;
 
 }
 
@@ -136,4 +136,99 @@
     padding: 10px;
     height: 6vh;
     width: 6vw;
+}
+
+
+/* Estilos para smartphones pequeños en adelante */
+@media (max-width: 320px) {
+    .contactscreen-general-container {
+        height: 105vh;
+    }
+
+    .contactscreen-container {
+        margin: 3rem 0 7rem 1.5rem;
+        padding: .5rem 1rem 0 1.2rem;
+        border-radius: 5px;
+        width: 75vw;
+        background: linear-gradient(315deg, #ffffff, #e3e7e6);
+        box-shadow: -6.5px -6.5px 13px #ced0cfab,
+            6.5px 6.5px 8px #dadfdd96;
+    }
+
+
+    .contact-h1 {
+        width: 85%;
+        padding: 12px;
+        font-size: 32px;
+
+        border-radius: 10px;
+        background: linear-gradient(145deg, #6268ff, #5357e6);
+        box-shadow: 3px 3px 11px #363996,
+            -3px -3px 11px #8288ff73;
+    }
+
+    .contact-container {
+        width: 100%;
+    }
+
+    .contact-form {
+        margin-right: 5px;
+    }
+
+    .contact-form label {
+        margin-top: 7px;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    .contact-form input {
+        height: 12px;
+        padding: 9px !important;
+        font-size: 16px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        /*
+        box-shadow: 0 0 5px rgba(92, 97, 255, 0.5);
+        */
+        border: 1px solid #5c61ff25;
+        outline: none;
+        box-shadow: rgba(92, 97, 255, 0.342) 0px 2px 18px inset, rgba(0, 0, 0, 0.116) 0px 18px 26px -18px inset;
+    }
+
+    .form-message {
+        height: 220px;
+        font-size: 16px !important;
+    }
+
+    .contact-form button {
+        margin-top: 20px;
+        margin-bottom: 2rem;
+        padding: 7px;
+        width: 36%;
+        font-size: 18px;
+    }
+
+    .contact-form button:hover {
+        background: linear-gradient(135deg, #5C61FF 0% 5%, #221536 100%);
+        box-shadow: -5px -5px 9px #ced0cf,
+            2px 2px 5px #97ff1f83;
+
+    }
+
+    .swal2-error {
+        color: rgba(201, 42, 42, 0.884);
+
+    }
+
+
+    .loader-contactform svg.blocks-wrapper {
+        margin-bottom: 0rem;
+        margin-left: 34%;
+        padding: 10px;
+        width: 18vw;
+    }
+
 }

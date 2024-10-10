@@ -1,27 +1,26 @@
-
-.projectsscreen-container{
+.projectsscreen-container {
     margin: 6rem 0rem 5.5rem 6rem;
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
     height: 100vh;
 }
 
-.projects-h1{
+.projects-h1 {
     width: 35%;
-    padding:15px;
+    padding: 15px;
     font-size: 75px;
-    color:#96FF1F;
+    color: #96FF1F;
 
 
     /*background: #5C61FF;*/
 
     border-radius: 10px;
     background: linear-gradient(145deg, #6268ff, #5357e6);
-    box-shadow:  6px 6px 17px #363996,
-                 -6px -6px 17px #8288ff73;
+    box-shadow: 6px 6px 17px #363996,
+        -6px -6px 17px #8288ff73;
 }
 
-.projects-container{
+.projects-container {
     margin: 1rem 1rem 0rem 0rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -29,16 +28,54 @@
     justify-content: center;
 }
 
-.loader-container{
+.loader-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin:1rem;
+    margin: 1rem;
     width: 95vw !important;
     height: 60vh !important;
 }
 
-svg.blocks-wrapper{
+svg.blocks-wrapper {
     height: 25vh;
     width: 25vw;
+}
+
+
+/* Estilos para smartphones pequeños en adelante */
+@media (max-width: 320px) {
+    .projectsscreen-container {
+        margin: 3rem 0rem 5.5rem 1.3rem;
+        height: 100%;
+    }
+
+    .projects-h1 {
+        width: 85%;
+        padding: 12px;
+        font-size: 32px;
+        border-radius: 10px;
+        background: linear-gradient(145deg, #6268ff, #5357e6);
+        box-shadow: 3px 3px 11px #363996,
+            -3px -3px 11px #8288ff73;
+    }
+
+    .projects-container {
+        margin: 1rem 1rem 0rem 0rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .loader-container {
+        margin: 1rem;
+        width: 95vw !important;
+        height: 45vh !important;
+    }
+
+    svg.blocks-wrapper {
+        height: 28vh;
+        width: 28vw;
+    }
 }

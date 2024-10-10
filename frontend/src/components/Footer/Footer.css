@@ -180,6 +180,7 @@ ul {
         font-size: .9rem;
         letter-spacing: 1px;
         font-weight: 600;
+        margin-bottom: 8px;
     }
     
     ul {
@@ -204,10 +205,14 @@ ul {
         font-weight: 400;
         letter-spacing: 1px;
     }
+
+    .explore-list{
+        font-size: 12px;
+    }
     
     .footerList {
-        margin-bottom: .5em;
-        letter-spacing: 1px;
+        margin-bottom: .3em;
+        letter-spacing: 2px;
         font-weight: 400;
         transition: all .5s ease;
     }
@@ -222,7 +227,7 @@ ul {
     }
     
     .logofoot {
-        width: 45vw;
+        width: 40vw;
         height: auto;
         margin-left: 0%;
         margin-right: 0%;

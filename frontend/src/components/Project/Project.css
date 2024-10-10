@@ -75,3 +75,65 @@
     vertical-align: middle;
     margin-right: 0.5rem;
 }
+
+
+
+
+/* Estilos para smartphones pequeños en adelante */
+@media (max-width: 320px) {
+    .project-card-container {
+        border-radius: 38px 0 38px 0;
+        overflow: hidden;
+        width: 280px;
+        height: 400px;
+        margin: 40px 10px 55px 0px;
+        box-sizing: border-box;
+        /*
+        box-shadow: 0 3px 16px rgba(44, 43, 40, 0.233);
+        background: linear-gradient(#ffffff 0% 10%, #F0F9FA 15% 55%, rgba(228, 236, 230, 0.103) 110%);
+        */
+        background: linear-gradient(145deg, #ffffff, #dcd8d8);
+        box-shadow: 10px 10px 20px #b5b2b2f1,
+            -10px -10px 20px #ffffff;
+        transition: box-shadow 0.3s, transform 0.7s;
+    }
+
+    .project-card-container:hover {
+        /*box-shadow: 3px 6px 26px rgba(44, 43, 40, 0.288);*/
+        background: linear-gradient(145deg, #ffffff, #dcd8d8);
+        box-shadow: 32px 32px 75px #aba8a8,
+            -32px -32px 45px #ffffff;
+    }
+
+    .project-image {
+        height: 245px;
+    }
+
+    .project-content {
+        padding: 14px;
+    }
+
+    .project-info {
+        height: 98px;
+    }
+
+    .project-title {
+        font-size: 1.25em;
+        margin: 0 0 14px 0;
+    }
+
+    .project-description {
+        width: 95%;
+        font-size: .95em;
+        margin: 0 0 4px 0;
+    }
+
+    .project-reactions {
+        font-size: .9em;
+    }
+
+    .reaction-icon {
+        font-size: 1.4rem;
+        margin-right: 0.5rem;
+    }
+}

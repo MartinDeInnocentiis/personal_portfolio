@@ -16,7 +16,7 @@ const ProjectsScreen = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const minimumLoadTime = new Promise(resolve => setTimeout(resolve, 300));
+            const minimumLoadTime = new Promise(resolve => setTimeout(resolve, 400));
 
             try {
                 const { data } = await api.get('/posts/');
