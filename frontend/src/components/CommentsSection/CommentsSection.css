@@ -342,17 +342,19 @@
         min-height: 120vh;
         padding: 1rem 0 9.5rem 0;
         margin: 0 0rem -9rem -7rem;
+        width: 150%;
     }
 
     .comments-subcontainer {
         padding-top: .5rem;
-        margin-left: 30%;
+        margin-left: 27%;
         margin-right: 5%;
     }
 
     .title-divider {
         margin-bottom: 1rem;
         margin-top: -1rem;
+        margin-right: 14%;
     }
 
     .comments-title {
@@ -362,11 +364,12 @@
     .message-item {
         padding: 2.5%;
         margin-bottom: 5%;
+        margin-right: 11.5%;
     }
 
     .new-message-form {
         gap: 10px;
-        margin: 3% 0 7% 0;
+        margin: 3% 11.5% 7% 0;
     }
 
     .new-message-input {
@@ -436,7 +439,7 @@
 
     .see-more-button {
         font-size: 1rem;
-        width: 100%;
+        width: 87%;
     }
 
 }

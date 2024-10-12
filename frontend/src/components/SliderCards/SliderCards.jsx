@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './SliderCards.css';
 import BackgroundCard from '../BackgroundCard/BackgroundCard';
 
@@ -13,6 +13,11 @@ const SliderCards = () => {
     ];
 
     const [active, setActive] = useState(2);
+    const [touchStartX, setTouchStartX] = useState(0);
+    const [touchEndX, setTouchEndX] = useState(0);
+    const sliderRef = useRef(null);
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
     useEffect(() => {
         const target = document.querySelector(".background-text");
@@ -68,6 +73,31 @@ const SliderCards = () => {
         setActive(prevActive => (prevActive - 1 >= 0 ? prevActive - 1 : prevActive));
     };
 
+    const handleTouchStart = (e) => {
+        if (isMobile) {
+            setTouchStartX(e.touches[0].clientX);
+        }
+    };
+
+    const handleTouchMove = (e) => {
+        if (isMobile) {
+            setTouchEndX(e.touches[0].clientX);
+        }
+    };
+
+    const handleTouchEnd = () => {
+        if (isMobile) {
+            const touchDiff = touchStartX - touchEndX;
+            if (touchDiff > 50) {
+                // Deslizar hacia la izquierda, ir a la siguiente tarjeta
+                nextSlide();
+            } else if (touchDiff < -50) {
+                // Deslizar hacia la derecha, ir a la tarjeta anterior
+                prevSlide();
+            }
+        }
+    };
+
     const renderedSlides = loadShow();
 
     return (
@@ -77,7 +107,13 @@ const SliderCards = () => {
 
             </p>
             <section className="slider">
-                <div className='container-slider'>
+                <div
+                    className='container-slider'
+                    ref={sliderRef}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                >
                     <div className="slides-container">
                         {renderedSlides.map((slide, index) => (
                             <div

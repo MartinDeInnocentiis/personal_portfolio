@@ -532,6 +532,7 @@
         font-size: 1.3rem;
         margin-right: 5px;
     }
+
     .reaction-icon-comment {
         font-size: 1.3rem;
         margin-right: 5px;
@@ -540,7 +541,7 @@
     .expand-button {
         position: relative;
         box-shadow: 1px 3px 12px rgba(2, 2, 2, 0.637);
-        width: 42% !important; 
+        width: 42% !important;
         font-size: .8rem !important;
         padding: 10px 10px;
         border-radius: 8px;
@@ -549,12 +550,7 @@
         border-top: 0px solid #97ff1f00;
         border-right: 0px solid #45810000;
     }
-    
-    .expand-button:hover{
-        /*VER VER VER*/
-        color:red !important;
-    }
-    
+
     .expand-button span {
         visibility: visible;
         opacity: 1;
@@ -564,6 +560,17 @@
     .expand-button::before {
         border-top: 0px solid #96FF1F;
         border-right: 0px solid #96FF1F;
+    }
+
+    .expand-button::after {
+        border-top: 0px solid #96FF1F;
+        border-right: 0px solid #96FF1F;
+
+    }
+
+
+    .expand-button:hover span {
+        transform: translate(0px);
     }
 
     .details-p {
@@ -577,19 +584,19 @@
     }
 
     .website-link {
+        display: block;
         font-size: 100%;
         margin-left: .1rem;
     }
 
     .github-link {
-        font-family: "Rajdhani", sans-serif;
+        display: block;
         font-size: 100%;
-        color: rgb(77, 98, 216);
-        margin-left: 1rem;
+        margin-left: 0rem;
     }
 
     .status {
-        font-size: 100%;
+        font-size: 110%;
         margin-left: 0.2rem;
     }
 
@@ -616,9 +623,9 @@
 
     .stack-container2 {
         position: relative;
-        max-width: 90%;
+        max-width: 93%;
         padding: 1.5rem 0 .5rem .7rem;
-        background: linear-gradient(180deg, #f1eaea 10%, #dac6c6 80%, #ecd3d3 100%);
+        background: linear-gradient(180deg, #f0e9e9 10%, #f7e8e8 80%, #f0e2e2 100%);
         box-shadow: 0 3px 6px rgba(44, 43, 40, 0.233);
         border-radius: 2px;
         border: 1px solid rgba(183, 216, 226, 0.465);
@@ -641,10 +648,10 @@
 
     .stack-tags {
         margin: .7rem 0;
-        max-width: 81%;
+        max-width: 89%;
         padding: .5rem;
-        padding-left: 1.2rem;
-        background: linear-gradient(145deg, rgba(244, 208, 253, 0.644) 2%, rgba(238, 193, 193, 0.432) 12%, rgba(71, 57, 194, 0.199) 31%, #53c77f3d 57%, #ddaa8646 80%, #fffff5c9 110%);
+        padding-left: .8rem;
+        background: linear-gradient(145deg, rgb(245, 205, 255) 2%, rgb(252, 233, 233) 12%, rgb(196, 190, 250) 31%, #9ff7c1 57%, #fdd2b4 80%, #fffedf 100%);
         backdrop-filter: blur(10px) saturate(150%);
         -webkit-backdrop-filter: blur(10px) saturate(150%);
         border: 2px solid rgba(173, 166, 166, 0.747);
@@ -691,10 +698,10 @@
     .stack-hashtag {
         z-index: 1;
         font-family: "Rajdhani", sans-serif;
-        background-color: #5C61FF;
+        background-color: #5c61ffc9;
         box-shadow: 3px 4px 8px rgba(68, 67, 65, 0.247);
         color: #96FF1F;
-        letter-spacing: 0px;
+        letter-spacing: 1px;
         font-weight: 500;
         font-size: 100%;
         margin: 0.3rem;
