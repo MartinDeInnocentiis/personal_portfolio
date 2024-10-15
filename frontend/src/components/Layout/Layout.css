@@ -8,11 +8,20 @@
 }
 
 /* Estilos para smartphones pequeños en adelante */
-@media (max-width: 320px) {
+@media (max-width: 360px) {
     .app{
         height: 100%;
         width: 105.5%; 
-        overflow-x: hidden; 
+        overflow-x: hidden !important; 
+    }
+}
+
+
+/* Estilos para smartphones pequeños en adelante */
+@media (min-width: 361px) and (max-width: 414px) {
+    .app {
+        width: 103.5%; 
+        overflow-x: hidden !important; 
     }
 }
 

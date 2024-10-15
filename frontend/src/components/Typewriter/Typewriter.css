@@ -36,10 +36,23 @@
 
 
   /* Estilos para smartphones pequeños en adelante */
-@media (max-width: 320px) {
+@media (max-width: 360px) {
   .typewriter{
     font-size: 1.4rem;
     margin: 1rem 0 0 0;
     font-weight: 700;
+  }
+}
+
+
+
+
+/* Estilos para móviles medianos */
+@media (min-width: 361px) and (max-width: 414px)  {
+  .typewriter{
+    font-size: 1.6rem;
+    padding-right: 0px;
+    font-weight: 700;
+    margin: .0rem 0 0 0;
   }
 }

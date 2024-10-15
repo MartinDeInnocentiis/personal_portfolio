@@ -145,7 +145,7 @@ header {
 
 
 /* Estilos para smartphones pequeños en adelante */
-@media (max-width: 320px) {
+@media (max-width: 360px) {
     header {
         padding-left: 0rem;
         padding-right: 4rem;
@@ -158,6 +158,27 @@ header {
 
     .logo-header {
         width: 180px;
+        height: auto;
+        margin-left: -15%;
+
+    }
+}
+
+
+/* Estilos para móviles medianos */
+@media (min-width: 361px) and (max-width: 414px) {
+    header {
+        padding-left: 0rem;
+        padding-right: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .navbar {
+        height: 18vh;
+    }
+
+    .logo-header {
+        width: 205px;
         height: auto;
         margin-left: -15%;
 
