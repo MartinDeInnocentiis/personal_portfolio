@@ -96,7 +96,7 @@
 @media (min-width: 361px) and (max-width: 414px) {
     .background-card {
         width: 14rem;
-        height: 17.5rem;
+        height: 18.5rem;
     }
 
     .background-card-title-container {
@@ -112,7 +112,7 @@
 
     .background-card-description-container {
         height: 78%;
-        padding: 10% 3%;
+        padding: 0% 3%;
     }
 
     .background-card-description {
@@ -121,4 +121,88 @@
         padding-right: .3rem;
     }
 
+}
+
+
+
+/* Estilos para móviles medianos-grandes */
+@media (min-width: 415px) and (max-width: 480px){
+    .background-card {
+        width: 18rem;
+        height: 21rem;
+    }
+
+    .background-card-title-container {
+        height: 23%;
+    }
+
+    .background-card-title {
+        font-weight: 600;
+        font-size: 1.25em;
+    }
+
+    .background-card-description-container {
+        height: 77%;
+        padding: 0% 5%;
+    }
+
+    .background-card-description {
+        font-weight: 400;
+        font-size: 1.07rem;
+    }
+}
+
+
+/* Estilos para  tablets pequeñas  */
+@media (min-width: 481px) and (max-width: 540px) {
+    .background-card {
+        width: 18rem;
+        height: 20rem;
+    }
+
+    .background-card-title-container {
+        height: 20%;
+    }
+
+    .background-card-title {
+        font-weight: 600;
+        font-size: 1.25em;
+    }
+
+    .background-card-description-container {
+        height: 80%;
+        padding: 0% 5%;
+    }
+
+    .background-card-description {
+        font-weight: 400;
+        font-size: 1.07rem;
+    }
+}
+
+/* Estilos para  tablets pequeñas  */
+@media (min-width: 541px) and (max-width: 600px){
+    .background-card {
+        width: 18rem;
+        height: 20rem;
+    }
+
+    .background-card-title-container {
+        height: 20%;
+    }
+
+    .background-card-title {
+        font-weight: 600;
+        font-size: 1.25em;
+    }
+
+    .background-card-description-container {
+        height: 80%;
+        padding: 0% 5%;
+    }
+
+    .background-card-description {
+        font-weight: 400;
+        font-size: 1.07rem;
+    }
 }

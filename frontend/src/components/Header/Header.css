@@ -186,8 +186,66 @@ header {
 }
 
 
+/* Estilos para móviles medianos-grandes */
+@media (min-width: 415px) and (max-width: 480px) {
+
+    header {
+        padding-left: 0rem;
+        padding-right: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .navbar {
+        height: 18vh;
+    }
+
+    .logo-header {
+        width: 210px;
+        margin-left: -15%;
+
+    }
+}
+
+
+/* Estilos para phablets */
+@media (min-width: 481px) and (max-width: 540px) {
+    header {
+        padding-left: .4rem;
+        margin-bottom: 1rem;
+    }
+
+    .navbar {
+        height: 18vh;
+    }
+
+    .logo-header {
+        width: 225px;
+        margin-left: -20%;
+
+    }
+}
+
+/* Estilos para  tablets pequeñas  */
+@media (min-width: 541px) and (max-width: 600px) {
+    header {
+        padding-left: .4rem;
+        margin-bottom: 1rem;
+    }
+
+    .navbar {
+        height: 18vh;
+    }
+
+    .logo-header {
+        width: 230px;
+        margin-left: -20%;
+
+    }
+}
 
 @media (max-width: 1024px) {
+    
+
     .navbarList {
         display: none;
         position: absolute;

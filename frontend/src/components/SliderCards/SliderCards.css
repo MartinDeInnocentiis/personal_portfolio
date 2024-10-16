@@ -93,16 +93,11 @@
 }
 
 
-
-
-
-
 .background-text {
     height: 20%;
     margin-top: 10rem;
     font-size: 3.3rem;
     color: #221536;
-    /*#96FF1F*/
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
     display: flex;
@@ -115,12 +110,10 @@
     font-weight: bold;
     white-space: nowrap;
     opacity: 0;
-    /* Inicialmente oculto */
 }
 
 .background-text.animate {
     opacity: 1;
-    /* Mostrar cuando esté en pantalla */
 }
 
 .background-text.animate span {
@@ -200,6 +193,7 @@
     .slider {
         width: 100% !important;
     }
+    
 }
 
 
@@ -207,10 +201,16 @@
     .slider {
         width: 110% !important;
     }
+    
+    .slides-container {
+        margin-left: -79.5% !important;
+    }
+    
 }
 
 
 /* Estilos para smartphones pequeños en adelante */
+
 @media (max-width: 360px) {
     .background-text {
         height: 20%;
@@ -232,9 +232,9 @@
     }
     
     .slides-container {
-        width: 60%;
+        width: 35%;
         height: 45vh !important;
-        margin-left: -76.5%;
+        margin-left: -79.5%;
         padding-right: 2rem;
         perspective: 1500px;
     }
@@ -253,34 +253,19 @@
     .slide.active:hover {
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0);
     }
-    
-    /*
-    
-    .arrows-container {
-        width: 235%;
-        height: 14vh;
-        margin-top: 120%;
-    }
-    .left-arrow,
-    .right-arrow {
-        font-size: 1.3rem;
-        margin: 0 12%;
-        padding: 5px 5px;
-        }
-        
-        .left-arrow:hover,
-        .right-arrow:hover {
-            scale: 1.02;
-        border-radius: 8px;
-        background: #d4d1f7;
-        box-shadow: 6px 6px 18px #b9b7d7c5,
-            -6px -6px 18px #fbf7ff91;
-    }
-    */
+
 
 }
 
+
+@media (max-width: 380px) {
+    .slider {
+        width: 130% !important;
+    }
+}
+
 /* Estilos para móviles medianos */
+
 @media (min-width: 361px) and (max-width: 414px) {
     .background-text {
         height: 20%;
@@ -292,7 +277,7 @@
     }
 
     .slider {
-        width: 100%;
+        width: 148%;
         height: 30rem;
     }
     
@@ -304,7 +289,7 @@
     .slides-container {
         width: 60%;
         height: 45vh !important;
-        margin-left: -76.5%;
+        margin-left: -79.5%;
         padding-right: 2rem;
         perspective: 1500px;
     }
@@ -321,7 +306,141 @@
     }
     
     .slide.active:hover {
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.103);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0);
+    }
+}
+
+/* Estilos para móviles medianos-grandes */
+@media (min-width: 415px) and (max-width: 480px) {
+    .background-text {
+        margin-top: 2rem;
+        padding-top: 8rem;
+        padding-bottom: .5rem;
+        font-size: 1.8rem;
+    }
+    
+    .container-slider{
+        margin-top: 3.2rem;
+        height: 46%;
+    }
+    
+    .slides-container {
+        width: 60%;
+        height: 45vh !important;
+        margin-left: -79.5%;
+        padding-right: 2rem;
+        perspective: 1500px;
+    }
+    
+    .slide {
+        left: 55%;
+        max-width: 20rem;
+        filter: blur(14px);
+        opacity: 0.7;
+    }
+    
+    .slide.active {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .slide.active:hover {
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0);
+    }
+}
+
+/* Estilos para phablets */
+@media (min-width: 481px) and (max-width: 540px){
+    .background-text {
+        margin-top: 2rem;
+        padding-top: 8rem;
+        padding-bottom: .5rem;
+        font-size: 2.1rem;
+    }
+    
+    .container-slider{
+        margin-top: 3.2rem;
+        height: 46%;
+    }
+    
+    .slides-container {
+        width: 60%;
+        height: 45vh !important;
+        margin-left: -79.5%;
+        padding-right: 2rem;
+        perspective: 1500px;
+    }
+    
+    .slide {
+        left: 55%;
+        max-width: 20rem;
+        filter: blur(14px);
+        opacity: 0.7;
+    }
+    
+    .slide.active {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .slide.active:hover {
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0);
+    }
+}
+
+/* Estilos para  tablets pequeñas  */
+@media (min-width: 541px) and (max-width: 600px){
+    .background-text {
+        margin-top: 2rem;
+        padding-top: 8rem;
+        padding-bottom: .5rem;
+        font-size: 2.3rem;
+    }
+    
+    .container-slider{
+        margin-top: 3.2rem;
+        height: 46%;
+    }
+    
+    .slides-container {
+        width: 60%;
+        height: 45vh !important;
+        margin-left: -79.5%;
+        padding-right: 2rem;
+        perspective: 1500px;
+    }
+    
+    .slide {
+        left: 55%;
+        max-width: 20rem;
+        filter: blur(14px);
+        opacity: 0.7;
+    }
+    
+    .slide.active {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .slide.active:hover {
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0);
+    }
+}
+
+
+@media (min-width: 415px) and (max-width: 450px){
+    .slider {
+        width: 115%;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 480px){
+    .slider {
+        width: 145%;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 540px){
+    .slider {
+        width: 155%;
     }
 }
 

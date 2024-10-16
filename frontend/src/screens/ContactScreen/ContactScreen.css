@@ -140,7 +140,7 @@
 
 
 /* Estilos para smartphones pequeños en adelante */
-@media (max-width: 320px) {
+@media (max-width: 768px) {
     .contactscreen-general-container {
         width: 100vw;
         height: 105vh;
@@ -159,7 +159,7 @@
 
 
     .contact-h1 {
-        width: 85%;
+        width: 90%;
         padding: 12px;
         font-size: 32px;
 
@@ -234,3 +234,14 @@
     }
 
 }
+
+
+
+
+/* Estilos para móviles medianos-grandes */
+@media (min-width: 415px) and (max-width: 480px) {
+    .contact-h1 {
+        width: 75% !important;
+    }
+}
+

@@ -373,3 +373,291 @@ ul {
     }
     
 }
+
+
+/* Estilos para móviles medianos-grandes */
+@media (min-width: 415px) and (max-width: 480px) {
+    footer {
+        font-size: 14px;
+        border-radius: 72% 67% 10% 10% / 14% 6% 0% 0%;
+    }
+    
+    .footerContainer {
+        height: 37vh;
+        padding: .5rem 1rem 0.5rem 1rem;
+        margin-bottom: -1rem;
+    }
+    
+    .footer-cols-container{
+        width: 70vw;
+        height: 80%;
+        margin-left: 5%;
+        padding: 0 0%;
+    }
+
+    .footer-col1{
+        margin-right: 1.7rem;
+    }
+    
+    .footer-col3{
+        width: 40vw;
+        margin-left: -3%;
+        padding-top: 5rem;
+    }
+    
+    .footer-item-title{
+        font-size: 1.12rem;
+        margin-bottom: 8px;
+    }
+
+    .footer-li{
+        font-size: 1em;
+        font-weight: 400;
+    }
+    
+
+    .footerhr{
+        margin: -.2rem 4rem -.2rem 0rem;
+        width: 100%;
+        margin-bottom: .2em;
+    }
+
+    .footer-li-location{
+        font-size: 1.03em;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+
+    .explore-list{
+        font-size: 14px;
+    }
+    
+    .footerList {
+        margin-bottom: .9em;
+        letter-spacing: 2px;
+        font-weight: 400;
+        transition: all .5s ease;
+    }
+    
+    .footerList:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    
+    .footlink{
+        font-size: 1.1em;
+    }
+    
+    .logofoot {
+        width: 40vw;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    
+
+    .copyright {
+        font-size: smaller;
+        padding-bottom: .7rem;
+        padding-top: .7rem;
+        letter-spacing: 4px;
+        font-weight: 400;
+    
+    }
+    
+    .copyright-span {
+        font-size: 25px;
+        margin: 0rem 0rem;
+    }
+}
+
+
+/* Estilos para phablets */
+@media (min-width: 481px) and (max-width: 540px) {
+    footer {
+        font-size: 14px;
+        border-radius: 72% 67% 10% 10% / 14% 6% 0% 0%;
+    }
+    
+    .footerContainer {
+        height: 37vh;
+        padding: .5rem 1rem 0.5rem 1rem;
+        margin-bottom: -1rem;
+    }
+    
+    .footer-cols-container{
+        width: 70vw;
+        height: 80%;
+        margin-left: 5%;
+        padding: 0 0%;
+    }
+
+    .footer-col1{
+        margin-right: 1.7rem;
+    }
+    
+    .footer-col3{
+        width: 40vw;
+        margin-left: -3%;
+        padding-top: 5rem;
+    }
+    
+    .footer-item-title{
+        font-size: 1.12rem;
+        margin-bottom: 8px;
+    }
+
+    .footer-li{
+        font-size: 1em;
+        font-weight: 400;
+    }
+    
+
+    .footerhr{
+        margin: -.2rem 4rem -.2rem 0rem;
+        width: 100%;
+        margin-bottom: .2em;
+    }
+
+    .footer-li-location{
+        font-size: 1.03em;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+
+    .explore-list{
+        font-size: 14px;
+    }
+    
+    .footerList {
+        margin-bottom: .9em;
+        letter-spacing: 2px;
+        font-weight: 400;
+        transition: all .5s ease;
+    }
+    
+    .footerList:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    
+    .footlink{
+        font-size: 1.1em;
+    }
+    
+    .logofoot {
+        width: 32vw;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    
+
+    .copyright {
+        font-size: small;
+        padding-bottom: .7rem;
+        padding-top: .7rem;
+        letter-spacing: 4px;
+        font-weight: 400;
+    
+    }
+    
+    .copyright-span {
+        font-size: 25px;
+        margin: 0rem 0rem;
+    }
+    
+}
+
+/* Estilos para  tablets pequeñas  */
+@media (min-width: 541px) and (max-width: 600px) {
+    footer {
+        font-size: 14px;
+        border-radius: 72% 67% 10% 10% / 14% 6% 0% 0%;
+    }
+    
+    .footerContainer {
+        height: 37vh;
+        padding: .5rem 1rem 0.5rem 1rem;
+        margin-bottom: -1rem;
+    }
+    
+    .footer-cols-container{
+        width: 70vw;
+        height: 80%;
+        margin-left: 5%;
+        padding: 0 0%;
+    }
+
+    .footer-col1{
+        margin-right: 1.7rem;
+    }
+    
+    .footer-col3{
+        width: 40vw;
+        margin-left: -3%;
+        padding-top: 5rem;
+    }
+    
+    .footer-item-title{
+        font-size: 1.12rem;
+        margin-bottom: 8px;
+    }
+
+    .footer-li{
+        font-size: 1em;
+        font-weight: 400;
+    }
+    
+
+    .footerhr{
+        margin: -.2rem 4rem -.2rem 0rem;
+        width: 100%;
+        margin-bottom: .2em;
+    }
+
+    .footer-li-location{
+        font-size: 1.03em;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+
+    .explore-list{
+        font-size: 14px;
+    }
+    
+    .footerList {
+        margin-bottom: .9em;
+        letter-spacing: 2px;
+        font-weight: 400;
+        transition: all .5s ease;
+    }
+    
+    .footerList:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    
+    .footlink{
+        font-size: 1.1em;
+    }
+    
+    .logofoot {
+        width: 32vw;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    
+
+    .copyright {
+        font-size: small;
+        padding-bottom: .7rem;
+        padding-top: .7rem;
+        letter-spacing: 4px;
+        font-weight: 400;
+    
+    }
+    
+    .copyright-span {
+        font-size: 25px;
+        margin: 0rem 0rem;
+    }
+}

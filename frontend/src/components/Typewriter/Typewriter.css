@@ -56,3 +56,38 @@
     margin: .0rem 0 0 0;
   }
 }
+
+
+/* Estilos para móviles medianos-grandes */
+@media (min-width: 415px) and (max-width: 480px)   {
+  .typewriter{
+    font-size: 1.8rem;
+    padding-right: 0px;
+    font-weight: 700;
+    margin: .0rem 0 0 0;
+  }
+}
+
+
+
+/* Estilos para phablets */
+@media (min-width: 481px) and (max-width: 540px)   {
+  .typewriter{
+    font-size: 2.2rem;
+    padding-right: 0px;
+    font-weight: 700;
+    margin: .0rem 0 0 0;
+  }
+}
+
+
+
+/* Estilos para  tablets pequeñas  */
+@media (min-width: 541px) and (max-width: 600px)   {
+  .typewriter{
+    font-size: 2.5rem;
+    padding-right: 0px;
+    font-weight: 700;
+    margin: .0rem 0 0 0;
+  }
+}

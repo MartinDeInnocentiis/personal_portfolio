@@ -166,12 +166,7 @@
 
 
 /* Estilos para smartphones pequeños en adelante */
-@media (max-width: 320px) {
-  .about-general-container {
-    display: grid;
-    margin-bottom: 5rem;
-    width: 100vw;
-  }
+@media (max-width: 360px) {
 
   .about-container1 {
     margin: 1rem 3rem 0 1.5rem;
@@ -268,4 +263,54 @@
     font-size: 15px;
   }
 
+}
+
+/* Estilos para móviles medianos */
+@media (min-width: 361px) and (max-width: 414px) {
+
+  .about-container1 {
+    margin: 1rem 3rem 0 1.5rem;
+    width: 75%;
+  }
+
+  .about-h1 {
+    width: 85%;
+    padding: 12px;
+    font-size: 32px;
+
+    border-radius: 10px;
+    background: linear-gradient(145deg, #6268ff, #5357e6);
+    box-shadow: 3px 3px 11px #363996,
+      -3px -3px 11px #8288ff73;
+  }
+}
+
+
+/* Estilos para móviles medianos-grandes */
+@media (min-width: 415px) and (max-width: 480px) {
+
+  .about-container1 {
+    margin: 1rem 3rem 0 1.5rem;
+    width: 75%;
+  }
+
+  .about-h1 {
+    width: 85%;
+    padding: 12px;
+    font-size: 32px;
+
+    border-radius: 10px;
+    background: linear-gradient(145deg, #6268ff, #5357e6);
+    box-shadow: 3px 3px 11px #363996,
+      -3px -3px 11px #8288ff73;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .about-general-container {
+    display: grid;
+    margin-bottom: 5rem;
+    width: 100vw;
+  }
 }
