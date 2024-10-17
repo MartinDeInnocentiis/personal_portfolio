@@ -91,3 +91,25 @@
     margin: .0rem 0 0 0;
   }
 }
+
+
+/* Estilos para tablets estándar */
+@media (min-width: 601px) and (max-width: 768px) {
+  .typewriter{
+    font-size: 2.8rem;
+    padding-right: 0px;
+    font-weight: 700;
+    margin: .0rem 0 0 0;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .typewriter{
+    font-size: 3.5rem;
+    padding-right: 0px;
+    font-weight: 700;
+    margin: .0rem 0 0 0;
+  }
+}

@@ -204,12 +204,12 @@ p {
   .home-h3 {
     width: 92%;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 13.5px;
   }
 
   .home-h3,
   p {
-    margin: 1.2rem 0rem;
+    margin: 1.4rem 0rem;
   }
 
   .see-more {
@@ -573,5 +573,159 @@ p {
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     margin-bottom: 5rem;
+  }  
+}
+
+
+/* Estilos para tablets estándar */
+@media (min-width: 601px) and (max-width: 768px) {
+  .home-general-container {
+    width: 100vw;
+  }
+
+  .home-container1 {
+    width: 100%;
+    margin: 2rem .5rem 0 2.2rem;
+    height: 87vh;
+  }
+
+  .home-h1 {
+    font-size: 36px;
+  }
+
+  .my-name {
+    display: flex;
+    margin: 21px 0px;
+    font-weight: 600;
+    font-size: 68px;
+  }
+
+  .home-h3 {
+    width: 82%;
+    font-weight: 400;
+    font-size: 18.5px;
+  }
+
+  .home-h3,
+  p {
+    margin: 1.2rem 0rem;
+  }
+
+  .see-more {
+    font-size: 18px;
+    margin-top: 1.4rem;
+    border: 1px solid rgb(214, 215, 241);
+    background: #d7d5e6;
+    box-shadow: 20px 20px 58px #9a96bb,
+      -20px -20px 58px #faf6ff;
+  }
+
+
+  .see-more:hover {
+    background: linear-gradient(165deg, #f0ededbb 0% 20%, #dddbf0 100%);
+  }
+
+  .home-container2 {
+    display: none;
+  }
+
+  .subcontainer-2 {
+    padding-top: 3rem;
+  }
+
+  .home-section2 {
+    width: 100vw;
+    height: 65vh;
+  }
+
+  .blinking-text {
+    font-size: 2.4rem;
+    letter-spacing: 3px;
+    margin-top: 1.5rem;
+  }
+
+  .home-section3 {
+    width: 100vw;
+    height: 74vh;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    margin-bottom: 4rem;
+  }  
+}
+
+
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .home-general-container {
+    width: 100vw;
+  }
+
+  .home-container1 {
+    width: 100%;
+    margin: 2rem .5rem 0 2.8rem;
+    height: 98vh;
+  }
+
+  .home-h1 {
+    font-size: 46px;
+  }
+
+  .my-name {
+    display: flex;
+    margin: 21px 0px;
+    font-weight: 600;
+    font-size: 75px;
+  }
+
+  .home-h3 {
+    width: 82%;
+    font-weight: 400;
+    font-size: 19.5px;
+  }
+
+  .home-h3,
+  p {
+    margin: 1.2rem 0rem;
+  }
+
+  .see-more {
+    font-size: 19px;
+    margin-top: 1.2rem;
+    border: 1px solid rgb(214, 215, 241);
+    background: #d7d5e6;
+    box-shadow: 20px 20px 58px #9a96bb,
+      -20px -20px 58px #faf6ff;
+  }
+
+
+  .see-more:hover {
+    background: linear-gradient(165deg, #f0ededbb 0% 20%, #dddbf0 100%);
+  }
+
+  .home-container2 {
+    display: none;
+  }
+
+  .subcontainer-2 {
+    padding-top: 3rem;
+  }
+
+  .home-section2 {
+    width: 100vw;
+    height: 74vh;
+  }
+
+  .blinking-text {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-top: 1.5rem;
+  }
+
+  .home-section3 {
+    width: 100vw;
+    height: 86vh;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    margin-bottom: 4rem;
   }  
 }

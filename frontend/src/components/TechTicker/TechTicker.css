@@ -132,3 +132,35 @@
   }
 
 }
+
+
+/* Estilos para phablets */
+@media (min-width: 481px) and (max-width: 600px) {
+  .ticker-content {
+    width: 800%;  
+  }
+
+  .ticker-item {
+    padding: 1.2rem;
+    margin:1.2rem;
+    width: 5.8rem;
+    margin-top: 0rem;
+  }
+  
+  .ticker-item:hover {
+    transform: scale(1.1);
+  }
+  
+  .icon {
+    font-size: 10rem; 
+  }
+  
+  .item-name-div {
+    font-size: 1.3rem;
+  }
+}
+
+/* Estilos para phablets */
+@media (min-width: 601px) and (max-width: 768px) {
+
+}
