@@ -568,7 +568,7 @@ ul {
 }
 
 /* Estilos para  tablets pequeñas  */
-@media (min-width: 541px) and (max-width: 600px) {
+@media (min-width: 541px) and (max-width: 768px) {
     footer {
         font-size: 14px;
         border-radius: 72% 67% 10% 10% / 14% 6% 0% 0%;
@@ -659,5 +659,97 @@ ul {
     .copyright-span {
         font-size: 25px;
         margin: 0rem 0rem;
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    footer {
+        font-size: 16px;
+    }
+    
+    .footerContainer {
+        padding: .5rem 1rem 0.5rem 1rem;
+        margin-bottom: -1rem;
+    }
+    
+    .footer-cols-container{
+        height: 80%;
+        margin-left: 5%;
+        padding: 0 0%;
+    }
+
+    .footer-col1{
+        margin-right: 2rem;
+    }
+    
+    .footer-col3{
+        width: 40vw;
+        margin-left: -3%;
+        padding-top: 8rem;
+    }
+    
+    .footer-item-title{
+        font-size: 1.34rem;
+        margin-bottom: 8px;
+    }
+ 
+    .footer-li{
+        font-size: 1.2em;
+        font-weight: 400;
+    }
+    
+
+    .footerhr{
+        margin: -.2rem 4rem -.2rem 0rem;
+        width: 100%;
+    }
+
+    .footer-li-location{
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+
+    .explore-list{
+        font-size: 16px;
+    }
+    
+    .footerList {
+        margin-bottom: .9em;
+        letter-spacing: 2px;
+        font-weight: 400;
+        transition: all .5s ease;
+    }
+    
+    .footerList:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    
+    .logofoot {
+        width: 28vw;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    
+
+    .copyright {
+        font-size: small;
+        padding-bottom: .7rem;
+        padding-top: .7rem;
+        letter-spacing: 4px;
+        font-weight: 400;
+    }
+    
+    .copyright-span {
+        font-size: 25px;
+        margin: 0rem 0rem;
+    }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .logofoot {
+        width: 22vw !important;
     }
 }

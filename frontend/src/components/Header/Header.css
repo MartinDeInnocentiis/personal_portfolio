@@ -119,8 +119,8 @@ header {
 
 .vertical-separator {
     width: 1px;
-    height: 35px;
-    background-color: #080a3f;
+    height: 75px;
+    background-color: #080a3f3d;
     margin: 0 15px;
 }
 
@@ -259,6 +259,10 @@ header {
         margin-left: -18%;
 
     }
+
+    .objectList{
+        font-size: 24px;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -275,7 +279,42 @@ header {
         margin-left: -14%;
 
     }
+
+    .objectList{
+        font-size: 27px;
+    }
 }
+
+
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    header {
+        padding-left: .4rem;
+        margin-bottom: 1rem;
+    }
+
+    .navbar {
+        height: 18vh;
+    }
+
+    .logo-header {
+        margin-left: -14%;
+
+    }
+
+    .navbarList {
+        margin-right: .4rem;
+    }
+
+    .objectList{
+        margin: 1.5rem 1rem;
+    }
+
+
+}
+
+
+
 
 @media (max-width: 1024px) {
     

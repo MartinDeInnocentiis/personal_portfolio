@@ -1,5 +1,5 @@
 .contactscreen-general-container {
-    height: 120vh;
+    height: 125vh;
 }
 
 .contactscreen-container {
@@ -245,3 +245,29 @@
     }
 }
 
+@media (min-width: 481px) and (max-width: 600px) {
+    .contact-h1 {
+        width: 70% !important;
+        font-size: 38px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .contact-h1 {
+        width: 70% !important;
+        font-size: 46px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .contact-h1 {
+        width: 88% !important;
+        font-size: 64px;
+    }
+
+    .contactscreen-container {
+        padding-left: 2rem;
+        margin: 3rem 2rem;
+        width: 85%;
+    }
+}

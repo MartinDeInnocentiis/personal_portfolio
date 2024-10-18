@@ -427,6 +427,13 @@
 
 /* Estilos para tablets estándar */
 @media (min-width: 601px) and (max-width: 768px) {
+    .background-text {
+        margin-top: 2rem;
+        padding-top: 8rem;
+        padding-bottom: 2.5rem;
+        font-size: 2.6rem;
+    }
+
     .slides-container {
         width: 60%;
         height: 45vh !important;
