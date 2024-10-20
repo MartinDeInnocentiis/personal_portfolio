@@ -489,7 +489,7 @@
 }
 
 
-@media (min-width: 769px) and (max-width: 1200px) {
+@media (min-width: 769px) and (max-width: 900px) {
     .slides-container {
         margin-left: -44%;
     }
@@ -508,11 +508,115 @@
     }
 }
 
+
+
+@media (min-width: 901px) and (max-width: 1024px) {
+    .slides-container {
+        margin-left: -43%;
+    }
+    
+    .slide {
+        left: 57%;
+    }
+    .slider {
+        width: 100%;
+        padding-top: 1rem;
+    } 
+}
+
+@media (min-width: 1025px) and (max-width: 1100px) {
+    .slides-container {
+        margin-left: -44%;
+    }
+    
+    .slide {
+        left: 60%;
+    }
+    .slider {
+        width: 100%;
+        padding-top: 1rem;
+    } 
+}
+
+@media (min-width: 1101px) and (max-width: 1200px) {
+    .slides-container {
+        margin-left: -44%;
+    }
+    
+    .slide {
+        left: 61.5%;
+    }
+    .slider {
+        width: 100%;
+        padding-top: 1rem;
+    } 
+}
+
+
+@media (min-width: 1201px) and (max-width: 1300px) {
+    .slides-container {
+        margin-left: -45.5%;
+    }
+    
+    .slide {
+        left: 65%;
+    }
+    .slider {
+        width: 100%;
+        padding-top: 1rem;
+    } 
+    
+}
+
+@media (min-width: 1301px) and (max-width: 1400px) {
+    .slides-container {
+        margin-left: -46%;
+    }
+    
+    .slide {
+        left: 67%;
+    }
+    .slider {
+        width: 100%;
+        padding-top: 1rem;
+    } 
+    
+}
+
+
+@media (min-width: 1401px) and (max-width: 1500px) {
+    .slides-container {
+        margin-left: -46%;
+    }
+    
+    .slide {
+        left: 69%;
+    }
+    .slider {
+        width: 100%;
+        padding-top: 1rem;
+    } 
+    
+}
+
+@media (min-width: 1501px) and (max-width: 1700px) {
+    .slides-container {
+        margin-left: -46%;
+    }
+    
+    .slide {
+        left: 69%;
+    }
+}
+
+
+/* ARROWS */
+
 @media (min-width: 841px) and (max-width: 1000px) {
     
     .arrows-container {
         margin-top: 58% !important;
-        width: 195% !important;
+        width: 265% !important;
     }
 }
 
@@ -525,12 +629,29 @@
     }
 }
 
-@media (min-width: 1101px) and (max-width: 1200px) {
+@media (min-width: 1101px) and (max-width: 1400px) {
     .arrows-container {
         margin-top: 44% !important;
         width: 175% !important;
     }
 }
+
+
+@media (min-width: 1401px) and (max-width: 1500px) {
+    .arrows-container {
+        margin-top: 36% !important;
+        width: 175% !important;
+    }
+}
+
+
+@media (min-width: 1501px) and (max-width: 1700px) {
+    .arrows-container {
+        margin-top: 33% !important;
+        width: 225% !important;
+    }
+}
+
 
 @media (max-width: 768px) {
     .arrows-container {

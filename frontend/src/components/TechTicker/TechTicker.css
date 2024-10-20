@@ -160,7 +160,54 @@
   }
 }
 
-/* Estilos para phablets */
-@media (min-width: 601px) and (max-width: 768px) {
 
+@media (min-width: 601px) and (max-width: 768px) {
+  .ticker-content {
+    width: 1200%;  
+  }
+
+  .ticker-item {
+    padding: 1.4rem;
+    margin:1.2rem;
+    width: 7.8rem;
+    margin-top: 3rem;
+  }
+  
+  .ticker-item:hover {
+    transform: scale(1.1);
+  }
+  
+  .icon {
+    font-size: 10rem; 
+  }
+  
+  .item-name-div {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .ticker-content {
+    width: 1200%;  
+  }
+
+  .ticker-item {
+    padding: 1.4rem;
+    margin:1.2rem;
+    width: 10rem;
+    margin-top: 4.2rem;
+  }
+  
+  .ticker-item:hover {
+    transform: scale(1.1);
+  }
+  
+  .icon {
+    font-size: 10rem; 
+  }
+  
+  .item-name-div {
+    font-size: 1.7rem;
+  }
 }

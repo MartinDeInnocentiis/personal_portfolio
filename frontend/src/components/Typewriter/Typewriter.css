@@ -104,9 +104,39 @@
 
 
 
-@media (min-width: 769px) and (max-width: 1200px) {
+@media (min-width: 769px) and (max-width: 1025px) {
   .typewriter{
     font-size: 3.5rem;
+    padding-right: 0px;
+    font-weight: 700;
+    margin: .0rem 0 0 0;
+  }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1100px) {
+  .typewriter{
+    font-size: 3rem;
+    padding-right: 0px;
+    font-weight: 700;
+    margin: .0rem 0 0 0;
+  }
+}
+
+
+@media (min-width: 1101px) and (max-width: 1200px) {
+  .typewriter{
+    font-size: 3.37rem;
+    padding-right: 0px;
+    font-weight: 700;
+    margin: .0rem 0 0 0;
+  }
+}
+
+
+@media (min-width: 1201px) and (max-width: 1500px) {
+  .typewriter{
+    font-size: 3.7rem;
     padding-right: 0px;
     font-weight: 700;
     margin: .0rem 0 0 0;

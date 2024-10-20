@@ -22,9 +22,9 @@
 
 
 .contact-h1 {
-    width: 51%;
+    width: 70%;
     padding: 15px;
-    font-size: 75px;
+    font-size: 70px;
     color: #96FF1F;
 
     /*background: #5C61FF;*/
@@ -259,10 +259,23 @@
     }
 }
 
-@media (min-width: 769px) and (max-width: 1200px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .contact-h1 {
-        width: 88% !important;
+        width: 72% !important;
         font-size: 64px;
+    }
+
+    .contactscreen-container {
+        padding-left: 2rem;
+        margin: 3rem 2rem;
+        width: 85%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .contact-h1 {
+        width: 60% !important;
+        font-size: 70px;
     }
 
     .contactscreen-container {

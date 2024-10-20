@@ -130,7 +130,6 @@ ul {
     padding-top: .7rem;
     letter-spacing: 4px;
     font-weight: 400;
-
 }
 
 
@@ -138,7 +137,7 @@ ul {
     color: #f0f9fad5;
     font-weight: 100;
     font-size: 3rem;
-    margin: -.5rem 1rem;
+    margin: -.5rem 1rem !important;
 }
 
 
