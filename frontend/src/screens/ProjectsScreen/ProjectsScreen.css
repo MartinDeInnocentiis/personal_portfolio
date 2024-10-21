@@ -43,8 +43,15 @@ svg.blocks-wrapper {
 }
 
 
+@media (max-width: 340px) {
+    .projects-h1 {
+        width: 79% !important;
+        font-size: 32px !important;
+    }
+}
+
 /* Estilos para smartphones pequeños en adelante */
-@media (max-width: 320px) {
+@media (max-width: 414px) {
     .projectsscreen-container {
         margin: 3rem 0rem 5.5rem 1.3rem;
         width: 100vw;
@@ -52,9 +59,9 @@ svg.blocks-wrapper {
     }
 
     .projects-h1 {
-        width: 79%;
+        width: 70%;
         padding: 12px;
-        font-size: 32px;
+        font-size: 35px;
         border-radius: 10px;
         background: linear-gradient(145deg, #6268ff, #5357e6);
         box-shadow: 3px 3px 11px #363996,

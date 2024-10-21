@@ -11,7 +11,7 @@
 
 
 /* Estilos para smartphones pequeños en adelante */
-@media (max-width: 320px) {
+@media (max-width: 768px) {
     .swal2-popup {
         width: 80vw;
         margin: -.3rem 2.8rem 0 0;

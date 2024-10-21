@@ -449,7 +449,7 @@
 
 
 /* Estilos para smartphones pequeños en adelante */
-@media (max-width: 320px) {
+@media (max-width: 414px) {
     .project-detail-container {
         margin: 1rem 0rem;
         width: 100vw;

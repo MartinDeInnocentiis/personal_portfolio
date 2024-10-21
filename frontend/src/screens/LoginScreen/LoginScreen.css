@@ -192,7 +192,7 @@
 
 
 /* Estilos para smartphones pequeños en adelante */
-@media (max-width: 320px) {
+@media (max-width: 414px) {
     .login-screen {
         width: 100vw;
         background: linear-gradient(165deg, rgb(255, 255, 255) 0% 7%, #F0F9FA 11% 17%, #c6b5a931 31%, #F0F9FA 54%, rgba(47, 0, 255, 0.247) 90%);
@@ -260,5 +260,76 @@
 
     .register-text a {
         font-size: 16px;
+    }
+}
+
+@media (min-width: 415px) and (max-width: 1024px) {
+    .login-screen {
+        width: 100vw;
+        background: linear-gradient(165deg, rgb(255, 255, 255) 0% 7%, #F0F9FA 11% 17%, #c6b5a931 31%, #F0F9FA 54%, rgba(47, 0, 255, 0.247) 90%);
+    }
+
+    .login-form {
+        padding: 2rem 2rem 4rem 2rem;
+        margin: 0 1.4rem 0 .8rem;
+        width: 75%;
+        background: linear-gradient(315deg, #ffffff, #e6e6e6);
+        box-shadow: -21px -21px 42px #d4d4d4,
+            21px 21px 42px #ffffff94;
+    }
+
+    .back-arrow-login {
+        font-size: 220%;
+        transition: transform 0.3s;
+        margin-left: -1.3rem;
+        color: #5C61FF;
+    }
+
+    .back-arrow-login:hover {
+        transform: scale(1.1);
+
+    }
+
+    .login-form h1 {
+        width: 90%;
+        margin-left: .5rem;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .login-form label {
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    .login-form input {
+        width: 80%;
+        font-size: 17px;
+    }
+
+    .login-form button {
+        width: 100%;
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    .login-buttons button {
+        width: 30%;
+        height: 5vh;
+    }
+
+    .login-buttons p {
+        font-size: 17px;
+    }
+
+    .register-text {
+        margin-right: 0rem;
+        margin-bottom: 0;
+        margin-top: 14px !important;
+    }
+
+    .register-text a {
+        font-size: 18.5px;
     }
 }
