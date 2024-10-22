@@ -2,7 +2,8 @@
     background: linear-gradient(175deg, #b6a59941 0% 20%, #8f7e72c4 90%);
     min-height: 120vh;
     padding: 1rem 0 9.5rem 0;
-    margin: 0 -3rem -9rem -2rem;
+    margin: 0 0rem -9rem 0rem;
+    width: 100%;
 }
 
 .comments-subcontainer {
@@ -23,12 +24,9 @@
 
 .comments-title {
     font-weight: 500;
-    font-size: 1.7rem;
+    font-size: 1.82rem;
     color: #221536;
 }
-
-
-
 
 
 
@@ -40,6 +38,11 @@
     overflow-y: auto;
 }
 
+.message-item .message-content {
+    word-wrap: break-word; 
+    white-space: pre-wrap; 
+}
+
 .message-item {
     padding: 1.5%;
     border-bottom: 1px solid #eee;
@@ -48,6 +51,9 @@
     background-color: #f7f7fa;
     border-radius: 8px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+    max-width: 100%; 
+    height: auto; 
 }
 
 .message-item:last-child {
@@ -57,13 +63,13 @@
 
 .new-message-form {
     gap: 10px;
-    margin: 3% 0 4% 0;
+    margin: 3% 0 7% 0;
+    width: 100%;
 }
 
 .new-message-input {
     flex-grow: 1;
-    width: 84%;
-    margin-right: 1%;
+    width: 97%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 12px 1px 12px 1px;
@@ -75,11 +81,12 @@
 
 .input-name-container {
     display: flex;
-    width: 40%;
+    width: 100%;
 
 }
 
 .new-message-input-name {
+    width: 100%;
     flex-grow: 0.44;
     padding: 10px;
     border: 1px solid #ddd;
@@ -130,8 +137,9 @@
 .new-message-button {
     font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
-    width: 12%;
-    font-size: 20px;
+    margin: 3% 0% 0% 0%;
+    width: 18%;
+    font-size: 22px;
     padding: 10px 20px;
     color: #fff;
     border: none;
@@ -337,23 +345,34 @@
 
 
 /* Estilos para smartphones pequeños en adelante */
-@media (max-width: 320px) {
+@media (max-width: 414px) {
     .comments-container {
+        /*
         min-height: 120vh;
         padding: 1rem 0 9.5rem 0;
         margin: 0 0rem -9rem -7rem;
         width: 150%;
+        */
+        width: 100%;
+        min-height: 120vh;
+        padding: 1rem 0.8rem 9.5rem 0.8rem;
+        margin: 0;
+        margin-bottom: -9rem;
     }
 
     .comments-subcontainer {
-        padding-top: .5rem;
-        margin-left: 27%;
-        margin-right: 5%;
+        width: 100%;
+        margin:0;
+        padding: 0;
     }
 
     .title-divider {
         margin-bottom: 1rem;
         margin-top: -1rem;
+        margin-right: 14%;
+    }
+
+    .title-divider2 {
         margin-right: 14%;
     }
 
@@ -369,7 +388,8 @@
 
     .new-message-form {
         gap: 10px;
-        margin: 3% 11.5% 7% 0;
+        margin: 3% 0 7% 0;
+        width: 90%;
     }
 
     .new-message-input {
@@ -384,11 +404,13 @@
     }
 
     .new-message-input-name {
+        width: 94%;
         padding: 7px;
         font-size: 16px;
     }
 
     .input-error {
+        width: 94%;
         padding: 7px;
         font-size: 16px;
     }
@@ -442,4 +464,391 @@
         width: 87%;
     }
 
+}
+
+
+@media (min-width: 415px) and (max-width: 769px) {
+    .comments-container {
+        width: 100%;
+        min-height: 120vh;
+        padding: 1rem 0.8rem 9.5rem 0.8rem;
+        margin: 0;
+        margin-bottom: -9rem;
+    }
+
+    .comments-subcontainer {
+        width: 100%;
+        margin:0;
+        padding: 0;
+    }
+
+    .title-divider {
+        margin-bottom: 1rem;
+        margin-top: -1rem;
+        margin-right: 14%;
+    }
+
+    .title-divider2 {
+        margin-right: 14%;
+    }
+
+    .comments-title {
+        font-size: 1.5rem;
+    }
+
+    .message-item {
+        padding: 2.8%;
+        margin-bottom: 6%;
+        margin-right: 11.5%;
+    }
+
+    .new-message-form {
+        gap: 10px;
+        margin: 3% 0 7% 0;
+        width: 90%;
+    }
+
+    .new-message-input {
+        width: 92%;
+        padding: 9px;
+        font-size: 17px;
+    }
+
+    .input-name-container {
+        display: grid;
+        width: 98%;
+    }
+
+    .new-message-input-name {
+        width: 94%;
+        padding: 9px;
+        font-size: 17px;
+    }
+
+    .input-error {
+        width: 94%;
+        padding: 9px;
+        font-size: 17px;
+    }
+
+    .new-message-button {
+        width: 28%;
+        font-size: 18px;
+        padding: 7px 16px;
+        margin-top: 15px;
+        box-shadow: 2px 2px 8px #3639969c,
+            -2px -2px 8px #8288ff4f;
+    }
+
+    .messages-box {
+        margin-top: 2rem;
+    }
+
+    .message-item {
+        font-size: 17px;
+    }
+
+    .message-author {
+        font-weight: 600;
+    }
+
+    .message-content {
+        margin-left: 0.3rem;
+        font-weight: 500;
+    }
+
+    .message-item-date {
+        font-size: 13.5px;
+    }
+
+    .comment-reactions-delete-container {
+        margin-top: 3%;
+        padding-top: 3%;
+    }
+
+    .comment-reactions-container {
+        font-size: 1.3rem;
+    }
+
+    .com-reaction-icon-trash {
+        font-size: 1.3rem;
+    }
+
+
+    .see-more-button {
+        font-size: 1.15rem;
+        width: 87%;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 769px) {
+    .comments-subcontainer{
+        margin-left: 10%;
+        width: 85%;
+    }
+}
+
+
+@media (min-width: 770px) and (max-width: 1024px) {
+    .comments-container {
+        width: 100%;
+        min-height: 120vh;
+        padding: 2rem 0.8rem 9.5rem 0.8rem;
+        margin: 0;
+        margin-bottom: -9rem;
+    }
+
+    .comments-subcontainer {
+        margin-left: 10% !important;
+        width: 85%;
+        margin:0;
+        padding: 0;
+    }
+
+    .title-divider {
+        margin-bottom: 1rem;
+        margin-top: -1rem;
+        margin-right: 14%;
+    }
+
+    .title-divider2 {
+        margin-right: 14%;
+    }
+
+    .comments-title {
+        font-size: 1.7rem;
+    }
+
+    .message-item {
+        padding: 3%;
+        margin-bottom: 6%;
+        margin-right: 11.5%;
+    }
+
+    .new-message-form {
+        gap: 10px;
+        margin: 3% 0 7% 0;
+        width: 90%;
+    }
+
+    .new-message-input {
+        width: 92%;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .input-name-container {
+        display: grid;
+        width: 98%;
+    }
+
+    .new-message-input-name {
+        width: 94%;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .input-error {
+        width: 94%;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .new-message-button {
+        width: 28%;
+        font-size: 20px;
+        padding: 12px 16px;
+        margin-top: 15px;
+        box-shadow: 2px 2px 8px #3639969c,
+            -2px -2px 8px #8288ff4f;
+    }
+
+    .messages-box {
+        margin-top: 3rem;
+    }
+
+    .message-item {
+        font-size: 20px;
+    }
+
+    .message-author {
+        font-weight: 600;
+    }
+
+    .message-content {
+        margin-left: 0.3rem;
+        font-weight: 400;
+    }
+
+    .message-item-date {
+        font-size: 14.5px;
+    }
+
+    .comment-reactions-delete-container {
+        margin-top: 3%;
+        padding-top: 3%;
+    }
+
+    .comment-reactions-container {
+        font-size: 1.5rem;
+    }
+
+    .com-reaction-icon-trash {
+        font-size: 1.5rem;
+    }
+
+
+    .see-more-button {
+        font-size: 1.34rem;
+        width: 87%;
+    }
+
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .comments-container {
+        width: 100%;
+        min-height: 120vh;
+        padding: 2rem 0.8rem 9.5rem 0.8rem;
+        margin: 0;
+        margin-bottom: -9rem;
+    }
+
+    .comments-subcontainer {
+        margin-left: 20% !important;
+        width: 65%;
+        margin:0;
+        padding: 0;
+    }
+
+    .title-divider {
+        margin-bottom: 1rem;
+        margin-top: -1rem;
+        margin-right: 14%;
+    }
+
+    .title-divider2 {
+        margin-right: 14%;
+    }
+
+    .comments-title {
+        font-size: 1.7rem;
+    }
+
+    .message-item {
+        padding: 3%;
+        margin-bottom: 3%;
+        margin-right: 11.5%;
+    }
+
+    .new-message-form {
+        gap: 10px;
+        margin: 3% 0 5% 0;
+        width: 90%;
+    }
+
+    .new-message-input {
+        width: 92%;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .input-name-container {
+        display: grid;
+        width: 98%;
+    }
+
+    .new-message-input-name {
+        width: 94%;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .input-error {
+        width: 94%;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .new-message-button {
+        width: 28%;
+        font-size: 20px;
+        padding: 12px 16px;
+        margin-top: 15px;
+        box-shadow: 2px 2px 8px #3639969c,
+            -2px -2px 8px #8288ff4f;
+    }
+
+    .messages-box {
+        margin-top: 2rem;
+    }
+
+    .message-item {
+        font-size: 20px;
+    }
+
+    .message-author {
+        font-weight: 600;
+    }
+
+    .message-content {
+        margin-left: 0.3rem;
+        font-weight: 400;
+    }
+
+    .message-item-date {
+        font-size: 14.5px;
+    }
+
+    .comment-reactions-delete-container {
+        margin-top: 3%;
+        padding-top: 3%;
+    }
+
+    .comment-reactions-container {
+        font-size: 1.5rem;
+    }
+
+    .com-reaction-icon-trash {
+        font-size: 1.5rem;
+    }
+
+
+    .see-more-button {
+        font-size: 1.34rem;
+        width: 87%;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1500px) {
+
+    .new-message-form {
+        gap: 10px;
+        margin: 3% 0 5% 0;
+        width: 100%;
+    }
+
+    .new-message-input {
+        width: 92%;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .input-name-container {
+        display: grid;
+        width: 98%;
+    }
+
+    .new-message-input-name {
+        width: 94%;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .input-error {
+        width: 94%;
+        padding: 12px;
+        font-size: 18px;
+    }
 }

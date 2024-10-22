@@ -1,6 +1,6 @@
 .project-detail-container {
-    margin: 2rem;
-    margin-right: 3rem;
+    margin-right: 3rem 0rem;
+    width: 100vw;
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
 }
@@ -628,7 +628,7 @@
         background: linear-gradient(180deg, #f0e9e9 10%, #f7e8e8 80%, #f0e2e2 100%);
         box-shadow: 0 3px 6px rgba(44, 43, 40, 0.233);
         border-radius: 2px;
-        border: 1px solid rgba(183, 216, 226, 0.465);
+        border: 1px solid rgba(118, 120, 121, 0.465);
         transition: all 0.3s ease-in-out;
     }
 
@@ -707,69 +707,160 @@
         margin: 0.3rem;
         padding-left: .1rem !important;
     }
+}
 
 
-    /*
-    .project-detail-extra-info {
-        font-size: 1.1em;
+/******************/
+@media (min-width:415px) and (max-width: 769px) {
+    .project-detail-container {
+        margin: 1rem 0rem;
+        width: 100vw;
     }
 
-    .project-detail-extra-info p {
-        margin: 10px 0;
+    .back-arrow-projects {
+        font-size: 280%;
+        margin: 1rem 0 0.7rem 1.5rem !important;
+    }
+
+    .project-detail-card {
+        border-radius: 38px 0 38px 0;
+        width: 90%;
+        max-width: 420px;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+        box-shadow: 17px 17px 38px #c3c0c0,
+            -17px -17px 38px #ffffff;
+    }
+
+    .project-detail-image {
+        height: 265px;
+    }
+
+    .project-detail-content {
+        padding: 18px;
+    }
+
+    .project-detail-title {
+        font-size: 1.5em;
+    }
+
+    .project-not-found-div {
+        font-size: 3em;
+        margin: 7% 6%;
+        padding-top: 15%;
+        padding-bottom: 0%;
+    }
+
+    .oops {
+        font-weight: 400;
+        font-size: 1.5em;
+        margin-bottom: 0;
+        letter-spacing: 1px;
+    }
+
+    .project-detail-description {
+        font-size: 1.2em;
+        margin: 0 0 15px 0;
+    }
+
+    .project-detail-reactions {
+        font-size: 1em;
+        color: #221536;
+        margin-bottom: 18px;
+    }
+
+    .project-like,
+    .project-heart,
+    .project-comment {
+        margin-right: .9rem;
+    }
+
+    .reaction-icon-like {
+        font-size: 1.3rem;
+        margin-right: 5px;
+
+    }
+
+    .reaction-icon-like-solid {
+        font-size: 1.3rem;
+        margin-right: 5px;
+    }
+
+    .reaction-icon-heart {
+        font-size: 1.3rem;
+        margin-right: 5px;
+    }
+
+    .reaction-icon-heart-solid {
+        font-size: 1.3rem;
+        margin-right: 5px;
+    }
+
+    .reaction-icon-comment {
+        font-size: 1.3rem;
+        margin-right: 5px;
+    }
+
+    .expand-button {
+        position: relative;
+        box-shadow: 1px 3px 12px rgba(2, 2, 2, 0.637);
+        width: 42% !important;
+        font-size: .8rem !important;
+        padding: 10px 10px;
+        border-radius: 8px;
+        font-size: .7rem;
+        margin-bottom: .5rem;
+        border-top: 0px solid #97ff1f00;
+        border-right: 0px solid #45810000;
+    }
+
+    .expand-button span {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(0px);
+    }
+
+    .expand-button::before {
+        border-top: 0px solid #96FF1F;
+        border-right: 0px solid #96FF1F;
+    }
+
+    .expand-button::after {
+        border-top: 0px solid #96FF1F;
+        border-right: 0px solid #96FF1F;
+
+    }
+
+
+    .expand-button:hover span {
+        transform: translate(0px);
     }
 
     .details-p {
         font-weight: 500;
-        font-size: 100%;
+        font-size: 90%;
     }
 
     .hr-details {
         margin-right: 10%;
-        margin-top: 5%;
         margin-bottom: -2%;
     }
 
     .website-link {
-        font-family: "Rajdhani", sans-serif;
-        font-size: 120%;
-        color: rgb(77, 98, 216);
+        display: block;
+        font-size: 100%;
         margin-left: .1rem;
     }
 
-    .website-link:hover {
-        color: #b49781;
-        border-bottom: 1px solid #b49781;
-        cursor: pointer;
-    }
-
     .github-link {
-        font-family: "Rajdhani", sans-serif;
-        font-size: 120%;
-        color: rgb(77, 98, 216);
-        margin-left: 1rem;
-    }
-
-    .github-link:hover {
-        color: #b49781;
-        border-bottom: 1px solid #b49781;
-        cursor: pointer;
+        display: block;
+        font-size: 100%;
+        margin-left: 0rem;
     }
 
     .status {
-        font-family: "Rajdhani", sans-serif;
-        font-size: 130%;
-        color: rgb(77, 98, 216);
-        font-weight: 600;
-        letter-spacing: 1px;
-        margin-left: 1rem;
-    }
-
-
-    .stack-container {
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
-        opacity: 0;
+        font-size: 110%;
+        margin-left: 0.2rem;
     }
 
     .stack-container.expanded {
@@ -785,8 +876,8 @@
 
     .stack-container {
         position: absolute;
-        right: -80%;
-        top: 40%;
+        right: -8%;
+        top: 35%;
         transform: translateY(-50%);
         width: 110%;
         max-width: 770px;
@@ -795,12 +886,12 @@
 
     .stack-container2 {
         position: relative;
-        max-width: 70%;
-        padding: 2rem 0 .5rem 2.5rem;
-        background: linear-gradient(180deg, #fcf5f5 10%, #fafafa 80%, #ffffff 100%);
+        max-width: 91%;
+        padding: 1.5rem 0 .5rem .7rem;
+        background: linear-gradient(180deg, #f0e9e9 10%, #f7e8e8 80%, #f0e2e2 100%);
         box-shadow: 0 3px 6px rgba(44, 43, 40, 0.233);
         border-radius: 2px;
-        border: 1px solid rgba(183, 216, 226, 0.465);
+        border: 1px solid rgba(127, 129, 129, 0.465);
         transition: all 0.3s ease-in-out;
     }
 
@@ -812,23 +903,21 @@
 
 
     .stack-title {
-        color: #221536;
         font-weight: bold;
-        font-size: 1.33rem;
-        margin: 1rem 0 1.5rem .5rem;
+        font-size: 1.1rem;
+        margin: .4rem 0 1.2rem .5rem;
     }
 
 
     .stack-tags {
-        margin: 3rem 0;
-        max-width: 78%;
-        padding: 1.5rem;
-        padding-left: 2.2rem;
-        border-radius: 12px;
-        background: linear-gradient(145deg, rgba(204, 0, 255, 0.322) 2%, rgba(199, 47, 47, 0.267) 12%, rgba(57, 41, 202, 0.199) 31%, #53c77f3d 57%, #f5ad7a46 80%, #fbff0849 110%);
+        margin: 1rem 0;
+        max-width: 90%;
+        padding: .9rem;
+        padding-left: .8rem;
+        background: linear-gradient(145deg, rgb(245, 205, 255) 2%, rgb(252, 233, 233) 12%, rgb(196, 190, 250) 31%, #9ff7c1 57%, #fdd2b4 80%, #fffedf 100%);
         backdrop-filter: blur(10px) saturate(150%);
         -webkit-backdrop-filter: blur(10px) saturate(150%);
-        border: 2px solid rgba(173, 166, 166, 0.301);
+        border: 2px solid rgba(173, 166, 166, 0.747);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
@@ -872,26 +961,21 @@
     .stack-hashtag {
         z-index: 1;
         font-family: "Rajdhani", sans-serif;
-        background-color: #5C61FF;
+        background-color: #5c61ffc9;
         box-shadow: 3px 4px 8px rgba(68, 67, 65, 0.247);
         color: #96FF1F;
-        letter-spacing: .5px;
+        letter-spacing: 1px;
         font-weight: 500;
-        font-size: 110%;
-        max-width: 90%;
-        margin: 0.5rem;
-        padding-left: .5rem !important;
-        padding: .25%;
-        border-radius: 8px;
-        border: 2px solid rgb(110, 103, 103);
+        font-size: 100%;
+        margin: 0.3rem;
+        padding-left: .1rem !important;
     }
-
-    .stack-hashtag:hover {
-        background: linear-gradient(160deg, #5C61FF 0% 50%, #151bcc 120%);
-        border: 2px solid rgba(88, 84, 84, 0.575);
-        box-shadow: 3px 4px 6px rgba(7, 7, 7, 0.253);
-    }
-        */
-
 }
 
+
+@media (min-width: 415px) and (max-width: 1024px) {
+    .project-detail-container {
+        margin: 1rem 0rem;
+        width: 100vw;
+    }
+}
