@@ -1,5 +1,8 @@
 import './Footer.css'
 import { Link, NavLink } from 'react-router-dom';
+import FooterIcons from '../FooterIcons/FooterIcons';
+import { IoLocationSharp } from "react-icons/io5";
+
 
 const Footer = () => {
     return (
@@ -9,14 +12,13 @@ const Footer = () => {
                     <div className="footer-col1">
                         <h4 className='footer-item-title' >CONTACT ME</h4>
                         <ul className='contact-me-list'>
+                            <FooterIcons />
 
-                            <li className='footer-li'>LinkedIn</li>
-                            <li className='footer-li'>WhatsApp</li>
+
                             <br />
-                            <hr className='footerhr'/>
+                            <hr className='footerhr' />
                             <br />
-                            <li className='footer-li-location'>Buenos Aires,</li>
-                            <li className='footer-li-location'>Argentina.</li>
+                            <li className='footer-li-location'> <IoLocationSharp className='location-logo'/> Buenos Aires, <span className='argentina'> Argentina. </span> </li>
                         </ul>
                     </div>
 

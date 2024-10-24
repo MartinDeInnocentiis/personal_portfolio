@@ -1,0 +1,61 @@
+.footericons-container{
+    width: auto;
+    height: auto;
+    padding-top: 1rem;
+}
+
+.icon-footer-1, .icon-footer-2 {
+    font-size: 2rem;
+    margin-right: 30px;
+    color: #f3f3f3;
+    transition: all 0.2s ease-in-out;
+}
+
+.icon-footer-1:hover, .icon-footer-2:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    color: #96FF1F;
+}
+
+@media (max-width: 414px) {
+    .footericons-container{ 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+    .icon-footer-1, .icon-footer-2 {
+        font-size: 1.5rem;
+    }
+    .icon-footer-1 {
+        padding-bottom: 12px;
+    }
+}
+
+
+@media (min-width: 415px) and (max-width: 600px) {
+    .footericons-container{ 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 120%;
+    }
+    .icon-footer-1, .icon-footer-2 {
+        font-size: 1.8rem;
+    }
+    .icon-footer-1 {
+        padding-bottom: 18px;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .footericons-container{ 
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 115%;
+    }
+    
+    .icon-footer-1, .icon-footer-2 {
+        font-size: 1.6rem;
+        padding: 10px 0px 5px 0px;
+    }
+} 

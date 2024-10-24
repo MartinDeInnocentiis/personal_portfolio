@@ -47,11 +47,6 @@ footer {
     width: 40vw;
 }
 
-.footer-coldsfdsfsdf {
-    padding-right: 12rem;
-    height: 60%;
-}
-
 .footer-item-title{
     font-size: 1.55rem;
     letter-spacing: 1px;
@@ -64,9 +59,25 @@ ul {
     transition: all .5s ease;
 }
 
+.footerhr{
+    margin: 1.2rem 4rem -.2rem 0rem;
+    width: 88%;
+}
+
+.location-logo{
+    font-size: 1rem;
+}
+
+.footer-li-location{
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding-top: 1rem;
+    letter-spacing: .5px;
+}
+
 .footerList {
-    margin-bottom: 1.5em;
-    letter-spacing: 1px;
+    margin-bottom: 1.3em;
+    letter-spacing: 2px;
     font-weight: 500;
     transition: all .5s ease;
 }
@@ -79,7 +90,7 @@ ul {
 .footlink{
     color: #F0F9FA;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1em;
     margin-bottom: 22.5em;
 }
 
@@ -141,6 +152,19 @@ ul {
 }
 
 
+@media (max-width: 320px) {
+    .footerContainer {
+        height: 47vh !important;
+    }
+    .footer-li-location{
+        font-size: 1em !important;
+        letter-spacing: 0px !important;
+    }
+    .argentina{
+        margin-left: 18px !important;
+    }
+}
+
 /* Estilos para smartphones pequeños en adelante */
 @media (max-width: 360px) {
     footer {
@@ -149,7 +173,7 @@ ul {
     }
     
     .footerContainer {
-        height: 40vh;
+        height: 44vh;
         padding: .5rem 1rem 0.5rem 1rem;
         margin-bottom: -1rem;
         justify-content: space-around;
@@ -171,7 +195,7 @@ ul {
     .footer-col3{
         width: 40vw;
         margin-left: -3%;
-        padding-top: 5rem;
+        padding-top: 2.8rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -204,10 +228,19 @@ ul {
         width: 70%;
     }
 
+
+    .location-logo{
+        font-size: .9rem;
+    }
+
     .footer-li-location{
         font-size: .9em;
         font-weight: 400;
         letter-spacing: 1px;
+    }
+
+    .argentina {
+        margin-left: 39px;
     }
 
     .explore-list{
@@ -258,14 +291,14 @@ ul {
 }
 
 /* Estilos para móviles medianos */
-@media (min-width: 361px) and (max-width: 414px) {
+@media (min-width: 361px) and (max-width: 413px) {
     footer {
         font-size: 14px;
         border-radius: 72% 67% 10% 10% / 14% 6% 0% 0%;
     }
     
     .footerContainer {
-        height: 40vh;
+        height: 44vh;
         padding: .5rem 1rem 0.5rem 1rem;
         margin-bottom: -1rem;
         justify-content: space-around;
@@ -287,7 +320,7 @@ ul {
     .footer-col3{
         width: 40vw;
         margin-left: -3%;
-        padding-top: 5rem;
+        padding-top: 0rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -317,13 +350,16 @@ ul {
 
     .footerhr{
         margin: -.2rem 4rem -.2rem 0rem;
-        width: 70%;
+        width: 65%;
     }
 
     .footer-li-location{
-        font-size: .9em;
+        font-size: 1.05em;
         font-weight: 400;
         letter-spacing: 1px;
+    }
+    .argentina {
+        margin-left: 40px;
     }
 
     .explore-list{
@@ -355,7 +391,7 @@ ul {
     
 
     .copyright {
-        font-size: smaller;
+        font-size: small;
         padding-bottom: .7rem;
         padding-top: .7rem;
         letter-spacing: 4px;
@@ -375,7 +411,7 @@ ul {
 
 
 /* Estilos para móviles medianos-grandes */
-@media (min-width: 415px) and (max-width: 480px) {
+@media (min-width: 414px) and (max-width: 480px) {
     footer {
         font-size: 14px;
         border-radius: 72% 67% 10% 10% / 14% 6% 0% 0%;
@@ -418,21 +454,22 @@ ul {
     .footerhr{
         margin: -.2rem 4rem -.2rem 0rem;
         width: 100%;
-        margin-bottom: .2em;
+        margin-bottom: 0em;
     }
 
     .footer-li-location{
-        font-size: 1.03em;
+        font-size: .87em;
         font-weight: 400;
-        letter-spacing: 1px;
+        width: 160%;
+        margin-top: -.5rem;
     }
 
     .explore-list{
-        font-size: 14px;
+        font-size: 15px;
     }
     
     .footerList {
-        margin-bottom: .9em;
+        margin-bottom: 1.3em;
         letter-spacing: 2px;
         font-weight: 400;
         transition: all .5s ease;
@@ -455,7 +492,7 @@ ul {
     
 
     .copyright {
-        font-size: smaller;
+        font-size: small;
         padding-bottom: .7rem;
         padding-top: .7rem;
         letter-spacing: 4px;
@@ -497,7 +534,7 @@ ul {
     .footer-col3{
         width: 40vw;
         margin-left: -3%;
-        padding-top: 5rem;
+        padding-top: 5.7rem;
     }
     
     .footer-item-title{
@@ -514,13 +551,14 @@ ul {
     .footerhr{
         margin: -.2rem 4rem -.2rem 0rem;
         width: 100%;
-        margin-bottom: .2em;
+        margin-bottom: -.2em;
     }
 
     .footer-li-location{
         font-size: 1.03em;
         font-weight: 400;
         letter-spacing: 1px;
+        margin-top: -.5rem;
     }
 
     .explore-list{
@@ -610,13 +648,14 @@ ul {
     .footerhr{
         margin: -.2rem 4rem -.2rem 0rem;
         width: 100%;
-        margin-bottom: .2em;
+        margin-bottom: -.2em;
     }
 
     .footer-li-location{
         font-size: 1.03em;
         font-weight: 400;
         letter-spacing: 1px;
+        margin-top: -.5rem;
     }
 
     .explore-list{
@@ -647,7 +686,7 @@ ul {
     
 
     .copyright {
-        font-size: small;
+        font-size: medium;
         padding-bottom: .7rem;
         padding-top: .7rem;
         letter-spacing: 4px;
@@ -658,6 +697,21 @@ ul {
     .copyright-span {
         font-size: 25px;
         margin: 0rem 0rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px){ 
+    .footer-li-location{
+        font-size: 1.3em !important;
+        
+    }
+    .location-logo{
+        font-size: 1.15rem;
+        margin-right: 10px;
+    }
+
+    .explore-list {
+        font-size: .92rem;
     }
 }
 
@@ -701,7 +755,7 @@ ul {
 
     .footerhr{
         margin: -.2rem 4rem -.2rem 0rem;
-        width: 100%;
+        width: 91%;
     }
 
     .footer-li-location{
@@ -733,7 +787,7 @@ ul {
     
 
     .copyright {
-        font-size: small;
+        font-size: medium;
         padding-bottom: .7rem;
         padding-top: .7rem;
         letter-spacing: 4px;

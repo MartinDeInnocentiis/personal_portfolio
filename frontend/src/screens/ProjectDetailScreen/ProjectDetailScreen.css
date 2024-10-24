@@ -183,11 +183,11 @@
 
 .details-p {
     font-weight: 500;
-    font-size: 100%;
+    font-size: 115%;
 }
 
 .hr-details {
-    margin-right: 10%;
+    margin-right: 12%;
     margin-top: 5%;
     margin-bottom: -2%;
 }
@@ -196,7 +196,7 @@
     font-family: "Rajdhani", sans-serif;
     font-size: 120%;
     color: rgb(77, 98, 216);
-    margin-left: .1rem;
+    margin-left: 1rem;
 }
 
 .website-link:hover {
@@ -209,7 +209,7 @@
     font-family: "Rajdhani", sans-serif;
     font-size: 120%;
     color: rgb(77, 98, 216);
-    margin-left: 1rem;
+    margin-left: 2rem;
 }
 
 .github-link:hover {
@@ -220,11 +220,11 @@
 
 .status {
     font-family: "Rajdhani", sans-serif;
-    font-size: 130%;
+    font-size: 135%;
     color: rgb(77, 98, 216);
     font-weight: 600;
     letter-spacing: 1px;
-    margin-left: 1rem;
+    margin-left: 2rem;
 }
 
 .expand-button-container {
@@ -335,30 +335,28 @@
     opacity: 0;
 }
 
-
 .stack-container {
     position: absolute;
-    right: -80%;
-    top: 40%;
+    right: -8%;
+    top: 35%;
     transform: translateY(-50%);
-    width: 110%;
-    max-width: 770px;
+    width: 115%;
+    max-width: 1200px;
 }
-
 
 .stack-container2 {
     position: relative;
-    max-width: 70%;
-    padding: 2rem 0 .5rem 2.5rem;
-    background: linear-gradient(180deg, #fcf5f5 10%, #fafafa 80%, #ffffff 100%);
+    max-width: 91%;
+    padding: 3rem 0 1rem 5.4rem;
+    background: linear-gradient(180deg, #f0e9e9 10%, #f7e8e8 80%, #f0e2e2 100%);
     box-shadow: 0 3px 6px rgba(44, 43, 40, 0.233);
     border-radius: 2px;
-    border: 1px solid rgba(183, 216, 226, 0.465);
+    border: 1px solid rgba(107, 182, 182, 0.465);
     transition: all 0.3s ease-in-out;
 }
 
 .stack-container2:hover {
-    border: 1px solid rgba(176, 227, 243, 0.465);
+    border: 1px solid rgba(69, 156, 182, 0.527);
     box-shadow: 0 4px 30px rgba(2, 2, 2, 0.164);
     transition: all 0.3s ease-in-out;
 }
@@ -367,18 +365,17 @@
 .stack-title {
     color: #221536;
     font-weight: bold;
-    font-size: 1.33rem;
-    margin: 1rem 0 1.5rem .5rem;
+    font-size: 1.4rem;
+    margin: 0rem 0 1.5rem .5rem;
 }
 
 
 .stack-tags {
     margin: 3rem 0;
     max-width: 78%;
-    padding: 1.5rem;
-    padding-left: 2.2rem;
-    border-radius: 12px;
-    background: linear-gradient(145deg, rgba(204, 0, 255, 0.322) 2%, rgba(199, 47, 47, 0.267) 12%, rgba(57, 41, 202, 0.199) 31%, #53c77f3d 57%, #f5ad7a46 80%, #fbff0849 110%);
+    padding: 2.4rem;
+    border-radius: 28px 0px;
+    background: linear-gradient(145deg, rgb(245, 205, 255) 2%, rgb(252, 233, 233) 12%, rgb(196, 190, 250) 31%, #9ff7c1 57%, #fdd2b4 80%, #fffedf 100%);
     backdrop-filter: blur(10px) saturate(150%);
     -webkit-backdrop-filter: blur(10px) saturate(150%);
     border: 2px solid rgba(173, 166, 166, 0.301);
@@ -397,7 +394,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.61) 0%, rgba(255, 255, 255, 0.0) 60%);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.788) 0%, rgba(255, 255, 255, 0.0) 60%);
     transform: rotate(45deg);
     transition: all 0.5s ease-in-out;
     opacity: 0;
@@ -428,12 +425,12 @@
     background-color: #5C61FF;
     box-shadow: 3px 4px 8px rgba(68, 67, 65, 0.247);
     color: #96FF1F;
-    letter-spacing: .5px;
+    letter-spacing: 1px;
     font-weight: 500;
-    font-size: 110%;
+    font-size: 120%;
     max-width: 90%;
     margin: 0.5rem;
-    padding-left: .5rem !important;
+    padding-left: .8rem !important;
     padding: .25%;
     border-radius: 8px;
     border: 2px solid rgb(110, 103, 103);
@@ -701,9 +698,9 @@
         background-color: #5c61ffc9;
         box-shadow: 3px 4px 8px rgba(68, 67, 65, 0.247);
         color: #96FF1F;
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
         font-weight: 500;
-        font-size: 100%;
+        font-size: 85%;
         margin: 0.3rem;
         padding-left: .1rem !important;
     }
@@ -972,10 +969,473 @@
     }
 }
 
-
 @media (min-width: 415px) and (max-width: 1024px) {
     .project-detail-container {
         margin: 1rem 0rem;
         width: 100vw;
+    }
+}
+
+
+
+
+
+
+@media (min-width:770px) and (max-width: 1199px) {
+    .project-detail-container {
+        margin: 1rem 0rem;
+        width: 100vw;
+    }
+
+    .back-arrow-projects {
+        font-size: 330%;
+        margin: 1rem 0 0.7rem 1.5rem !important;
+    }
+
+    .project-detail-card {
+        border-radius: 38px 0 38px 0;
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+        box-shadow: 17px 17px 38px #c3c0c0,
+            -17px -17px 38px #ffffff;
+    }
+
+    .project-detail-image {
+        height: 445px;
+    }
+
+    .project-detail-content {
+        padding: 20px;
+    }
+
+    .project-detail-title {
+        font-size: 2em;
+    }
+
+    .project-not-found-div {
+        font-size: 5em;
+        margin: 7% 6%;
+        padding-top: 15%;
+        padding-bottom: 0%;
+    }
+
+    .oops {
+        font-weight: 400;
+        font-size: 1.8em;
+        margin-bottom: 0;
+        letter-spacing: 1px;
+    }
+
+    .project-detail-description {
+        font-size: 1.32em;
+        margin: 0 0 25px 0;
+    }
+
+    .project-detail-reactions {
+        font-size: 1.15em;
+        color: #221536;
+        margin-bottom: 22px;
+    }
+
+    .project-like,
+    .project-heart,
+    .project-comment {
+        margin-right: 1rem;
+    }
+
+    .reaction-icon-like {
+        font-size: 1.6rem;
+        margin-right: 5px;
+
+    }
+
+    .reaction-icon-like-solid {
+        font-size: 1.6rem;
+        margin-right: 5px;
+    }
+
+    .reaction-icon-heart {
+        font-size: 1.6rem;
+        margin-right: 5px;
+    }
+
+    .reaction-icon-heart-solid {
+        font-size: 1.6rem;
+        margin-right: 5px;
+    }
+
+    .reaction-icon-comment {
+        font-size: 1.6rem;
+        margin-right: 5px;
+    }
+
+    .expand-button {
+        position: relative;
+        box-shadow: 1px 3px 12px rgba(2, 2, 2, 0.637);
+        width: 42% !important;
+        font-size: 1rem !important;
+        padding: 10px 10px;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        border-top: 0px solid #97ff1f00;
+        border-right: 0px solid #45810000;
+    }
+
+    .expand-button span {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(0px);
+    }
+
+    .expand-button::before {
+        border-top: 0px solid #96FF1F;
+        border-right: 0px solid #96FF1F;
+    }
+
+    .expand-button::after {
+        border-top: 0px solid #96FF1F;
+        border-right: 0px solid #96FF1F;
+
+    }
+
+
+    .expand-button:hover span {
+        transform: translate(0px);
+    }
+
+    .details-p {
+        font-weight: 500;
+        font-size: 110%;
+    }
+
+    .hr-details {
+        margin-right: 10%;
+        margin-bottom: 3%;
+    }
+
+    .website-link {
+        display: block;
+        font-size: 105%;
+        margin-top: .2rem;
+        padding-bottom: .5rem !important;
+        margin-left: .1rem;
+    }
+
+    .github-link {
+        display: block;
+        font-size: 105%;
+        margin-top: .2rem;
+        padding-bottom: .5rem !important;
+        margin-left: 0rem;
+    }
+
+    .status {
+        font-size: 120%;
+        margin-left: 0.2rem;
+    }
+
+    .stack-container.expanded {
+        max-height: 1000px;
+        opacity: 1;
+    }
+
+    .stack-container.collapsed {
+        max-height: 0;
+        opacity: 0;
+    }
+
+
+    .stack-container {
+        position: absolute;
+        right: -10%;
+        top: 35%;
+        transform: translateY(-50%);
+        width: 115%;
+        max-width: 770px;
+    }
+
+
+    .stack-container2 {
+        position: relative;
+        max-width: 91%;
+        padding: 2.5rem 0 1.5rem 1.8rem;
+        background: linear-gradient(180deg, #f0e9e9 10%, #f7e8e8 80%, #f0e2e2 100%);
+        box-shadow: 0 3px 6px rgba(44, 43, 40, 0.233);
+        border-radius: 2px;
+        border: 1px solid rgba(127, 129, 129, 0.465);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .stack-container2:hover {
+        border: 1px solid rgba(176, 227, 243, 0.465);
+        box-shadow: 0 4px 30px rgba(2, 2, 2, 0.164);
+        transition: all 0.3s ease-in-out;
+    }
+
+
+    .stack-title {
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin: .4rem 0 1.2rem .5rem;
+    }
+
+
+    .stack-tags {
+        margin: 1.5rem 0;
+        max-width: 90%;
+        padding: .9rem;
+        padding-left: .8rem;
+        background: linear-gradient(145deg, rgb(245, 205, 255) 2%, rgb(252, 233, 233) 12%, rgb(196, 190, 250) 31%, #9ff7c1 57%, #fdd2b4 80%, #fffedf 100%);
+        backdrop-filter: blur(10px) saturate(150%);
+        -webkit-backdrop-filter: blur(10px) saturate(150%);
+        border: 2px solid rgba(173, 166, 166, 0.384);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stack-tags::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.61) 0%, rgba(255, 255, 255, 0.0) 60%);
+        transform: rotate(45deg);
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .stack-tags:hover::before {
+        opacity: 1;
+        top: -30%;
+        left: -30%;
+        transform: rotate(45deg);
+    }
+
+    .stack-tags:hover {
+        transform: scale(1.007);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.267);
+    }
+
+    .stack-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(31%, 1fr));
+        gap: 10px;
+    }
+
+    .stack-hashtag {
+        z-index: 1;
+        background-color: #5c61ffc9;
+        box-shadow: 3px 4px 8px rgba(68, 67, 65, 0.068);
+        letter-spacing: 2px;
+        font-weight: 500;
+        font-size: 105%;
+        margin: 0.4rem;
+        padding-left: .5rem !important;
+    }
+}
+
+
+@media (min-width:1200px) and (max-width: 1500px) {
+    .back-arrow-projects {
+        font-size: 360%;
+    }
+    .project-detail-card {
+        border-radius: 38px 0 38px 0;
+        width: 90%;
+        max-width: 700px;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+        box-shadow: 17px 17px 38px #c3c0c0,
+            -17px -17px 38px #ffffff;
+    }
+
+    .project-detail-image {
+        height: 480px;
+    }
+
+    .project-detail-content {
+        padding: 30px;
+    }
+
+    .project-detail-title {
+        font-size: 2.25em;
+    }
+
+    .project-not-found-div {
+        font-size: 5em;
+        margin: 7% 6%;
+        padding-top: 15%;
+        padding-bottom: 0%;
+    }
+
+    .oops {
+        font-weight: 400;
+        font-size: 1.8em;
+        margin-bottom: 0;
+        letter-spacing: 1px;
+    }
+
+    .project-detail-description {
+        font-size: 1.35em;
+        margin: 0 0 25px 0;
+    }
+
+    .reaction-icon-like {
+        font-size: 1.8rem;
+        margin-right: 5px;
+
+    }
+
+    .reaction-icon-like-solid {
+        font-size: 1.8rem;
+        margin-right: 5px;
+    }
+
+    .reaction-icon-heart {
+        font-size: 1.8rem;
+        margin-right: 5px;
+    }
+
+    .reaction-icon-heart-solid {
+        font-size: 1.8rem;
+        margin-right: 5px;
+    }
+
+    .reaction-icon-comment {
+        font-size: 1.8rem;
+        margin-right: 5px;
+    }
+
+    .details-p {
+        font-size: 114%;
+    }
+
+    .hr-details {
+        margin-right: 10%;
+        margin-bottom: 3%;
+    }
+
+    .website-link {
+        display: block;
+        font-size: 110%;
+        margin-top: .4rem;
+        padding-bottom: .7rem !important;
+        margin-left: .1rem;
+    }
+
+    .github-link {
+        display: block;
+        font-size: 110%;
+        margin-top: .4rem;
+        padding-bottom: .7rem !important;
+        margin-left: 0rem;
+    }
+
+    .status {
+        font-size: 130%;
+        margin-left: 0.2rem;
+    }
+
+    .stack-container {
+        position: absolute;
+        right: -10%;
+        top: 35%;
+        transform: translateY(-50%);
+        width: 115%;
+        max-width: 800px;
+    }
+
+
+    .stack-container2 {
+        position: relative;
+        max-width: 91%;
+        padding: 2.8rem 0 1rem 2.4rem;
+        background: linear-gradient(180deg, #f0e9e9 10%, #f7e8e8 80%, #f0e2e2 100%);
+        box-shadow: 0 3px 6px rgba(44, 43, 40, 0.233);
+        border-radius: 2px;
+        border: 1px solid rgba(102, 128, 128, 0.465);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .stack-container2:hover {
+        border: 1px solid rgba(110, 209, 240, 0.465);
+        box-shadow: 0 4px 30px rgba(2, 2, 2, 0.164);
+        transition: all 0.3s ease-in-out;
+    }
+
+
+    .stack-title {
+        font-weight: bold;
+        font-size: 1.25rem;
+        margin: .4rem 0 1rem .5rem;
+    }
+
+
+    .stack-tags {
+        margin: 1.6rem 0;
+        max-width: 90%;
+        height: 20vh;
+        padding: 1rem;
+        padding-left: .8rem;
+        background: linear-gradient(145deg, rgb(245, 205, 255) 2%, rgb(252, 233, 233) 12%, rgb(196, 190, 250) 31%, #9ff7c1 57%, #fdd2b4 80%, #fffedf 100%);
+        backdrop-filter: blur(10px) saturate(150%);
+        -webkit-backdrop-filter: blur(10px) saturate(150%);
+        border: 2px solid rgba(173, 166, 166, 0.384);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stack-tags::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.61) 0%, rgba(255, 255, 255, 0.0) 60%);
+        transform: rotate(45deg);
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .stack-tags:hover::before {
+        opacity: 1;
+        top: -30%;
+        left: -30%;
+        transform: rotate(45deg);
+    }
+
+    .stack-tags:hover {
+        transform: scale(1.007);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.267);
+    }
+
+    .stack-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(31%, 1fr));
+        gap: 10px;
+    }
+
+    .stack-hashtag {
+        z-index: 1;
+        background-color: #5c61ffc9;
+        box-shadow: 3px 4px 8px rgba(68, 67, 65, 0.068);
+        letter-spacing: 2px;
+        margin: 0.4rem;
+        padding-left: .7rem !important;
     }
 }

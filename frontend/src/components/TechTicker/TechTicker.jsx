@@ -5,7 +5,8 @@ import { DiReact, DiPython, DiJavascript, DiGoogleCloudPlatform, DiHtml5, DiCss3
 import { BiLogoRedux, BiLogoDjango, BiLogoPostgresql  } from "react-icons/bi";
 import { GrDocker, GrMysql } from "react-icons/gr";
 import { RiJavascriptFill } from "react-icons/ri";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaAws } from "react-icons/fa";
+import { SiTerraform } from "react-icons/si";
 
 const items = [
     { icon: <DiReact />, name: 'React' },
@@ -14,6 +15,8 @@ const items = [
     { icon: <DiPython />, name: 'Python' },
     { icon: <RiJavascriptFill />, name: 'JavaScript' },
     { icon: <DiGoogleCloudPlatform />, name: 'Google Cloud Platform' },
+    { icon: <FaAws />, name: 'AWS' },
+    { icon: <SiTerraform />, name: 'Terraform'},
     { icon: <GrDocker />, name: 'Docker' },
     { icon: <BiLogoPostgresql  />, name: 'PostgreSQL' },
     { icon: <GrMysql  />, name: 'MySQL' },
