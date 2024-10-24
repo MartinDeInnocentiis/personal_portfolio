@@ -39,7 +39,12 @@
   
   .ticker-item:hover {
     transform: scale(1.1);
+    filter: drop-shadow(
+        0 0 8px rgba(68, 0, 255, 0.651)
+    )
+    /*
     background: radial-gradient(#00000038 0% 2%, #f8f9fa00 55%);
+    */  
   }
   
   .ticker-item:hover .icon, .ticker-item:hover .item-name-div {

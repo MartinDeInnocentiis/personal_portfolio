@@ -63,44 +63,59 @@ const AboutScreen = () => {
             <div className='about-container2'>
 
                 <div className='h2-container'>
-
-                    <h2 className='about-h2'>Educational profile</h2></div>
-                <div className='about-container3'>
-                    <div className='column1'>
-                        <p className='about-p'>Google </p>
-                        <p className='about-p'>mundosE</p>
-                        <p className='about-p'>Inove </p>
-                        <p className='about-p'>Coderhouse </p>
-                        <p className='about-p'>ITMasters </p>
-                        <p className='about-p'>UBA </p>
-                        <p className='about-p'>Oxford University </p>
-                    </div>
-                    <div className='column2'>
-                        <p className='about-p'>|  asdasd</p>
-                        <p className='about-p'>|  asdasd</p>
-                        <p className='about-p'>|  asdads</p>
-                        <p className='about-p'>|  asdasd</p>
-                        <p className='about-p'>|  asdasd</p>
-                        <p className='about-p'>|  asdads</p>
-                        <p className='about-p'>|  asdasd</p>
-                    </div>
+                    <h2 className='about-h2'>Educational profile</h2>
                 </div>
 
+                <div className='about-container3'>
+                    <div className='education-item'>
+                        <p className='about-p institute'>Google</p>
+                        <p className='about-p title'>Associate Cloud Engineer</p>
+                    </div>
+                    <div className='education-item'>
+                        <p className='about-p institute'>mundosE</p>
+                        <p className='about-p title'>DevOps Career</p>
+                    </div>
+                    <div className='education-item'>
+                        <p className='about-p institute'>Inove</p>
+                        <p className='about-p title'>Django Backend</p>
+                    </div>
+                    <div className='education-item'>
+                        <p className='about-p institute'>Coderhouse</p>
+                        <p className='about-p title'>Frontend Career - ReactJS</p>
+                    </div>
+                    <div className='education-item'>
+                        <p className='about-p institute'>ITMasters</p>
+                        <p className='about-p title'>Python Developer</p>
+                    </div>
+                    <div className='education-item'>
+                        <p className='about-p institute'>UBA</p>
+                        <p className='about-p title'>Lawyer</p>
+                    </div>
+                    <div className='education-item'>
+                        <p className='about-p institute'>Cambrdige U.</p>
+                        <p className='about-p title'>First Certificate Exam</p>
+                    </div>
+                </div>
 
                 <div className='h2-container'>
-                    <h2 className='about-h2'>Work Experience</h2></div>
+                    <h2 className='about-h2'>Work Experience</h2>
+                </div>
+
                 <div className='about-container3'>
-                    <div className='column1'>
-                        <p className='about-p'>2023 - up to date </p>
-                        <p className='about-p'>2022 - up to date </p>
-                        <p className='about-p'>2013 - 2023 </p>
+                    <div className='work-item'>
+                        <p className='about-p year'>08/2024 - to date</p>
+                        <p className='about-p position'>Backend  &  Fullstack Developer <span className='where'>at Gestionar Logistica</span> </p>
                     </div>
-                    <div className='column2'>
-                        <p className='about-p'>|  FullStack Dev. / Data Engineer</p>
-                        <p className='about-p'>|  FrontEnd Dev. (Freelancer)</p>
-                        <p className='about-p'>|  Chief Officer</p>
+                    <div className='work-item'>
+                        <p className='about-p year'>04/2023 - to date</p>
+                        <p className='about-p position'>FullStack Dev. / Data Eng. <span className='where'>at Havas Group</span> </p>
+                    </div>
+                    <div className='work-item'>
+                        <p className='about-p year'>08/2022 - 02/2024</p>
+                        <p className='about-p position'>FrontEnd Developer <span className='where'>(Freelancer)</span></p>
                     </div>
                 </div>
+
             </div>
 
         </div>

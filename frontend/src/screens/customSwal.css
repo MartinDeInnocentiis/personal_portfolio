@@ -8,13 +8,16 @@
     font-family: 'Rajdhani', sans-serif;
 }
 
-
-
-/* Estilos para smartphones pequeños en adelante */
-@media (max-width: 768px) {
+@media (max-width: 414px) {
     .swal2-popup {
-        width: 80vw;
-        margin: -.3rem 2.8rem 0 0;
+        width: 80vw !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .swal2-popup {
+        width: 52vw;
+        margin: -.3rem .3rem 0 0;
         padding: 0 0 10px 0;
         display: flex;
         justify-content: space-evenly !important;
@@ -29,5 +32,47 @@
         height: 3.8vh;
         margin-top: 7px;
         font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .swal2-popup {
+        width: 40vw;
+        margin: -.3rem 1rem 0 0;
+        padding: 0 0 10px 0;
+        display: flex;
+        justify-content: space-evenly !important;
+        border-radius: 7px;
+        border-bottom: 5px solid rgb(16, 216, 16);
+    }
+    .swal2-success{
+        display: none !important;
+    }
+
+    .swal2-title{
+        height: 4.2vh;
+        margin-top: 7px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1580px) {
+    .swal2-popup {
+        width: 33vw;
+        margin: -.3rem 2.8rem 0 0;
+        padding: 0 0 12px 0;
+        display: flex;
+        justify-content: space-evenly !important;
+        border-radius: 7px;
+        border-bottom: 5px solid rgb(16, 216, 16);
+    }
+    .swal2-success{
+        display: none !important;
+    }
+
+    .swal2-title{
+        height: 4.5vh;
+        margin-top: 8px;
+        font-size: 18px;
     }
 }

@@ -7,10 +7,10 @@ import { FiMail } from "react-icons/fi";
 const FooterIcons = () => {
   return (
     <div className='footericons-container'>
-        <FaGithub className='icon-footer-1'/>
         <FaLinkedin className='icon-footer-1'/>
-        <FaWhatsapp className='icon-footer-2'/>
+        <FaGithub className='icon-footer-1'/>
         <FiMail className='icon-footer-2'/>
+        <FaWhatsapp className='icon-footer-2'/>
     </div>
   )
 }

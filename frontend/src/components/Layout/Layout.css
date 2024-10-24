@@ -18,13 +18,41 @@
 
 
 /* Estilos para smartphones pequeños en adelante */
-@media (min-width: 361px) and (max-width: 414px) {
+@media (min-width: 361px) and (max-width: 440px) {
     .app {
-        width: 103.5%; 
+        width: 104.5%; 
         overflow-x: hidden !important; 
     }
 }
 
+@media (min-width: 441px) and (max-width: 769px) {
+    .app {
+        width: 103.7%; 
+        overflow-x: hidden !important; 
+    }
+}
+
+
+@media (min-width: 770px) and (max-width: 950px){
+        .app {
+        width: 102%; 
+        overflow-x: hidden !important; 
+    }
+}
+
+@media (min-width: 951px) and (max-width: 1200px) {
+    .app {
+        width: 101.7%; 
+        overflow-x: hidden !important; 
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1300px) {
+    .app {
+        width: 101.2%; 
+        overflow-x: hidden !important; 
+    }
+}
 /*
 .app{
     width: 100%; 
