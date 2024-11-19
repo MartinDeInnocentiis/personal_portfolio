@@ -107,10 +107,13 @@
 
 
 .about-container2 {
+  overflow-y: hidden;
+  overflow-x: hidden;
   margin: 4rem 0 3rem 1rem;
   max-width: 100%;
   width: 28vw;
-  height: 85vh;
+  height: auto;
+  max-height: 88vh;
   border-radius: 48px 0 48px 0;
   border-right: 1px solid rgba(130, 182, 206, 0.438);
   border-bottom: 1px solid rgba(130, 182, 206, 0.445);
@@ -137,6 +140,7 @@
   color: #5C61FF;
   font-size: 30px;
   text-align: left;
+  margin-left: 15px;
 }
 
 
@@ -168,7 +172,7 @@
 
 .where {
   font-weight: 400;
-  color:#221536;
+  color: #221536;
 }
 
 
@@ -186,6 +190,13 @@
   transition: color 0.3s ease-in-out;
 }
 
+.about-hr {
+  width: 100%;
+  margin: .01rem 0;
+  border: none;
+  height: 1px;
+  background-color: #856e6a27;
+}
 
 /* Estilos para smartphones pequeños en adelante */
 @media (max-width: 414px) {
@@ -253,7 +264,7 @@
   .about-container2 {
     margin: 4rem 0.5rem 3rem .6rem;
     max-width: 100%;
-    height: 82vh;
+    height: auto;
     border-radius: 28px 0 28px 0;
     border-right: 1px solid rgba(130, 182, 206, 0.438);
     border-bottom: 1px solid rgba(130, 182, 206, 0.445);
@@ -261,45 +272,46 @@
     background: #f9f9f9;
     box-shadow: -6px -6px 12px rgba(223, 223, 223, 0.6), 6px 6px 12px rgba(255, 255, 255, 0.5);
   }
-  
+
   .about-container3 {
     display: flex;
     flex-direction: column;
     padding-left: 1rem;
   }
-  
+
   .h2-container {
-    margin:0.2rem !important;
+    margin: 0.2rem !important;
     margin-bottom: 1.5rem !important;
     padding: 0.2rem !important;
     height: 30px !important;
   }
-  
+
   .about-h2 {
     font-size: 22px !important;
     margin-top: 0 !important;
     text-align: left;
   }
-  
-  
+
+
   .education-item,
   .work-item {
-    padding:  0 !important;
+    padding: 0 !important;
   }
-  
-  
+
+
   .institute {
     font-weight: 500;
     font-size: 14px;
     width: 32%;
   }
+
   .year {
     font-size: 14px;
     width: 25%;
     margin-right: 1rem;
   }
-  
-  .title{
+
+  .title {
     font-size: 14px;
   }
 
@@ -307,7 +319,11 @@
     font-size: 14px;
     width: 75%;
   }
-  
+
+  .about-hr{
+    margin: -1.2rem 0 1rem 0;
+  }
+
 
 }
 
@@ -377,12 +393,12 @@
 
 
   .about-container2 {
-    margin: 3rem 1rem 3rem 1.5rem;
-    width: 74%;
-    height: 65vh;
+    margin: 3rem 1rem 3rem .8rem;
+    width: auto !important;
+    height: auto;
     border-radius: 48px 0 48px 0;
     border: 1px solid rgba(221, 173, 173, 0.096);
-    padding: 1.5rem 1.7rem;
+    padding: 1.5rem 1rem !important;
     background: linear-gradient(145deg, #ffffff, #e3e3e3);
     box-shadow: 14px 14px 26px #c7c7c7,
       -14px -14px 26px #ebe7e7;
@@ -393,21 +409,24 @@
     margin-bottom: 1rem;
   }
 
-  .column1 {
-    width: 50%;
-  }
-
-  .column2 {
-    width: 50%;
-  }
-
   .about-h2 {
-    color: #5C61FF;
-    font-size: 22px;
+    margin: 0;
+  }
+  
+
+  .h2-container {
+    margin: 0.2rem !important;
+    margin-bottom: .5rem !important;
+    padding: 0.2rem !important;
+    height: 40px !important;
   }
 
   .about-p {
     font-size: 16px;
+  }
+
+  .about-hr{
+    margin: -1.2rem 0 1rem 0;
   }
 }
 
@@ -429,7 +448,7 @@
   }
 
   .about-container2 {
-    width: 78%;
+    width: 78%;;
     padding: 1.5rem 2rem;
   }
 
@@ -440,6 +459,14 @@
 
   .about-p {
     font-size: 17px;
+  }
+
+  .institute, .year, .title, .position {
+    font-size: 18px;
+  }
+
+  .about-hr{
+    margin: -1.2rem 0 1rem 0;
   }
 }
 
@@ -522,7 +549,8 @@
   .about-container2 {
     margin: 4rem 2rem 3rem 1rem;
     width: 50%;
-    height: 65vh;
+    height: auto;
+    max-height: 85vh;
     border-radius: 48px 0 48px 0;
     border: 1px solid rgba(221, 173, 173, 0.096);
     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
@@ -536,20 +564,17 @@
     margin-bottom: 1rem;
   }
 
-  .column1 {
-    width: 50%;
-  }
-
-  .column2 {
-    width: 50%;
-  }
-
   .about-h2 {
     font-size: 22px;
+    padding-left: 15px;
   }
 
   .about-p {
     font-size: 16px;
+  }
+
+  .about-hr{
+    margin: -1.2rem 0 1rem 0;
   }
 }
 
@@ -572,7 +597,7 @@
   }
 
   .about-container2 {
-    height: 69vh;
+    height: auto;
     margin-right: 3rem;
   }
 
@@ -606,7 +631,8 @@
 
 
   .about-container2 {
-    height: 76vh;
+    height: auto;
+    max-height: 100vh;
     margin-right: 3.5rem;
   }
 
@@ -618,6 +644,15 @@
 
   .about-p {
     font-size: 20px;
+  }
+}
+
+@media (min-width:1501px) and (max-width:1850px) {
+
+  .about-container2 {
+    height: auto;
+    max-height: 112vh;
+    margin-right: 3.5rem;
   }
 }
 
@@ -642,4 +677,21 @@
     padding-left: 0.5rem;
   }
 
+}
+
+@media (min-width: 783px) and (max-width: 920px) {
+  .about-container2 {
+    height: auto !important;
+    max-height: 83vh !important;
+  }
+}
+
+@media (max-width: 920px) and (orientation: landscape) {
+  .about-container2 {
+    max-height: 175vh; 
+    overflow-y: auto; 
+    width: 100vw; 
+    padding: 1rem; 
+    margin: 2rem; 
+  }
 }

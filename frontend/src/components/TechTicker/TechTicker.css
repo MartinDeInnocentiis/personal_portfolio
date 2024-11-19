@@ -33,7 +33,6 @@
     display: inline-block;
     padding: 2rem;
     width: 15rem;
-    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
   
@@ -74,7 +73,7 @@
 @media (max-width: 360px) {
 
   .ticker-content {
-    width: 800%;  
+    width: 1600%;  
   }
 
   .ticker-item {
@@ -108,7 +107,7 @@
 /* Estilos para móviles medianos */
 @media (min-width: 361px) and (max-width: 480px) {
   .ticker-content {
-    width: 800%;  
+    width: 1500%;  
   }
 
   .ticker-item {
@@ -142,7 +141,7 @@
 /* Estilos para phablets */
 @media (min-width: 481px) and (max-width: 600px) {
   .ticker-content {
-    width: 800%;  
+    width: 1200%;  
   }
 
   .ticker-item {

@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   margin: 5rem 0 0 10rem;
-  height: 88vh;
+  height: 90vh;
   font-size: 30px;
 }
 
@@ -248,7 +248,7 @@ p {
 
   .home-section3 {
     width: 100vw;
-    height: 86vh;
+    height: 92vh;
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
   }
@@ -256,7 +256,7 @@ p {
 
 
 /* Estilos para móviles medianos */
-@media (min-width: 361px) and (max-width: 414px) {
+@media (min-width: 361px) and (max-width: 413px) {
   .home-general-container {
     width: 100vw;
   }
@@ -328,7 +328,7 @@ p {
 
   .home-section3 {
     width: 100vw;
-    height: 68vh;
+    height: 75vh;
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     margin-bottom: 5rem;
@@ -337,7 +337,7 @@ p {
 
 
 /* Estilos para móviles medianos-grandes */
-@media (min-width: 415px) and (max-width: 480px) {
+@media (min-width: 414px) and (max-width: 480px) {
   .home-general-container {
     width: 100vw;
   }
@@ -488,7 +488,7 @@ p {
 
   .home-section3 {
     width: 100vw;
-    height: 72vh;
+    height: 82vh;
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     margin-bottom: 5rem;
@@ -587,7 +587,7 @@ p {
   .home-container1 {
     width: 100%;
     margin: 2rem .5rem 0 2.2rem;
-    height: 87vh;
+    height: auto;
   }
 
   .home-h1 {
@@ -614,7 +614,7 @@ p {
 
   .see-more {
     font-size: 18px;
-    margin-top: 1.4rem;
+    margin: 1.4rem 0rem 3rem;
     border: 1px solid rgb(214, 215, 241);
     background: #d7d5e6;
     box-shadow: 20px 20px 58px #9a96bb,
@@ -636,7 +636,7 @@ p {
 
   .home-section2 {
     width: 100vw;
-    height: 65vh;
+    height: auto;
   }
 
   .blinking-text {
@@ -647,10 +647,10 @@ p {
 
   .home-section3 {
     width: 100vw;
-    height: 94vh;
+    height: auto;
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-    margin-bottom: 4rem;
+    margin-bottom: .5rem;
   }  
 }
 
@@ -882,4 +882,11 @@ p {
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     margin-bottom: 4rem;
   }  
+}
+
+
+@media (min-width: 1501px) and (max-width: 1800px) {
+  .home-container1 {
+    height: 98vh;
+  }
 }

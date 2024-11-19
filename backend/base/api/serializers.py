@@ -22,7 +22,9 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', '_id', 'username', 'email', 'name', 'isAdmin', 'password']
-        
+        extra_kwargs = {
+            'username': {'validators': []}  # Disable automatic unique validation
+        }
     def get__id(self, obj):
         _id=obj.id
         
@@ -48,7 +50,7 @@ class UserSerializer(serializers.ModelSerializer):
     
     def validate_username(self, value):
         if User.objects.filter(username=value).exists():
-           raise serializers.ValidationError("This username has already been taken. Please, choose another one.")
+           raise serializers.DjangoValidationError("A user with that username already exists.")
         if not re.match(r'^[\w.@+\- ]+$', value):
            raise serializers.ValidationError("Username may only contain letters, numbers and @/./+/-/_/ /(spaces) as special characters.")
         return value

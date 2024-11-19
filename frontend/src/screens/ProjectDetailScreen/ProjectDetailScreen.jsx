@@ -83,15 +83,7 @@ const ProjectDetailScreen = () => {
         fetchData();
     }, [id, user]);
 
-    // Verificamos si projectDetail está disponible
-    //if (!projectDetail) {
-    //    return <div>Loading...</div>;
-    //}
 
-    //if (!projectDetail) {
-    //    return <div className='project-not-found-div'> <p className='oops'> Oops! </p>  <p className='project-not-found'>Project not found... </p></div>
-
-    //}
 
 
     if (loading) {
@@ -112,9 +104,13 @@ const ProjectDetailScreen = () => {
 
     if (!projectDetail) {
         return (
-            <div className='project-not-found-div'>
-                <p className='oops'>Oops!</p>
-                <p className='project-not-found'>Project not found...</p>
+            <div>
+                <Link to='/projects/'> <IoArrowBackCircleSharp className='back-arrow-projects' title='Back' /> </Link>
+
+                <div className='project-not-found-div'>
+                    <p className='oops'>Oops!</p>
+                    <p className='project-not-found'>Project not found...</p>
+                </div>
             </div>
         );
     }
@@ -199,72 +195,72 @@ const ProjectDetailScreen = () => {
 
     return (
         <>
-            <Link to='/projects/'> <IoArrowBackCircleSharp className='back-arrow-projects' title='Back'/> </Link>
+            <Link to='/projects/'> <IoArrowBackCircleSharp className='back-arrow-projects' title='Back' /> </Link>
 
-                <div className='project-detail-container'>
-
-
-                    <div className="project-detail-card">
-                        <img src={projectDetail.image} alt={projectDetail.title} className="project-detail-image" />
-                        <div className="project-detail-content">
-                            <h2 className="project-detail-title">{projectDetail.title}</h2>
-                            <p className="project-detail-description">{projectDetail.description}</p>
+            <div className='project-detail-container'>
 
 
-                            <div className="project-detail-reactions">
-                                <span className="project-like">
-                                    {liked ? <BiSolidLike className='reaction-icon-like-solid' onClick={handleLike} title='Like'/> : <BiLike className='reaction-icon-like' onClick={handleLike} title='Like'/>} <div> {totalLikes}</div>
-                                </span>
-                                <span className="project-heart">
-                                    {hearted ? <BiSolidHeart className='reaction-icon-heart-solid' onClick={handleHeart} title='Heart'/> : <BiHeart className='reaction-icon-heart' onClick={handleHeart} title='Heart'/>} <div> {totalHearts}</div>
-                                </span>
-                                <span className="project-comment">
-                                    <BiCommentDetail onClick={scrollToCommentInput} className='reaction-icon-comment' title='Comment'/> <div> {totalComments}</div>
-                                </span>
-                            </div>
-                            <div className="project-detail-extra-info">
-                                {/* Otra información extra del proyecto */}
-                            </div>
+                <div className="project-detail-card">
+                    <img src={projectDetail.image} alt={projectDetail.title} className="project-detail-image" />
+                    <div className="project-detail-content">
+                        <h2 className="project-detail-title">{projectDetail.title}</h2>
+                        <p className="project-detail-description">{projectDetail.description}</p>
 
 
-                            <div className='expand-button-container'>
-                                <button onClick={toggleExpand} className={`expand-button ${isExpanded ? 'expanded' : ''}`}>
-                                    <span className='span-button-detail'> {isExpanded ? 'Hide details' : 'View details'}</span>
-                                </button>
-                            </div>
+                        <div className="project-detail-reactions">
+                            <span className="project-like">
+                                {liked ? <BiSolidLike className='reaction-icon-like-solid' onClick={handleLike} title='Like' /> : <BiLike className='reaction-icon-like' onClick={handleLike} title='Like' />} <div> {totalLikes}</div>
+                            </span>
+                            <span className="project-heart">
+                                {hearted ? <BiSolidHeart className='reaction-icon-heart-solid' onClick={handleHeart} title='Heart' /> : <BiHeart className='reaction-icon-heart' onClick={handleHeart} title='Heart' />} <div> {totalHearts}</div>
+                            </span>
+                            <span className="project-comment">
+                                <BiCommentDetail onClick={scrollToCommentInput} className='reaction-icon-comment' title='Comment' /> <div> {totalComments}</div>
+                            </span>
+                        </div>
+                        <div className="project-detail-extra-info">
+                            {/* Otra información extra del proyecto */}
+                        </div>
 
-                            <div className={`stack-container ${isExpanded ? 'expanded' : 'collapsed'}`}>
-                                <div className='stack-container2'>
-                                    <p className='details-p'>Website: <span className='website-link'>{projectDetail.website_link}</span></p>
-                                    <p className='details-p'>GitHub: <span className='github-link'>{projectDetail.github_link}</span></p>
-                                    <p className='details-p'>Status: <span className='status'>{projectDetail.status}</span></p>
-                                    <hr className='hr-details' />
-                                    <div className="stack-tags">
-                                        <span className='stack-title'>Tech Stack:</span>
-                                        <div className="stack-grid">
-                                            {stackWithHashtags.map((hashtag, index) => (
-                                                <span key={index} className="stack-hashtag">
-                                                    {hashtag}
-                                                </span>
-                                            ))}
-                                        </div>
+
+                        <div className='expand-button-container'>
+                            <button onClick={toggleExpand} className={`expand-button ${isExpanded ? 'expanded' : ''}`}>
+                                <span className='span-button-detail'> {isExpanded ? 'Hide details' : 'View details'}</span>
+                            </button>
+                        </div>
+
+                        <div className={`stack-container ${isExpanded ? 'expanded' : 'collapsed'}`}>
+                            <div className='stack-container2'>
+                                <p className='details-p'>Website: <span className='website-link'>{projectDetail.website_link}</span></p>
+                                <p className='details-p'>GitHub: <span className='github-link'>{projectDetail.github_link}</span></p>
+                                <p className='details-p'>Status: <span className='status'>{projectDetail.status}</span></p>
+                                <hr className='hr-details' />
+                                <div className="stack-tags">
+                                    <span className='stack-title'>Tech Stack:</span>
+                                    <div className="stack-grid">
+                                        {stackWithHashtags.map((hashtag, index) => (
+                                            <span key={index} className="stack-hashtag">
+                                                {hashtag}
+                                            </span>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                    </div>
-                    <div>
-                        <CommentsSection
-                            comments={projectDetail.comments}
-                            postId={id}
-                            inputRef={commentInputRef}
-                            onCommentAdded={handleNewCommentAdded} // PROPAGATING THE HANDLER DOWN
-                            onCommentDeleted={handleCommentDeleted}
-                        />
-                    </div>
 
+                    </div>
                 </div>
+                <div>
+                    <CommentsSection
+                        comments={projectDetail.comments}
+                        postId={id}
+                        inputRef={commentInputRef}
+                        onCommentAdded={handleNewCommentAdded} // PROPAGATING THE HANDLER DOWN
+                        onCommentDeleted={handleCommentDeleted}
+                    />
+                </div>
+
+            </div>
         </>
     );
 };

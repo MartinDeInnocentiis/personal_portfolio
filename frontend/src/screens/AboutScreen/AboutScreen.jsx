@@ -71,26 +71,27 @@ const AboutScreen = () => {
                         <p className='about-p institute'>Google</p>
                         <p className='about-p title'>Associate Cloud Engineer</p>
                     </div>
+                    <hr className='about-hr'/>
                     <div className='education-item'>
                         <p className='about-p institute'>mundosE</p>
                         <p className='about-p title'>DevOps Career</p>
                     </div>
+                    <hr className='about-hr'/>
                     <div className='education-item'>
                         <p className='about-p institute'>Inove</p>
                         <p className='about-p title'>Django Backend</p>
                     </div>
+                    <hr className='about-hr'/>
                     <div className='education-item'>
                         <p className='about-p institute'>Coderhouse</p>
                         <p className='about-p title'>Frontend Career - ReactJS</p>
                     </div>
+                    <hr className='about-hr'/>
                     <div className='education-item'>
                         <p className='about-p institute'>ITMasters</p>
                         <p className='about-p title'>Python Developer</p>
                     </div>
-                    <div className='education-item'>
-                        <p className='about-p institute'>UBA</p>
-                        <p className='about-p title'>Lawyer</p>
-                    </div>
+                    <hr className='about-hr'/>
                     <div className='education-item'>
                         <p className='about-p institute'>Cambrdige U.</p>
                         <p className='about-p title'>First Certificate Exam</p>
@@ -101,15 +102,21 @@ const AboutScreen = () => {
                     <h2 className='about-h2'>Work Experience</h2>
                 </div>
 
-                <div className='about-container3'>
+                <div className='about-container3'><div className='work-item'>
+                        <p className='about-p year'>12/2024 - to date</p>
+                        <p className='about-p position'>Fullstack Developer <span className='where'>at Eprezto Seguros</span> </p>
+                    </div>
+                    <hr className='about-hr'/>
                     <div className='work-item'>
                         <p className='about-p year'>08/2024 - to date</p>
-                        <p className='about-p position'>Backend  &  Fullstack Developer <span className='where'>at Gestionar Logistica</span> </p>
+                        <p className='about-p position'>Fullstack Developer <span className='where'>at Gestionar Logistica</span> </p>
                     </div>
+                    <hr className='about-hr'/>
                     <div className='work-item'>
-                        <p className='about-p year'>04/2023 - to date</p>
+                        <p className='about-p year'>04/2023 - 12/2024</p>
                         <p className='about-p position'>FullStack Dev. / Data Eng. <span className='where'>at Havas Group</span> </p>
                     </div>
+                    <hr className='about-hr'/>
                     <div className='work-item'>
                         <p className='about-p year'>08/2022 - 02/2024</p>
                         <p className='about-p position'>FrontEnd Developer <span className='where'>(Freelancer)</span></p>

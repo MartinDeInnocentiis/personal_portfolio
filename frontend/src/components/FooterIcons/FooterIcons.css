@@ -20,6 +20,12 @@
     )
 }
 
+@media (max-width: 320px) {
+    .icon-footer-1, .icon-footer-2{
+        padding-left: 3px !important;
+    }
+}
+
 @media (max-width: 414px) {
     .footericons-container{ 
         display: grid;

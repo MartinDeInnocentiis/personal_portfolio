@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(165deg, rgb(255, 255, 255) 0% 7%, #F0F9FA 11% 17%, #c6b5a931 31%, #F0F9FA 54%, rgba(47, 0, 255, 0.247) 90%);
+    padding-bottom: .5rem;
 }
 
 .back-arrow-register {
@@ -253,18 +253,18 @@
 }
 
 
-
 @media (max-width: 375px) {
     .register-screen {
         width: 100vw;
+        padding:1rem 0rem;
         background: linear-gradient(165deg, rgb(255, 255, 255) 0% 7%, #F0F9FA 11% 17%, #c6b5a931 31%, #F0F9FA 54%, rgba(47, 0, 255, 0.247) 90%);
     }
 
     .register-form {
-        padding: 1.5rem 2rem 6rem 2rem;
+        padding: 1rem 2rem 1rem 2rem;
         margin: 0 .8rem 0 .8rem;
         width: 100%;
-        height: 70vh !important;
+        height: auto !important;
     }
     
 
@@ -276,17 +276,25 @@
     .register-form h1 {
         width: 90%;
         margin-left: .5rem;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .register-error-message {
+        width: 105%;
+        margin: 0.5rem -.5rem;
+        font-weight: 400;
+        font-size: 13.5px;
     }
 
     .register-form label {
         margin-top: 4px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .register-form input {
         width: 80%;
-        font-size: 16px;
+        font-size: 14px;
+        margin:6px 0;
     }
 
     .eye-password {
@@ -297,18 +305,18 @@
 
     .register-form button {
         width: 100%;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 500;
     }
 
     .register-buttons button {
         padding-left: .3em;
         width: 30%;
-        height: 5vh;
+        height: 6vh;
     }
 
     .register-buttons p {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .login-text {
@@ -319,6 +327,11 @@
 
     .login-text a {
         font-size: 16px;
+    }
+
+    .all-fields{
+        font-size: 14px;
+        margin:5px 0;
     }
 }
 
@@ -333,7 +346,13 @@
         padding: 1.5rem 2rem 6rem 2rem;
         margin: 0 .8rem 0 .8rem;
         width: 100%;
-        height: 60vh !important;
+        height: auto;
+    }
+    .register-error-message {
+        width: 105%;
+        margin: 0.5rem -.5rem;
+        font-weight: 400;
+        font-size: 14px;
     }
 
     .back-arrow-register {
@@ -400,7 +419,14 @@
         padding: 1.5rem 2rem 6rem 2rem;
         margin: 0 1.5rem 0 .8rem;
         width: 75%;
-        height: 68%;
+        height: auto;
+    }
+
+    .register-error-message {
+        width: 105%;
+        margin: 0.5rem -.5rem;
+        font-weight: 400;
+        font-size: 15px;
     }
 
     .back-arrow-register {
@@ -454,5 +480,57 @@
 
     .login-text a {
         font-size: 18px;
+    }
+}
+
+
+
+@media (max-width: 782px) and (orientation: landscape) {
+    .register-screen {
+        height: auto !important;
+    }
+
+    .back-arrow-register {
+        margin-left: .1rem;
+    }
+
+    .register-form {
+        height: auto !important;
+        padding: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    
+
+    .register-error-message {
+        width: 105%;
+        margin: 1rem -.5rem;
+        padding-top: 1.8rem;
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    .register-form h1{
+        font-size: 1.5rem;
+        margin:0;
+    }
+    
+    .register-form label {
+        margin: 0;
+        font-size: 15px;
+    }
+
+    .register-form input {
+        width: 80%;
+        height: 3vh;
+        font-size: 15px;
+    }
+    .register-buttons button {
+        height: 10vh;
+    }
+
+    .register-buttons{
+        width: 85%;
     }
 }

@@ -88,10 +88,10 @@ const SliderCards = () => {
     const handleTouchEnd = () => {
         if (isMobile) {
             const touchDiff = touchStartX - touchEndX;
-            if (touchDiff > 50) {
+            if (touchDiff > 20) {
                 // Deslizar hacia la izquierda, ir a la siguiente tarjeta
                 nextSlide();
-            } else if (touchDiff < -50) {
+            } else if (touchDiff < -20) {
                 // Deslizar hacia la derecha, ir a la tarjeta anterior
                 prevSlide();
             }

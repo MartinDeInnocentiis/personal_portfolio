@@ -251,11 +251,12 @@ header {
     }
 
     .navbar {
-        height: 18vh;
+        height: auto;
     }
 
     .logo-header {
         margin-left: -18%;
+        width: 180px;
 
     }
 
@@ -271,11 +272,12 @@ header {
     }
 
     .navbar {
-        height: 18vh;
+        height: auto;
     }
 
     .logo-header {
         margin-left: -14%;
+        width: 230px;
 
     }
 
@@ -337,7 +339,6 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        /* Mostramos el menú cuando está abierto */
     }
 
     .vertical-separator {
@@ -361,3 +362,18 @@ header {
     }
 }
 
+
+
+@media (max-width: 782px) and (orientation: landscape) {
+    .navbarList {
+        margin-left: -1rem;
+        width: 102vw;
+        height: 105vh;
+        color: #221536;
+        background: linear-gradient(125deg, #97ff1f -8% -1%, #dafdb2 8% 13%, #e9f8e0 22%, #eff7eb 31%, #e0e1ee 54%, rgb(189, 179, 235) 75%, rgb(162, 144, 245) 90%, rgb(47, 0, 255) 115%);
+    }
+
+    .objectList{
+        font-size: 20px;
+    }
+}

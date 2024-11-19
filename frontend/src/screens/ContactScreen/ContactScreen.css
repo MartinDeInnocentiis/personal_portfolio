@@ -1,5 +1,6 @@
 .contactscreen-general-container {
-    height: 125vh;
+    height: auto;
+    padding-bottom: 4rem;
 }
 
 .contactscreen-container {
@@ -141,7 +142,7 @@
 
 @media  (max-width:320px) {
     .contactscreen-general-container {
-        height: 118vh !important;
+        height: auto !important;
     }
 }
 
@@ -149,7 +150,7 @@
 @media (max-width: 768px) {
     .contactscreen-general-container {
         width: 100vw;
-        height: 105vh;
+        height: auto;
     }
 
     .contactscreen-container {

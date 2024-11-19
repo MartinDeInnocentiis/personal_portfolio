@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding-bottom: .5rem;
     background: linear-gradient(165deg, rgb(255, 255, 255) 0% 7%, #F0F9FA 11% 17%, #c6b5a931 31%, #F0F9FA 54%, rgba(47, 0, 255, 0.247) 90%);
 }
 
@@ -331,5 +332,57 @@
 
     .register-text a {
         font-size: 18.5px;
+    }
+}
+
+
+
+@media (max-width: 782px) and (orientation: landscape) {
+    .login-screen {
+        height: auto !important;
+    }
+
+    .back-arrow-login {
+        margin-left: .1rem;
+    }
+
+    .login-form {
+        height: auto !important;
+        padding: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    
+
+    .login-error-message {
+        width: 105%;
+        margin: 1rem -.5rem;
+        padding-top: 1.8rem;
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    .login-form h1{
+        font-size: 1.7rem;
+        margin:0;
+    }
+    
+    .login-form label {
+        margin: 0;
+        font-size: 15px;
+    }
+
+    .login-form input {
+        width: 80%;
+        height: 3vh;
+        font-size: 15px;
+    }
+    .login-buttons button {
+        height: 11vh;
+    }
+
+    .login-buttons{
+        width: 85%;
     }
 }
