@@ -31,8 +31,9 @@ const HomeScreen = () => {
           <button className='see-more' onClick={handleScroll}>See more</button>
         </div>
         <div className='home-container2'>
-          FOTO
-
+            {
+              <img src="/profilepic.png" alt="Profile Picture" className='profile-pic' />
+            }
         </div>
       </div>
 

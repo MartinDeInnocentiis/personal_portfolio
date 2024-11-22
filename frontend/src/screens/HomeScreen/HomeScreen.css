@@ -87,9 +87,49 @@ p {
 
 .home-container2 {
   margin: 5rem 0;
-  width: 30vw;
+  width: 40vw;
+  margin-right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.profile-pic {
+  /* Dimensiones */
+  width: 77%;
+  margin-top: -5rem;
+
+  /* Máscara (gradiente inferior y lateral derecha) */
+  mask-image: linear-gradient(
+      to bottom, 
+      transparent, 
+      black 20%, 
+      black 80%, 
+      transparent
+    ),
+    linear-gradient(
+      to right, 
+      transparent, 
+      black 90%
+    );
+  -webkit-mask-image: linear-gradient(
+      to bottom, 
+      transparent, 
+      black 10%, 
+      black 70%, 
+      transparent
+    ),
+    linear-gradient(
+      to left, 
+      transparent, 
+      black 50%
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+
+  /* Efectos */
+  filter: drop-shadow(0 0 24px rgb(68, 0, 255));
+}
 
 .home-section2 {
   background: linear-gradient(165deg, #b6a599 0% 20%, #8f7e72 90%);

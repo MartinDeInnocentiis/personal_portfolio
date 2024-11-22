@@ -32,7 +32,6 @@ const CommentsSection = ({ comments, postId, inputRef, onCommentAdded, onComment
                 setAnonUserId(newAnonUserId);
                 localStorage.setItem('anonUserId', newAnonUserId);
             }
-            //console.log("Current Anon User ID:", storedAnonUserId);
         }
         fetchComments();
     }, [user, storedAnonUserId, setAnonUserId]);
@@ -192,15 +191,6 @@ const CommentsSection = ({ comments, postId, inputRef, onCommentAdded, onComment
         });
     };
 
-    /*const handleDeleteComment = async (commentId) => {
-        try {
-            await api.delete(`/comments/${commentId}/`);
-            setMessages(prevMessages => prevMessages.filter(message => message.id !== commentId));
-            onCommentDeleted();
-        } catch (error) {
-            console.error("There was an error deleting the comment", error);
-        }
-    };*/
 
     const handleSeeMoreClick = () => {
         setShowAllComments(true);
